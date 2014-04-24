@@ -13,7 +13,7 @@ gem 'font-awesome-sass'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'geocoder'
 gem 'websocket-rails'
-
+gem "jquery-rails"
 
 group :production do
   gem 'rails_12factor'
