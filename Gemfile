@@ -13,7 +13,8 @@ gem 'font-awesome-sass'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'geocoder'
 gem 'websocket-rails'
-gem "jquery-rails"
+gem "chartkick"
+gem 'jquery-rails'
 
 group :production do
   gem 'rails_12factor'
@@ -46,7 +47,6 @@ gem 'coffee-rails'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
