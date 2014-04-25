@@ -7,7 +7,7 @@ class ChartsController < ApplicationController
   def create
 
     @chart = Chart.new params[:chart].permit(:name, :chart_type)
-    params.permit(:csv)
+    
     if @chart.save
       @chart.create_datapoints(params[:csv])
       redirect_to '/charts'

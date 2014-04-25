@@ -1,4 +1,5 @@
 require './lib/csvprocessor.rb'
+
 class Chart < ActiveRecord::Base
 
   has_many :datapoints
