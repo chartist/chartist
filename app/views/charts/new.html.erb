@@ -7,6 +7,9 @@
      
       <%= f.radio_button :chart_type, "Pie chart"%>
       <%= f.label "Pie chart" %>
+      <br>
+      <%= f.file_field :csv %>
+
       <%= f.submit 'Generate' %>
      <% end %>
     </div>
