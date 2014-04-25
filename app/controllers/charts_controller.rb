@@ -11,10 +11,14 @@ class ChartsController < ApplicationController
     if @chart.save
       @chart.create_datapoints @chart.csv.path
       @chart.csv.destroy
-      redirect_to '/charts'
+      redirect_to "/charts/#{@chart.id}"
     else
       flash[:error] = "Oops! something went wrong"
       render "new"
     end
+  end
+
+  def show
+    @chart = Chart.find params[:id]
   end
 end
