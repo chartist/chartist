@@ -8,9 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<p class="notice"><%= notice %></p>
 
-<%= yield %>
-<script src=zepto.min.js></script>
+	<p class="alert"><%= alert %></p>
+	<%= yield %>
+
 
 </body>
 </html>
