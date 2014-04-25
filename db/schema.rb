@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140425140356) do
 
   create_table "datapoints", force: true do |t|
     t.string   "x"
-    t.string   "y"
+    t.float    "y"
     t.integer  "chart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
