@@ -15,6 +15,7 @@ gem 'geocoder'
 gem 'websocket-rails'
 gem "chartkick"
 gem 'jquery-rails'
+gem 'smarter_csv'
 
 group :production do
   gem 'rails_12factor'
