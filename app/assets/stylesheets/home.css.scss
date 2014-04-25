@@ -1,3 +1,370 @@
-// Place all the styles related to the home controller here.
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ */
+
+/* Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com */
+/* -------------------------------------------------------
+
+  Description: Minimal Coming Soon Page
+  Version: 1.0
+
+  Designed by Stelian Subotin (1stwebdesigner.com)
+  Coded by Anli Zaimi (azmind.com) for 1stwebdesigner.com
+
+------------------------------------------------------- */
+
+
+
+body.splash-page {
+  background: #ffffff;
+  font-family: Helvetica, sans-serif;
+  padding-bottom: 40px;
+}
+
+
+
+/* ---- Header ---- */
+
+header {
+  width: 720px;
+  margin: 80px auto 0 auto;
+}
+
+header h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #272727;
+  text-shadow: 0 1px 0 #fff;
+}
+
+header p {
+  margin: 20px 0 0 3px;
+  font-size: 14px;
+  color: #272727;
+}
+
+
+
+/* ---- Main Area ---- */
+
+#main {
+  position: relative;
+  width: 700px;
+  margin: 50px auto 0 auto;
+  padding: 20px 0 0 25px;
+}
+
+
+
+/* ---- Links ---- */
+
+#links {
+  width: 700px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #aaa;
+  line-height: 18px;
+  overflow: hidden;
+}
+
+#links a {
+  position: relative;
+  color: #aaa;
+  text-decoration: none;
+}
+
+#links a:hover {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.home, .support, .browser, .books, .download, .ups {
+  float: left;
+  width: 180px;
+  margin-left: 42px;
+  padding-left: 25px;
+}
+
+.home { margin-left: 0; }
+.browser { clear: right; }
+
+.books, .download, .ups { margin-top: 10px; }
+
+.books { margin-left: 0; }
+.ups { clear: right; }
+
+
+
+/* ---- Counter ---- */
+
+#counter {
+  width: 700px;
+  height: 145px;
+  margin: 55px auto 0 auto;
+  font-family: Helvetica, sans-serif;
+  font-size: 92px;
+  color: #272727;
+  text-shadow: 0 1px 0 #fff;
+  overflow: hidden;
+}
+
+.countDays, .countHours, .countMinutes, .countSeconds {
+  float: left;
+  width: 102px;
+  height: 138px;
+  padding-left: 36px;
+  background: #e7e7e7;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.1)), to(rgba(0,0,0,.07)));
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.07));
+  background-image: -moz-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.07)); 
+  background-image: -ms-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.07)); 
+  background-image: -o-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.07));
+  background-image: linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.07));
+  border: 1px solid #ccc;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow:
+    0 2px 3px 0 rgba(255,255,255,.2) inset,
+    0 2px 2px 0 rgba(0,0,0,.1);
+  -webkit-box-shadow:
+    0 2px 3px 0 rgba(255,255,255,.2) inset,
+    0 2px 2px 0 rgba(0,0,0,.1);
+  box-shadow:
+    0 2px 3px 0 rgba(255,255,255,.2) inset,
+    0 2px 2px 0 rgba(0,0,0,.1);
+}
+
+.points {
+  float: left;
+  width: 40px;
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 44px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 138px;
+  text-shadow: none;
+}
+
+.position {
+  position: relative;
+  float: left;
+  width: 35px;
+  height: 92px;
+  margin: 8px 0 0 0;
+}
+
+.digit {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.boxName {
+  float: left;
+  width: 80px;
+  margin: -5px 0 0 7px;
+  font-size: 36px;
+  color: #a6a6a6;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.Hours { margin-left: 5px; }
+.Seconds { margin-left: 2px; }
+
+
+
+/* ---- Subscription Form ---- */
+
+form {
+  position: relative;
+  margin: 40px auto 0 auto;
+}
+
+.email {
+  width: 498px;
+  height: 35px;
+  padding: 0 15px;
+  background: #f1f1f1;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.02)), to(rgba(0,0,0,.02)));
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,.02), rgba(0,0,0,.02));
+  background-image: -moz-linear-gradient(top, rgba(255,255,255,.02), rgba(0,0,0,.02)); 
+  background-image: -ms-linear-gradient(top, rgba(255,255,255,.02), rgba(0,0,0,.02)); 
+  background-image: -o-linear-gradient(top, rgba(255,255,255,.02), rgba(0,0,0,.02));
+  background-image: linear-gradient(top, rgba(255,255,255,.02), rgba(0,0,0,.02));
+  border: 1px solid #cbcbcb;
+  -moz-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #b3b2b2;
+  font-style: italic;
+}
+
+.email:focus {
+  outline: 0;
+  border: 1px solid #c0c0c0;
+  -moz-box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) inset;
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) inset;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) inset;
+}
+
+.submit {
+  width: 140px;
+  height: 37px;
+  margin: 0 0 0 5px;
+  padding: 0;
+  background: #888;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,.1)), to(rgba(0,0,0,.1)));
+  background-image: -webkit-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.1));
+  background-image: -moz-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.1)); 
+  background-image: -ms-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.1)); 
+  background-image: -o-linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.1));
+  background-image: linear-gradient(top, rgba(255,255,255,.1), rgba(0,0,0,.1));
+  border: 1px solid #636363;
+  -moz-box-shadow:
+    0 1px 2px 0 rgba(253,252,252,.35) inset,
+    0 -1px 2px 0 rgba(0,0,0,.15) inset;
+  -webkit-box-shadow:
+    0 1px 2px 0 rgba(253,252,252,.35) inset,
+    0 -1px 2px 0 rgba(0,0,0,.15) inset;
+  box-shadow:
+    0 1px 2px 0 rgba(253,252,252,.35) inset,
+    0 -1px 2px 0 rgba(0,0,0,.15) inset;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0,0,0,.35);
+  line-height: 13px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(255,255,255,.1)), to(rgba(0,0,0,.1)));
+  background-image: -webkit-linear-gradient(bottom, rgba(255,255,255,.1), rgba(0,0,0,.1));
+  background-image: -moz-linear-gradient(bottom, rgba(255,255,255,.1), rgba(0,0,0,.1)); 
+  background-image: -ms-linear-gradient(bottom, rgba(255,255,255,.1), rgba(0,0,0,.1)); 
+  background-image: -o-linear-gradient(bottom, rgba(255,255,255,.1), rgba(0,0,0,.1));
+  background-image: linear-gradient(bottom, rgba(255,255,255,.1), rgba(0,0,0,.1));
+  -moz-box-shadow: 0 1px 2px 0 rgba(0,0,0,.15) inset;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.15) inset;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.15) inset;
+}
+
+.submit:active {
+  -moz-box-shadow:
+    0 1px 2px 0 rgba(0,0,0,.15) inset,
+    0 3px 13px 3px rgba(0,0,0,.3) inset;
+  -webkit-box-shadow:
+    0 1px 2px 0 rgba(0,0,0,.15) inset,
+    0 3px 13px 3px rgba(0,0,0,.3) inset;
+  box-shadow:
+    0 1px 2px 0 rgba(0,0,0,.15) inset,
+    0 3px 13px 3px rgba(0,0,0,.3) inset;
+  color: #ddd;
+}
+
+.popup {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width: 140px;
+  padding: 10px;
+  background: #e7e7e7;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.1);
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.1);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #888;
+}
+
+
+/* ---- Social Media Arrow ---- */
+
+.social-media-arrow {
+  position: absolute;
+  top: 125px;
+  right: -95px;
+  width: 108px;
+  height: 256px;
+  background: url(../images/social-media-arrow.png) top left no-repeat;
+}
+
+
+
+/* ---- Footer ---- */
+
+footer {
+  width: 700px;
+  margin: 0 auto;
+  padding: 35px 0 25px 0;
+  overflow: hidden;
+}
+
+footer ul {
+  float: right;
+  width: 125px;
+  height: 22px;
+}
+
+footer ul li {
+  float: left;
+}
+
+footer a {
+  position: relative;
+  display: block;
+  margin-left: 10px;
+}
+
+.digg {
+  width: 10px;
+  height: 16px;
+  background: url(../images/5g.png) center center no-repeat;
+}
+
+.twitter {
+  width: 21px;
+  height: 16px;
+  background: url(../images/twitter.png) center center no-repeat;
+}
+
+.vimeo {
+  width: 16px;
+  height: 16px;
+  background: url(../images/vimeo.png) center center no-repeat;
+}
+
+.skype {
+  width: 16px;
+  height: 16px;
+  background: url(../images/skype.png) center center no-repeat;
+}
+
+

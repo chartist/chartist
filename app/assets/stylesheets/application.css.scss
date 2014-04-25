@@ -10,8 +10,57 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bootstrap
  *= require_tree .
  *= require_self
  */
 
-@import 'bootstrap'
+body {
+  
+}
+
+.form-container {
+  width: 500px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+.form-container a {
+  color: #c12e2a;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  background: #f1f1f1;
+}
+
+.btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.left {
+  float: left;
+  border-right: 1px solid #999999; 
+  width: 50%;
+  padding-top: 0px;
+  margin-top: 15px;
+
+}
+
+.right {
+  float: right;
+  width: 50%;
+}
+
+.signup-footer {
+  clear: both;
+  text-align: center;
+}
+
+.form-links {
+  
+}
+
+
+
