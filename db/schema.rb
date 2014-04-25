@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425131611) do
+ActiveRecord::Schema.define(version: 20140425140356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20140425131611) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "datapoints", force: true do |t|
+    t.string   "x"
+    t.string   "y"
+    t.integer  "chart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "datapoints", ["chart_id"], name: "index_datapoints_on_chart_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
