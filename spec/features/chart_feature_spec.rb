@@ -8,7 +8,7 @@ describe "Building a chart" do
       visit "/charts/new"
     end
 
-    it "shows the form to create one" do
+    it "creates a chart with a csv" do
       fill_in('Name', with: "Football chart")
       page.choose('chart_chart_type_pie_chart')
       attach_file('chart_csv', Rails.root.join("spec/extras/test.csv"))
