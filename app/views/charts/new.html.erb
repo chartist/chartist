@@ -1,0 +1,13 @@
+<div>
+  <%= form_for @chart, html: { multipart: true, class: 'form-horizontal' } do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
+     
+      <%= f.radio_button :chart_type, "Pie chart"%>
+      <%= f.label "Pie chart" %>
+      <%= f.submit 'Generate' %>
+     <% end %>
+    </div>
+</div>
