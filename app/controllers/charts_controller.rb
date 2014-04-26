@@ -15,4 +15,8 @@ class ChartsController < ApplicationController
       render "new"
     end
   end
+
+  def show
+    @chart = Chart.find params[:id]
+  end
 end
