@@ -5,9 +5,7 @@ class ChartsController < ApplicationController
   end
 
   def create
-
     @chart = Chart.new params[:chart].permit(:name, :chart_type, :csv)
-
     if @chart.save
       @chart.create_datapoints @chart.csv.path
       @chart.csv.destroy
