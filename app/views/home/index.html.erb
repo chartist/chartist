@@ -1,50 +1,34 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
   <meta charset="utf-8" />
-
   <title>Charti.st - Coming soon</title>
-
-  <%= 
-  stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true 
-  %>
-
-
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 </head>
 
 <body class="splash-page">
-
-
-<div id="container">
   <header>
     <h1>We are working our butts off to finish this website</h1>
-    <p>Our developers 
-    <a href="http://www.twitter.com/yan0va" target="_blank">@yan0va</a>,
-    <a href="http://www.twitter.com/itsmurasaki" target="_blank">@itsmurasaki</a>,
-    <a href="http://www.twitter.com/mdubov" target="_blank">@mdubov</a>,
-    <a href="http://www.twitter.com/TobyRet" target="_blank">@TobyRet</a>,
-    <a href="http://www.twitter.com/MarioGintili" target="_blank">@MarioGintili</a> are doing their best to finish this website before the counter.</p>
+    <p>
+      Our developers 
+      <a href="http://www.twitter.com/yan0va" target="_blank">@yan0va</a>,
+      <a href="http://www.twitter.com/itsmurasaki" target="_blank">@itsmurasaki</a>,
+      <a href="http://www.twitter.com/mdubov" target="_blank">@mdubov</a>,
+      <a href="http://www.twitter.com/TobyRet" target="_blank">@TobyRet</a>,
+      <a href="http://www.twitter.com/MarioGintili" target="_blank">@MarioGintili</a>
+      are doing their best to finish this website before the counter stops.
+    </p>
   </header>
 
   <div id="main">
-    
+    <div class="social-media-arrow"></div>
+      <div id="links">
+        <div class="twitter"><a href="">http://1wd.co/e-books/</a></div>
+        <div class="github"><a href="">http://1wd.com/download/</a></div>
+       <div class="tumblr"><a href="">UPS Signed Worldwide</a></div>
+      </div>
     <div id="counter"></div>
-
-    <footer>
-      <ul>
-        <li><a class="twitter" href=""></a></li>
-        <li><a class="github" href=""></a></li>
-        <li><a class="tumblr" href=""></a></li>
-      </ul>
-    </footer>
   </div>
-
-</div>
-
-<%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
 </body>
-
 </html>
