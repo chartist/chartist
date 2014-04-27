@@ -50,6 +50,7 @@ body {
 header {
   width: 720px;
   margin: 80px auto 0 auto;
+  text-align: center;
 }
 
 header h1 {
@@ -65,6 +66,12 @@ header p {
   color: #272727;
 }
 
+.landing-page a {
+  position: relative;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 
 /* ---- Main Area ---- */
@@ -73,62 +80,16 @@ header p {
   position: relative;
   width: 700px;
   margin: 50px auto 0 auto;
-  padding: 20px 0 0 25px;
-  background: url(/assets/landing-page/main-content-pattern.jpg) top left repeat;
+  padding: 20px 0 0 12px;
+  background: url(/assets/landing-page/main-content-pattern.jpg) top right repeat;
 }
-
-/* ---- Social Media Arrow ---- */
-
-.social-media-arrow {
-  position: absolute;
-  top: -180px;
-  right: -115px;
-  width: 108px;
-  height: 256px;
-  background: url(/assets/landing-page/social-media-arrow.png) top left no-repeat;
-}
-
-/* ---- Links ---- */
-
-#links {
-  width: 700px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #aaa;
-  line-height: 18px;
-  overflow: hidden;
-}
-
-#links a {
-  position: relative;
-  color: #aaa;
-  text-decoration: none;
-}
-
-#links a:hover {
-  color: #aaa;
-  text-decoration: none;
-}
-
-.twitter, .github, .tumblr {
-  float: left;
-  width: 180px;
-  margin-left: 42px;
-  padding-left: 25px;
-}
-
-.twitter, .github, .tumblr { margin-top: 10px; }
-
-.twitter { background: url(/assets/landing-page/books.png) left center no-repeat; margin-left: 0; }
-.github { background: url(/assets/landing-page/download.png) left center no-repeat; }
-.tumblr { background: url(/assets/landing-page/ups.png) left center no-repeat; clear: right; }
 
 /* ---- Counter ---- */
 
 #counter {
   width: 700px;
   height: 200px;
-  margin: 55px auto 0 auto;
+  margin: -25px auto 0 auto;
   font-family: 'LeagueGothicRegular', Arial, Helvetica, sans-serif;
   font-size: 92px;
   color: #272727;
@@ -200,6 +161,61 @@ header p {
 
 .Hours { margin-left: 5px; }
 .Seconds { margin-left: 2px; }
+
+/* ---- Social Media Arrow ---- */
+
+.social-media-arrow {
+  position: absolute;
+  top: -10px;
+  right: -115px;
+  width: 108px;
+  height: 256px;
+  background: url(/assets/landing-page/social-media-arrow.png) top left no-repeat;
+}
+
+/* ---- Links ---- */
+
+#links {
+  width: 700px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #484848;
+  line-height: 18px;
+  overflow: hidden;
+}
+
+#links a {
+  position: relative;
+  color: #484848;
+  text-decoration: none;
+}
+
+#links a:hover {
+  color: #484848;
+  text-decoration: none;
+}
+
+.twitter { 
+  background: url(/assets/landing-page/twitter.png) 
+  center no-repeat; 
+  margin-left: 0;
+  width: 100;
+  height: 100; 
+}
+
+.tumblr { 
+  background: url(/assets/landing-page/tumblr.png) 
+  center no-repeat;  
+  width: 150px;
+  height: 150px;
+}
+
+.github { 
+  background: url(/assets/landing-page/github.png) 
+  center no-repeat;
+  width: 150;
+  height: 150;
+}
 
 /* ---- Footer ---- */
 
