@@ -48,21 +48,21 @@ body {
 /* ---- Header ---- */
 
 header {
-  width: 720px;
+  width: 850px;
   margin: 80px auto 0 auto;
   text-align: center;
 }
 
 header h1 {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
   color: #272727;
   text-shadow: 0 1px 0 #fff;
 }
 
 header p {
-  margin: 20px 0 0 3px;
-  font-size: 14px;
+  margin: 30px 0 0 3px;
+  font-size: 17px;
   color: #272727;
 }
 
@@ -139,7 +139,7 @@ header p {
 .position {
   position: relative;
   float: left;
-  width: 35px;
+  width: 45px;
   height: 108px;
   margin: 8px 0 0 0;
 }
@@ -177,7 +177,7 @@ header p {
 
 #links {
   width: 700px;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: bold;
   color: #484848;
   line-height: 18px;
@@ -195,26 +195,41 @@ header p {
   text-decoration: none;
 }
 
+.tumblr, .github, .twitter, {
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  vertical-align: middle; 
+  float: right;
+
+}
+
 .twitter { 
-  background: url(/assets/landing-page/twitter.png) 
-  center no-repeat; 
-  margin-left: 0;
-  width: 100;
-  height: 100; 
+  background-image: url(/assets/landing-page/twitter.png); 
+  width: 40px;
+  height: 33px;
+  margin-top: 30px;
+  margin-left: 15px;
+  margin-right: 15px; 
 }
 
 .tumblr { 
-  background: url(/assets/landing-page/tumblr.png) 
-  center no-repeat;  
-  width: 150px;
-  height: 150px;
+  background-image: url(/assets/landing-page/tumblr.png); 
+  width: 43px;
+  height: 43px;
+  margin-top: 25px;
+  margin-left: 15px;
+  margin-right: 15px; 
 }
 
 .github { 
-  background: url(/assets/landing-page/github.png) 
-  center no-repeat;
-  width: 150;
-  height: 150;
+  background-image: url(/assets/landing-page/github.png);
+  width: 55px;
+  height: 55px;
+  margin-top: 18px;
+  margin-left: 10px;
+  margin-right: 30px; 
 }
 
 /* ---- Footer ---- */
