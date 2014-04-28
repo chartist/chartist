@@ -43,6 +43,9 @@ a:hover {
   color: $darker;
 }
 
+
+/* Sign up & Sign in */
+
 .form-container {
   width: 600px;
   margin: 0 auto;
@@ -50,8 +53,8 @@ a:hover {
 }
 
 .panel-heading {
-  color: #ffffff!important;
-  background: $darker!important;
+  color: #ffffff;
+  background: $darker;
   font-size: 28px;
   font-weight: 400;
 }
@@ -101,4 +104,16 @@ a:hover {
 .signup-footer {
   clear: both;
   text-align: center;
+}
+
+.form-signin {
+  width: 300px;
+}
+
+.form-rememberme {
+  margin: 0px 0px 7px 0px;
+}
+
+.form-rememberme label {
+  font-weight: 400;
 }
