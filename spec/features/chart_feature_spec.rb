@@ -1,22 +1,14 @@
-# require 'spec_helper'
+require 'spec_helper'
 
-# describe "Building a chart" do
+describe "Building a chart" do
 
-#   context "creating a chart" do
+  context "creating a chart" do
 
-#     before do
-#       create(:chart)
-#     end
+    let(:chart) {create(:chart)}
 
-#     it "creates a chart with a csv" do
-#       visit "/charts/1.json"
-      
-#       # uri = URI(current_url)
-#       # response = JSON.load(Net::HTTP.get(uri))
-#       # puts "*" * 100
-#       # puts response
-#       # puts.response.first
-#       # puts "*" * 100
-#     end
-#   end
-# end
+    it "creates a chart with a csv" do
+      visit chart_path(chart)
+      expect(page).to have_css '.chart_container'
+    end
+  end
+end
