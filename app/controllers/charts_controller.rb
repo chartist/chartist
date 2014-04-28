@@ -25,6 +25,7 @@ class ChartsController < ApplicationController
   end
 
   def json
+    @chart = Chart.find params[:id]
     render json: @chart.datapoints.group(:x).sum(:y)
   end
 end
