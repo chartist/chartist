@@ -34,6 +34,7 @@ group :development, :test do
   gem 'annotate', ">=2.6.0"
   gem 'capybara-email'
   gem 'mailcatcher'
+  gem 'webmock'
 end
 
 
