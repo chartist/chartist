@@ -8,6 +8,7 @@ require 'capybara/poltergeist'
 require 'database_cleaner'
 require 'capybara/email/rspec'
 
+
 include Warden::Test::Helpers
 include ActionDispatch::TestProcess
 
