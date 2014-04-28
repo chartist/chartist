@@ -63,7 +63,6 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt (3.1.7)
-    bootstrap (0.0.1)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.2)
@@ -347,7 +346,6 @@ PLATFORMS
 DEPENDENCIES
   annotate (>= 2.6.0)
   aws-sdk
-  bootstrap
   bootstrap-sass
   capybara
   capybara-email
