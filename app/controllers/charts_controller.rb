@@ -19,14 +19,8 @@ class ChartsController < ApplicationController
   def show
     @chart = Chart.find params[:id]
     respond_to do |format|
-      format.json
+      format.json { render json: @chart.datapoints.group(:x).sum(:y) }
       format.html
     end
   end
-
-  def json
-    @chart = Chart.find params[:id]
-    render json: @chart.datapoints.group(:x).sum(:y)
-  end
 end
-
