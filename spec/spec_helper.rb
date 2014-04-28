@@ -7,6 +7,7 @@ require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'database_cleaner'
 require 'capybara/email/rspec'
+require 'webmock/rspec'
 
 
 include Warden::Test::Helpers
@@ -14,6 +15,7 @@ include ActionDispatch::TestProcess
 
 Warden.test_mode!
 
+WebMock.disable_net_connect!(allow_localhost: true)
 Capybara.javascript_driver = :poltergeist
 Capybara.server do |app, port|
   require 'rack/handler/thin'

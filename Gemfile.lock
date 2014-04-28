@@ -53,6 +53,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     annotate (2.6.3)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -98,6 +99,7 @@ GEM
     colorator (0.1)
     commander (4.1.6)
       highline (~> 1.6.11)
+    crack (0.3.2)
     daemons (1.1.9)
     database_cleaner (1.2.0)
     devise (3.2.4)
@@ -321,6 +323,9 @@ GEM
     uuidtools (2.1.4)
     warden (1.2.3)
       rack (>= 1.0)
+    webmock (1.17.4)
+      addressable (>= 2.2.7)
+      crack (>= 0.3.2)
     websocket-driver (0.3.2)
     websocket-rails (0.7.0)
       em-synchrony
@@ -369,4 +374,5 @@ DEPENDENCIES
   stripe!
   turbolinks
   uglifier
+  webmock
   websocket-rails
