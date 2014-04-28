@@ -9,7 +9,7 @@ describe "Building a chart" do
     end
 
     it "creates a chart with a csv" do
-      visit "/charts/"
+      visit "/charts/1"
       expect(page).to have_css ".chart_container"
     end
   end
