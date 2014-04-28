@@ -7,7 +7,8 @@ class Chart < ActiveRecord::Base
   validates_attachment :csv,
 
     content_type: {content_type: 'text/csv'},
-    size: {in: 0..2.megabytes}
+    size: {in: 0..2.megabytes},
+    presence: true
 
   after_save :create_datapoints
 
