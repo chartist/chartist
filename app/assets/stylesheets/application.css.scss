@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require reset
+ *= require bootstrap
+ *= require_tree .
+ *= require_self
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,300,600,800);
+
+/* color variables */
+$darker: #1a1b1c;
+$dark-grey: #A0A6AD;
+$medium-grey: #CED5DE;
+$pale-grey: #E9EFF7;
+$accent: #a52625;
+
+
+
+body {
+  font-family: "Open Sans";
+  color: $darker;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+a {
+  color: $accent;
+  font-weight: 600;
+}
+
+a:hover {
+  color: $darker;
+}
+
+
+/* Sign up & Sign in */
+
+.form-container {
+  width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+.panel-heading {
+  color: #ffffff;
+  background: $darker;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  background: #f1f1f1;
+}
+
+.panel-body {
+  margin-top: 15px;
+}
+
+.left {
+  float: left;
+  border-right: 1px solid $dark-grey; 
+  width: 50%;
+  padding-top: 0px;
+}
+
+.right {
+  float: right;
+  width: 50%;
+  padding-top: 0px;
+}
+
+.form-title {
+  padding-bottom: 12px;
+  font-size: 18px;
+  color: $dark-grey;
+  font-weight: 300;
+}
+
+.form-text {
+  margin: -3px 0px 8px 0px;
+}
+
+.btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn-signup {
+  background: $accent;
+}
+
+.signup-footer {
+  clear: both;
+  text-align: center;
+}
+
+.form-signin {
+  width: 300px;
+}
+
+.form-rememberme {
+  margin: 0px 0px 7px 0px;
+}
+
+.form-rememberme label {
+  font-weight: 400;
+}

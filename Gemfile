@@ -6,6 +6,7 @@ gem 'rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'devise'
+gem 'bootstrap'
 gem 'bootstrap-sass'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
