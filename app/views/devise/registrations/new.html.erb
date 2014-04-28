@@ -14,7 +14,7 @@
 
     <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Password confirmation", :class => "form-control" %>
 
-  <div><%= f.submit "Sign up", :class => "btn btn-default" %></div>
+  <div><%= f.submit "Sign up", :class => "btn btn-danger btn-default btn-signup" %></div>
 
 <% end %>
 
@@ -23,13 +23,13 @@
 
 <div class="panel-body right">
   <div class="form-title">Use other accounts</div>
-  You can also sign up using your Facebook, Google or Twitter
+  <div class="form-text">You can also sign up using your Facebook, Google or Twitter</div>
 
   <!-- THIS IS WRONG! Form url needs to be fixed -->
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.submit "Login with Facebook", :class => "form-control"  %>
-  <%= f.button "Login with Google", :class => "form-control"  %>
-  <%= f.button "Login with Twitter", :class => "form-control"  %> 
+  <%= f.submit "Login with Facebook", :class => "btn btn-primary btn-default"  %>
+  <%= f.button "Login with Google", :class => "btn btn-danger btn-default"  %>
+  <%= f.button "Login with Twitter", :class => "btn btn-info btn-default"  %> 
   <% end %>
 
 </div>
