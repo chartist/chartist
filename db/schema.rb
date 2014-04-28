@@ -11,16 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140425161617) do
-=======
-ActiveRecord::Schema.define(version: 20140425103017) do
->>>>>>> ed6e358afd76be8b38aabb46c6969d65f7c516da
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "charts", force: true do |t|
     t.string   "name"
     t.integer  "chart_type"
@@ -43,8 +38,6 @@ ActiveRecord::Schema.define(version: 20140425103017) do
 
   add_index "datapoints", ["chart_id"], name: "index_datapoints_on_chart_id", using: :btree
 
-=======
->>>>>>> ed6e358afd76be8b38aabb46c6969d65f7c516da
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
