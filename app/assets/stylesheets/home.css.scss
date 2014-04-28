@@ -1,3 +1,150 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800);
+
+/* color variables */
+$darker: #201f1f;
+$dark-grey: #777777;
+$medium-grey: #a9a9a9;
+$pale-grey: #dfdfdf;
+$accent: #a52625;
+
+
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Open Sans";
+  color: $darker;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0px;
+}
+
+a {
+  color: $accent;
+  font-weight: 600;
+}
+
+a:hover {
+  color: $darker;
+}
+
+/* Homepage header */
+
+.homepage_header {
+  background: $medium-grey;
+  width: 100%;
+  margin: 0px;
+  height: 100%;
+}
+
+/* Homepage body */
+
+.homepage_body {
+  height: 600px;
+}
+
+.form-container {
+  width: 700px;
+  margin: 10% auto;
+  background: #ffffff;
+}
+
+.panel-heading {
+  font-size: 28px;
+  font-weight: 400;
+  padding: 20px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  background: #f1f1f1;
+
+  -webkit-box-shadow: inset 0 1px 1px rgba(165, 38, 37, 0.075);
+  box-shadow: inset 0 1px 1px rgba(165, 38, 37, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.form-control:focus {
+  border: 1px solid $accent;
+  
+}
+
+.panel-body {
+  margin-top: 15px;
+  padding: 20px;
+}
+
+.left {
+  float: left;
+  border-right: 1px solid $medium-grey; 
+  width: 50%;
+  padding-top: 0px;
+}
+
+.right {
+  float: right;
+  width: 50%;
+  padding-top: 0px;
+}
+
+.form-title {
+  padding-bottom: 0px;
+  font-size: 18px;
+  color: $dark-grey;
+  font-weight: 300;
+}
+
+.form-text {
+  margin: 17px 0px 8px 0px;
+}
+
+.btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn-signup {
+  background: $dark-grey;
+  border: 1px solid $dark-grey;
+}
+
+.btn-signup:hover {
+  background: $medium-grey;
+   border: 1px solid $medium-grey;
+}
+
+.signup-footer {
+  clear: both;
+  text-align: center;
+}
+
+.alert {
+  font-size: 16px;
+  margin: 0px 0px 5px 0px;
+  padding: 0px;
+  color: $accent;
+  font-size: 14px;
+}
+
+.alert *, .alert li {
+  padding: 0px;
+  margin: 0px;
+}
+
+.alert ul {
+  margin-top: -20px;
+}
+/* Homepage footer */
+
+.homepage_footer {
+  height: 400px;
+  background: grey;
+}

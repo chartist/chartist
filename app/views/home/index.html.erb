@@ -1,3 +1,8 @@
+<div class="homepage_header">
+
+</div>
+
+<div class="homepage_body">
 <div class="form-container panel panel-default clearfix">
   <div class="panel-heading">Sign up</div>
   
@@ -7,7 +12,7 @@
     
     <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
 
-      <%# devise_error_messages! %>
+     <span class="alert"><%# devise_error_messages!%></span>
     
       <%= f.email_field :email, autofocus: true, :placeholder => "Email address", :class => "form-control" %>
     
@@ -37,5 +42,18 @@
   
   </div>
   
+  <div class="panel-body signup-footer">
+    Already have an account? <%= render "devise/shared/links" %>
+  </div>
   
+</div>
+  
+</div>
+
+
+<div class="homepage_footer">
+  MADE BY CHARTIST TEAM AT MAKERS ACADEMY   
+  © 2014 Chartist. All Rights Reserved.
+  Get in touch contact@chartist.com
+  Follow us @ChartistChat
 </div>
