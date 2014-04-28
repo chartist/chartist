@@ -4,7 +4,11 @@ class Chart < ActiveRecord::Base
 
   has_many :datapoints
   has_attached_file :csv, :default_url => "/images/missing.csv"
-  validates_attachment_content_type :csv, :content_type => 'text/csv'
+  validates_attachment :csv,
+
+    content_type: {content_type: 'text/csv'},
+    size: {in: 0..2.megabytes}
+
   after_save :create_datapoints
 
   def create_datapoints
