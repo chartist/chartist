@@ -2,9 +2,11 @@ require 'spec_helper'
 
 describe "Building a chart" do
 
+  let(:user) { create(:user) }
+
   context "Pie chart" do
 
-    let(:chart) {create(:pie_chart)}
+    let(:chart) {create(:pie_chart, user: user)}
 
     it "outputs a chart" do
       visit chart_path(chart)
@@ -15,7 +17,7 @@ describe "Building a chart" do
 
   context "Column chart" do
 
-    let(:chart) {create(:col_chart)}
+    let(:chart) {create(:col_chart, user: user)}
 
     it "outputs a chart" do
       visit chart_path(chart)
@@ -26,7 +28,7 @@ describe "Building a chart" do
   
   context "Bar chart" do
 
-    let(:chart) {create(:bar_chart)}
+    let(:chart) {create(:bar_chart, user: user)}
 
     it "outputs a chart" do
       visit chart_path(chart)
@@ -37,12 +39,22 @@ describe "Building a chart" do
   
   context "Line chart" do
 
-    let(:chart) {create(:line_chart)}
+    let(:chart) {create(:line_chart, user: user)}
 
     it "outputs a chart" do
       visit chart_path(chart)
       expect(page).to have_css '.chart_container'
       expect(page).to have_css '#line_chart_4'
     end
+  end
+end
+
+describe 'Chart features' do
+  let(:user) { create(:user) }
+  let(:chart) { create(:line_chart, user: user) }
+
+  it 'belongs to a user' do
+    visit chart_path(chart)
+    expect(page).to have_css('.chart-author', :text => 'test@test.com')
   end
 end
