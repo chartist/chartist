@@ -12,7 +12,10 @@
  *
  *= require reset
  *= require bootstrap
- *= require_tree .
+ *= require charts
+ *= require home
+ *= require navbar
+ *= require signin
  *= require_self
  */
 
