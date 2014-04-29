@@ -9,17 +9,27 @@
       <div><%= f.submit "Sign up", :class => "btn btn-danger btn-default btn-signup" %></div>
     <% end %>
   </div>
+  
   <div class="panel-body right">
+    
     <div class="form-title">Use other accounts</div>
 
-    <div class="form-text">You can also sign up using your Facebook, Google or Twitter</div>
-    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-default" %>
-    <%= link_to "Sign in with LinkedIn", user_omniauth_authorize_path(:linkedin), class: "btn btn-primary btn-info" %>
-    <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2), class: "btn btn-primary btn-success" %>
+      <div class="form-text">You can also sign up using your Facebook, Google or Twitter</div>
+      <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-block btn-social btn-facebook" do %>
+        <i class="fa fa-facebook"></i> Sign up with Facebook
+      <% end %>
+      <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-block btn-social btn-linkedin" do %>
+        <i class="fa fa-linkedin"></i> Sign up with LinkedIn
+      <% end %>
+      <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-block btn-social btn-google-plus" do %>
+        <i class="fa fa-google-plus"></i> Sign up with Google
+      <% end %>
+      </div>
+ 
 
-  </div>
   <div class="panel-body signup-footer">
     Already have an account?
     <%= render "devise/shared/links" %>
   </div>
+
 </div>
