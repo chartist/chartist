@@ -1,8 +1,7 @@
-<div class="form-container panel panel-default form-signin">
-  
+<div class="form-container panel panel-default clearfix">
   <div class="panel-heading">Sign in</div>
-  
-  <div class="panel-body">
+  <div class="panel-body left">
+    <div class="form-title">Using your email</div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
       <div><%= f.email_field :email, autofocus: true, :placeholder => "Email address", :class => "form-control" %></div>
@@ -16,8 +15,16 @@
       <div><%= f.submit "Sign in", :class => "btn btn-danger btn-default btn-signup" %></div>
       
     <% end %>
+    </div>
+    <div class="panel-body right">
+    <div class="form-title">Use other accounts</div>
+    <div class="form-text">You can also sign up using your Facebook, Linkedin or Google</div>
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-default" %>
+    <%= link_to "Sign in with LinkedIn", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-default" %>
+    <%= link_to "Sign in with Google", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-default" %>
+    </div>
 
-    <div class="signup-footer">
+    <div class="panel-body signup-footer">
       <%= render "devise/shared/links" %>
     </div>
 
