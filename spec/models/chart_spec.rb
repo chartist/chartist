@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Chart do
 
 
-  let(:chart) {create(:chart)}
+  let(:chart) {create(:pie_chart)}
 
   it "creates datapoints in the database correctly" do
     expect(chart.datapoints.count).to eq(2)
@@ -25,6 +25,17 @@ describe Chart do
     end
     it "presence" do
       should validate_attachment_presence(:csv)
+    end
+  end
+  context 'Enumeration' do
+    
+    let(:line_chart) {create(:line_chart)}
+    let(:pie_chart) {create(:pie_chart)}
+    
+    it 'knows the type of the chart' do
+      expect(line_chart.line_chart?).to be_true
+      expect(pie_chart.pie_chart?).to be_true
+      expect(line_chart.pie_chart?).not_to be_true
     end
   end
 end

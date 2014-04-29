@@ -4,7 +4,7 @@ describe "Charts API" do
 
   context "Retrieving data from a chart" do
 
-    let(:chart) { create(:chart) }
+    let(:chart) { create(:pie_chart) }
 
     it "Returns the right JSON" do
       get chart_path(chart, format: :json)
