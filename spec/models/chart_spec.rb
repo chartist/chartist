@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'chronic'
 
 describe Chart do
 
@@ -13,7 +14,8 @@ describe Chart do
   end
 
   it "formats dates correctly" do
-    expect(line_chart.datapoints.last.x.class).to eq DateTime
+    date = Chronic.parse(line_chart.datapoints.last.x)
+    expect(date).not_to be_false
   end
 
   context 'Validations' do

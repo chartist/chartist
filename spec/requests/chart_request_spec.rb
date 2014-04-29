@@ -14,11 +14,5 @@ describe "Charts API" do
       expect(chart_data['US']).to eq 75
       expect(chart_data['GB']).to eq 25
     end
-    xit "formats dates" do
-      get chart_path(line_chart, format: :json)
-      expect(response).to be_success
-      chart_data = JSON.parse(response.body)
-      expect(chart_data[]).to eq 7
-    end
   end
 end
