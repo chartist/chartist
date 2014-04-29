@@ -4,8 +4,16 @@
       <%= f.label :name %>
       <%= f.text_field :name %>
       <br>
-      <%= f.radio_button :chart_type, "Pie chart"%>
-      <%= f.label "Pie chart" %>
+      <%= f.radio_button :chart_type, :pie_chart %>
+      <%= f.label :chart_type, 'Pie chart', value: :pie_chart %>
+      <%= f.radio_button :chart_type, :line_chart %>
+      <%= f.label :chart_type, 'Line chart', value: :line_chart %>
+      <%= f.radio_button :chart_type, :col_chart %>
+      <%= f.label :chart_type, 'Column chart', value: :col_chart %>
+      <%= f.radio_button :chart_type, :bar_chart %>
+      <%= f.label :chart_type, 'Bar chart', value: :bar_chart %>
+
+
       <br>
       <%= f.file_field :csv %>
       <%= f.submit 'Generate' %>

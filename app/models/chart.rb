@@ -12,6 +12,8 @@ class Chart < ActiveRecord::Base
 
   after_save :create_datapoints
 
+  enum chart_type: [:pie_chart, :line_chart, :col_chart, :bar_chart]
+
   def create_datapoints
     processor = CSVProcessor.new(csv.path)
     processor.process.each do |row|
