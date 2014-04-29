@@ -19,6 +19,8 @@ gem 'smarter_csv'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+gem 'groupdate'
+gem 'chronic'
 
 
 group :production do

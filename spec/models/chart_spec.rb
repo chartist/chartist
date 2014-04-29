@@ -4,11 +4,16 @@ describe Chart do
 
 
   let(:chart) {create(:pie_chart)}
+  let(:line_chart) {create(:line_chart)}
 
   it "creates datapoints in the database correctly" do
     expect(chart.datapoints.count).to eq(2)
     expect(chart.datapoints.last.x).to eq 'GB'
     expect(chart.datapoints.last.y).to eq 25
+  end
+
+  it "formats dates correctly" do
+    expect(line_chart.datapoints.last.x.class).to eq DateTime
   end
 
   context 'Validations' do
@@ -28,10 +33,10 @@ describe Chart do
     end
   end
   context 'Enumeration' do
-    
+
     let(:line_chart) {create(:line_chart)}
     let(:pie_chart) {create(:pie_chart)}
-    
+
     it 'knows the type of the chart' do
       expect(line_chart.line_chart?).to be_true
       expect(pie_chart.pie_chart?).to be_true
