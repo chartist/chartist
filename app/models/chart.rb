@@ -2,6 +2,7 @@ require './lib/csvprocessor.rb'
 
 class Chart < ActiveRecord::Base
 
+  belongs_to :user
   has_many :datapoints
   has_attached_file :csv, :default_url => "/images/missing.csv"
   validates_attachment :csv,

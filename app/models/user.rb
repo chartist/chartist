@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   validates :password, presence: { message: "is required" }, length: { minimum: 8, message: "is too short!" }
 
+  has_many :charts
+
   def self.find_for_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider

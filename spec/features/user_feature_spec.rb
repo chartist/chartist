@@ -9,4 +9,18 @@ describe "User" do
 			expect(page).to have_content "You need to sign in"
 		end
 	end
+
+	context "while logged in" do
+
+		let(:user) { create(:user) }
+
+		before do
+			login_as user
+			create(:line_chart, user: user)
+		end
+
+		it "can create a chart" do
+			expect(user.charts.count).to eq 1  
+		end
+	end
 end

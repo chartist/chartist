@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429084053) do
+ActiveRecord::Schema.define(version: 20140429162649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,10 @@ ActiveRecord::Schema.define(version: 20140429084053) do
     t.string   "csv_content_type"
     t.integer  "csv_file_size"
     t.datetime "csv_updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "charts", ["user_id"], name: "index_charts_on_user_id", using: :btree
 
   create_table "datapoints", force: true do |t|
     t.string   "x"
