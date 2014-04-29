@@ -16,6 +16,8 @@ gem 'websocket-rails'
 gem "chartkick"
 gem 'jquery-rails'
 gem 'smarter_csv'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 
 group :production do
@@ -33,6 +35,9 @@ group :development, :test do
   gem 'annotate', ">=2.6.0"
   gem 'capybara-email'
   gem 'mailcatcher'
+end
+
+group :test do
   gem 'webmock'
 end
 
