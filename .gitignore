@@ -17,3 +17,5 @@
 doc/
 .swp
 .DS_Store
+.gitignore
+.rspec
