@@ -1,0 +1,52 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800);
+
+/* color variables */
+$darker: #201f1f;
+$dark-grey: #777777;
+$medium-grey: #a9a9a9;
+$pale-grey: #dfdfdf;
+$accent: #a52625;
+
+
+.navbar {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    background: $accent;
+	border-bottom: 1px solid $accent;
+}
+
+.navbar-content {
+	width: 840px;
+}
+
+.navbar-logo {
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+	margin: 0px auto;
+	width: 300px;
+}
+
+.navbar .btn {
+	border: 0px;
+	margin-top: 2px;
+}
+
+.navbar-left {
+	float: left;
+	text-align: left;
+	width: 30%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.navbar-right {
+	float: right;
+	text-align: right;
+	width: 30%;
+	padding: 0px;
+	margin: 0px;
+} 
