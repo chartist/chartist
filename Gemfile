@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'smarter_csv'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
 
 
 group :production do

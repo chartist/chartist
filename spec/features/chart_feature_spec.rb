@@ -45,22 +45,4 @@ describe "Building a chart" do
       expect(page).to have_css '#line_chart_4'
     end
   end
-    
-  # context "Line chart" do
-    
-  #   # let(:chart) {create(:line_chart)}
-
-  #   it "outputs a chart" do
-  #     visit '/charts/new'
-
-  #     fill_in 'Name', with: "Line chart"
-  #     choose 'Line chart'
-  #     attach_file 'chart_csv', Rails.root.join('spec/extras/test.csv')
-  #     click_button 'Generate'
-  #     expect(Chart.last.line_chart?).to be_true
-  #     expect(page).to have_css '.chart_container'
-      
-  #   end
-
-  # end
 end
