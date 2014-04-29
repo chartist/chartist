@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :trackable,
     :recoverable, :rememberable, :omniauthable,
-    :omniauth_providers => [:facebook, :linkedin]
+    :omniauth_providers => [:facebook, :linkedin, :google_oauth2]
   #, :validatable
 
   validates :password, presence: { message: "is required" }, length: { minimum: 8, message: "is too short!" }

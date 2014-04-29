@@ -231,6 +231,9 @@ GEM
       rack (~> 1.0)
     omniauth-facebook (1.6.0)
       omniauth-oauth2 (~> 1.1)
+    omniauth-google-oauth2 (0.2.4)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.1)
     omniauth-linkedin (0.1.0)
       omniauth-oauth (~> 1.0)
     omniauth-oauth (1.0.1)
@@ -408,6 +411,7 @@ DEPENDENCIES
   mailcatcher
   omniauth
   omniauth-facebook
+  omniauth-google-oauth2
   omniauth-linkedin
   paperclip!
   pg
