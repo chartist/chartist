@@ -10,9 +10,17 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <%= render :partial => "layouts/navbar" %>
+    
     <div class="container">
       <%= debug(params) if Rails.env.development? %>
-      <%= yield %>
+      <h1><%= current_user.email if current_user %></h1>
     </div>
+    
+   
+      <div class="container">
+      <%= yield %>
+      </div>
   </body>
 </html>
