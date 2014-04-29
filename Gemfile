@@ -16,11 +16,15 @@ gem 'websocket-rails'
 gem "chartkick"
 gem 'jquery-rails'
 gem 'smarter_csv'
+
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+gem 'omniauth-google-oauth2' 
+
 gem 'groupdate'
 gem 'chronic'
+
 
 
 group :production do

@@ -79,6 +79,8 @@ Devise.setup do |config|
   # passing skip: :sessions to `devise_for` in your config/routes.rb
   config.skip_session_storage = [:http_auth]
 
+
+
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX
   # requests for sign in and sign up, you need to get a new CSRF token
@@ -95,6 +97,7 @@ Devise.setup do |config|
   # encryptor), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
   config.stretches = Rails.env.test? ? 1 : 10
+
 
   # Setup a pepper to generate the encrypted password.
   # config.pepper = 'd6577a8cc5bbbd38c8b04745c52da9edf374a29c3ef282adb735e9c20a02a8068418860118783f2a8c0926e493e394263eca8b117c0c6a8903bf86fdda53fd75'
@@ -229,8 +232,9 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :facebook, "1476282805921943", "0dfe0d7e0ea89f614f100715bc7153e8" #, strategy_class: OmniAuth::Strategies::Facebook
-  config.omniauth :linkedin, "7722gbu1wyz652", "WghP6FrIbTgv7LBG" #, strategy_class: OmniAuth::Strategies::LinkedIn 
+  config.omniauth :facebook, "1476282805921943", "0dfe0d7e0ea89f614f100715bc7153e8"
+  config.omniauth :linkedin, "7722gbu1wyz652", "WghP6FrIbTgv7LBG"
+  config.omniauth :google_oauth2, "534117741134-j3jpp4mjkhpa9k5rqc9qoua9lnd3edem.apps.googleusercontent.com", "z6YYlqqacwuU20Pgdi9FGwcT"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
