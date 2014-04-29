@@ -39,7 +39,7 @@ describe "Building a chart" do
 
     let(:chart) {create(:line_chart)}
 
-    xit "outputs a chart" do
+    it "outputs a chart" do
       visit chart_path(chart)
       expect(page).to have_css '.chart_container'
       expect(page).to have_css '#line_chart_4'

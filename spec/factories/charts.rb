@@ -11,7 +11,7 @@ FactoryGirl.define do
     name "Line chart"
     chart_type 1
     x_type 1
-    csv { fixture_file_upload Rails.root.join('spec/extras/test.csv'), 'text/csv' }
+    csv { fixture_file_upload Rails.root.join('spec/extras/test3.csv'), 'text/csv' }
   end
   factory :col_chart, class: 'Chart' do
     name "Column chart"
