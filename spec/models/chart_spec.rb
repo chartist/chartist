@@ -8,7 +8,7 @@ describe Chart do
   it "creates datapoints in the database correctly" do
     expect(chart.datapoints.count).to eq(2)
     expect(chart.datapoints.last.x).to eq 'GB'
-    expect(chart.datapoints.last.y).to eq 0.25
+    expect(chart.datapoints.last.y).to eq 25
   end
 
   context 'Validations' do
