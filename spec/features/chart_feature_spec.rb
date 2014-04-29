@@ -49,7 +49,8 @@ describe "Building a chart" do
   end
 end
 
-describe 'Chart features' do
+describe "Charts and users" do
+
   let(:user) { create(:user) }
   let(:chart) { create(:line_chart, user: user) }
 
