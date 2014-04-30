@@ -1,38 +1,23 @@
-<div class="chart_container">
-  <div class="row">
+<div class="panel panel-primary chart_container">
 
-    <h3 class = "page-header"><%= @chart.name %></h3>
-    <% if @chart.pie_chart? %>
-      <%= pie_chart chart_path(@chart, format: :json), id: "pie_chart_#{@chart.id}" %>
-    <% elsif @chart.col_chart? %>
-      <%= column_chart chart_path(@chart, format: :json), id: "col_chart_#{@chart.id}" %>
-    <% elsif @chart.bar_chart? %>
-      <%= bar_chart chart_path(@chart, format: :json), id: "bar_chart_#{@chart.id}" %>
-    <% elsif @chart.line_chart? %>
-      <%= line_chart chart_path(@chart, format: :json), id: "line_chart_#{@chart.id}", library: { :hAxis => {:format => "d-MMM-yy"}} %>
-    <% end %>
-    <div class="chart-author"><%#= @chart.user.email %></div>
-    
+    <div class = "panel-heading">
+      <%= @chart.name %>
+    </div>
 
-
-    <!-- AddThis Button BEGIN -->
-      <div class="addthis_toolbox addthis_default_style addthis_32x32_style pull-right">
-        <a class="addthis_button_preferred_1"></a>
-        <a class="addthis_button_preferred_2"></a>
-        <a class="addthis_button_preferred_3"></a>
-        <a class="addthis_button_preferred_4"></a>
-        <a class="addthis_button_compact"></a>
-        <a class="addthis_counter addthis_bubble_style"></a>
-      </div>
+    <div class = "panel-body">
+      <% if @chart.pie_chart? %>
+        <%= pie_chart chart_path(@chart, format: :json), id: "pie_chart_#{@chart.id}" %>
+      <% elsif @chart.col_chart? %>
+        <%= column_chart chart_path(@chart, format: :json), id: "col_chart_#{@chart.id}" %>
+      <% elsif @chart.bar_chart? %>
+        <%= bar_chart chart_path(@chart, format: :json), id: "bar_chart_#{@chart.id}" %>
+      <% elsif @chart.line_chart? %>
+        <%= line_chart chart_path(@chart, format: :json), id: "line_chart_#{@chart.id}", library: { :hAxis => {:format => "d-MMM-yy"}} %>
+      <% end %>
       
-    <!-- Embedly button -->
-      <a class="embedly-button pull right" href="http://embed.ly/code" data-theme="light-flat" data-lang="Auto (Determined by Browser)">Embed</a>
-
-      <script>!function(a){var b="embedly-platform",c="script";if(!a.getElementById(b)){var d=a.createElement(c);d.id=b,d.src=("https:"===document.location.protocol?"https":"http")+"://cdn.embedly.com/widgets/platform.js";var e=document.getElementsByTagName(c)[0];e.parentNode.insertBefore(d,e)}}(document);</script>
-      <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-      <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5360c28d7bd608ba"></script>
-    <!-- AddThis Button END -->
-
+      <div class="chart-author"><%= @chart.user.email %></div>
+    
+      <%= render 'layouts/share' %>
 
   </div>
 </div>
