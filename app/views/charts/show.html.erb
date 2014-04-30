@@ -1,4 +1,4 @@
-<div class="panel panel-primary chart_container">
+<div class="panel panel-danger chart_container">
 
     <div class = "panel-heading">
       <%= @chart.name %>
@@ -15,7 +15,7 @@
         <%= line_chart chart_path(@chart, format: :json), id: "line_chart_#{@chart.id}", library: { :hAxis => {:format => "d-MMM-yy"}} %>
       <% end %>
       
-      <div class="chart-author"><%= @chart.user.email %></div>
+      <div class="chart-author"><%# @chart.user.email %></div>
     
       <%= render 'layouts/share' %>
 

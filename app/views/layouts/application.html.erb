@@ -6,6 +6,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
     <%= csrf_meta_tags %>
+    <meta property="og:image" content="<%= image_url('navbar/chartist_avatar.png') %>" />
   </head>
 
   <body>
@@ -15,10 +16,10 @@
     <%= render :partial => "layouts/navbar" %>
     
     <div class="container">
-      <%= debug(params) if Rails.env.development? %>
+      <%= debug(params) if Rails.env.development? %><br>
       <div>
-        The user now: <%= current_user.email if current_user %>
-      </div>
+        <p>The current signed in user is: <%= current_user.email if current_user %></p>
+      </div><br>
       <%= yield %>
     </div>
   </body>
