@@ -6,8 +6,18 @@ describe "Charts API" do
 
     let(:pie_chart) { create(:pie_chart) }
 
-    it "Returns the right JSON for simple file" do
+    it "Returns the right JSON for a pie chart file" do
       get chart_path(pie_chart, format: :json)
+      expect(response).to be_success
+      chart_data = JSON.parse(response.body)
+      expect(chart_data['US']).to eq 75
+      expect(chart_data['GB']).to eq 25
+    end
+
+    let(:col_chart) { create(:col_chart) }
+
+    it "Returns ta different JSON for other chart types" do
+      get chart_path(col_chart, format: :json)
       expect(response).to be_success
       chart_data = JSON.parse(response.body)
       expect(chart_data[0]['data']['US']).to eq 75
