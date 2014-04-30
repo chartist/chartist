@@ -75,3 +75,11 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
+
+def add_pie_chart(name, dashboard_titles)
+  fill_in 'Name', with: name
+  fill_in 'Dashboards', with: dashboard_titles
+  choose 'Pie chart'
+  attach_file 'chart_csv', Rails.root.join('spec/extras/test.csv')
+  click_button 'Generate'
+end

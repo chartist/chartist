@@ -2,7 +2,7 @@ require './lib/csvprocessor.rb'
 
 class Chart < ActiveRecord::Base
 
-  has_many :dashboards
+  has_and_belongs_to_many :dashboards
   belongs_to :user
   has_many :datapoints
   has_attached_file :csv, :default_url => "/images/missing.csv"
@@ -13,6 +13,7 @@ class Chart < ActiveRecord::Base
     presence: true
 
   after_save :create_datapoints
+  after_save :generate_dashboards
 
   enum chart_type: [:pie_chart, :line_chart, :col_chart, :bar_chart]
 
@@ -23,4 +24,15 @@ class Chart < ActiveRecord::Base
     end
     csv.destroy
   end
+
+  attr_accessor :dashboard_titles
+
+  def generate_dashboards
+    unless dashboard_titles.nil?
+      dashboard_titles.split.each do |title|
+        self.dashboards << Dashboard.create(title: title)
+      end
+    end
+  end
+
 end

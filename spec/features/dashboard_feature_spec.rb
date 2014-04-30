@@ -14,5 +14,11 @@ describe "Dashboards" do
 			visit "/charts/new"
 			expect(page).to have_content "Dashboard"
 		end
+
+		it "adds dashboards to that chart" do
+			visit "/charts/new"
+			add_pie_chart('Pie chart', 'uk london')
+			expect(Chart.last.dashboards.count).to eq 2
+		end
 	end
 end

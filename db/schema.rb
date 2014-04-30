@@ -40,10 +40,7 @@ ActiveRecord::Schema.define(version: 20140430102855) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "chart_id"
   end
-
-  add_index "dashboards", ["chart_id"], name: "index_dashboards_on_chart_id", using: :btree
 
   create_table "datapoints", force: true do |t|
     t.string   "x"
