@@ -25,4 +25,10 @@ FactoryGirl.define do
     x_type 1
     csv { fixture_file_upload Rails.root.join('spec/extras/test.csv'), 'text/csv' }
   end
+  factory :mult_chart, class: 'Chart' do
+    name "Multiple Series Chart"
+    chart_type 1
+    x_type 1
+    csv { fixture_file_upload Rails.root.join('spec/extras/test5.csv'), 'text/csv' }
+  end
 end

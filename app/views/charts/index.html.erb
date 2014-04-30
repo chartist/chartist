@@ -1,6 +1,5 @@
 <% @charts.each do |chart| %>
-
-	  <h3><%= chart.name %></h3>
+  <h3><%= chart.name %></h3>
   <% if chart.pie_chart? %>
     <%= pie_chart chart_path(chart, format: :json), id: "pie_chart_#{chart.id}" %>
   <% elsif chart.col_chart? %>
