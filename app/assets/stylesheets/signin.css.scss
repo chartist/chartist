@@ -13,12 +13,13 @@
 }
 
 a {
-  color: $accent;
+  color: $dark-grey;
   font-weight: 600;
 }
 
 a:hover {
   color: $darker;
+  text-decoration: none;
 }
 
 /* Homepage header */
@@ -45,23 +46,18 @@ a:hover {
 .panel-heading {
   font-size: 28px;
   font-weight: 400;
-  padding: 20px;
+  padding: 10px;
 }
 
 .form-control {
+  margin-top: 20px;
   margin-bottom: 10px;
   background: #f1f1f1;
-
-  -webkit-box-shadow: inset 0 1px 1px rgba(165, 38, 37, 0.075);
-  box-shadow: inset 0 1px 1px rgba(165, 38, 37, 0.075);
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 
 .form-control:focus {
   border: 1px solid $accent;
-  
+  -webkit-box-shadow: none;
 }
 
 .panel-body {
