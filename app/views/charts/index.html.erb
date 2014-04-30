@@ -1,13 +1,20 @@
-<% @charts.each do |chart| %>
+<div class="page-header"><h1>All Charts</h1></div>
 
-	  <h3><%= chart.name %></h3>
-  <% if chart.pie_chart? %>
-    <%= pie_chart chart_path(chart, format: :json), id: "pie_chart_#{chart.id}" %>
-  <% elsif chart.col_chart? %>
-    <%= column_chart chart_path(chart, format: :json), id: "col_chart_#{chart.id}" %>
-  <% elsif chart.bar_chart? %>
-    <%= bar_chart chart_path(chart, format: :json), id: "bar_chart_#{chart.id}" %>
-  <% elsif chart.line_chart? %>
-    <%= line_chart chart_path(chart, format: :json), id: "line_chart_#{chart.id}", library: { :hAxis => {:format => "d-MMM-yy"}} %>
+<div class = "row">
+  <% @charts.each do |chart| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+      	<h2><%= link_to chart.name, chart_path(chart) %></h2>
+        <% if chart.pie_chart? %>
+          <%= pie_chart chart_path(chart, format: :json), id: "pie_chart_#{chart.id}" %>
+        <% elsif chart.col_chart? %>
+          <%= column_chart chart_path(chart, format: :json), id: "col_chart_#{chart.id}" %>
+        <% elsif chart.bar_chart? %>
+          <%= bar_chart chart_path(chart, format: :json), id: "bar_chart_#{chart.id}" %>
+        <% elsif chart.line_chart? %>
+          <%= line_chart chart_path(chart, format: :json), id: "line_chart_#{chart.id}", library: { :hAxis => {:format => "d-MMM-yy"}} %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
-<% end %>
+</div>

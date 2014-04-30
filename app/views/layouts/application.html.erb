@@ -7,6 +7,7 @@
     <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
     <%= csrf_meta_tags %>
   </head>
+
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -15,12 +16,10 @@
     
     <div class="container">
       <%= debug(params) if Rails.env.development? %>
-      <h1>The user now: <%= current_user.email if current_user %></h1>
-    </div>
-    
-   
-      <div class="container">
-      <%= yield %>
+      <div>
+        The user now: <%= current_user.email if current_user %>
       </div>
+      <%= yield %>
+    </div>
   </body>
 </html>
