@@ -3,7 +3,7 @@ require 'spec_helper'
 describe 'Chart index page' do
   
 	
-  let!(:chart) {create(:pie_chart)}
+  let!(:chart) {create(:pie_chart, id: 1)}
 
   
   it 'shows the most recent chart' do
