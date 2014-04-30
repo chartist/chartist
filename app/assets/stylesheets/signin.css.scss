@@ -1,12 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800);
-
-/* color variables */
-$darker: #201f1f;
-$dark-grey: #777777;
-$medium-grey: #a9a9a9;
-$pale-grey: #dfdfdf;
-$accent: #a52625;
-
+@import "mixins";
 
 .form-signin {
   width: 300px;

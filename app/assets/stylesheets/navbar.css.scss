@@ -1,11 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800);
-
-/* color variables 
-$darker: #201f1f;
-$dark-grey: #777777;
-$medium-grey: #a9a9a9;
-$pale-grey: #dfdfdf;
-$accent: #a52625; */
+@import "mixins";
 
 .navbar-brand {
     position: absolute;
@@ -13,4 +6,33 @@ $accent: #a52625; */
     left: 0;
     text-align: center;
     margin: auto;
+    font-family: "Satisfy";
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 100;
+    box-shadow: 0;
+}
+
+.navbar-default .navbar-brand {
+	color: #ffffff;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #ffffff;
+}
+
+.navbar-brand img {
+  margin: -5px 10px 5px 0px;
+}
+
+.navbar {
+  background: $accent; /* Old browsers */
+  background: -moz-linear-gradient(top,  $accent-lighter 0%, $accent 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$accent-lighter), color-stop(100%,$accent)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $accent-lighter 0%,$accent 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $accent-lighter 0%,$accent 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $accent-lighter 0%,$accent 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $accent-lighter 0%,$accent 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b63d3c', endColorstr='$accent',GradientType=0 ); /* IE6-9 */
+
 }
