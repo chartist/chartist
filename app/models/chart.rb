@@ -13,13 +13,13 @@ class Chart < ActiveRecord::Base
 
     content_type: {content_type: 'text/csv'},
     size: {in: 0..2.megabytes},
-    presence: true
+    presence: true,
+    on: :create
 
 
-  attr_accessor :dashboard_titles
+  attr_accessor :dashboard_titles, :name
 
-  after_save :create_series, :create_datapoints, :generate_dashboards
-
+  after_save :create_series, :create_datapoints, :generate_dashboards, :on => :create
 
   enum chart_type: [:pie_chart, :line_chart, :col_chart, :bar_chart]
 
