@@ -8,4 +8,10 @@
 <% elsif chart.line_chart? %>
   <%= line_chart chart_path(chart, format: :json), id: "line_chart_#{chart.id}", library: { :hAxis => {:format => "d-MMM-yy"}} %>
 <% end %>
+
+<% if chart.dashboards.any? %>
+	<%= chart.dashboards.each do |dashboard| %>
+		<%= link_to dashboard.title, dashboard_path(dashboard.id) %>
+	<% end %> 
+<% end %>
 <div class="chart-author"><%= chart.user.email if chart.user %></div>
