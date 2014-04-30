@@ -10,7 +10,10 @@
   font-family: "Satisfy";
   color: #ffffff;
   font-size: 28px;
-  letter-spacing: -0.5px;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased; 
+  font-smoothing: antialiased;
+  text-shadow: 1px 1px $accent;
 }
 
 .navbar-brand img {
