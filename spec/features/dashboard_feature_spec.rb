@@ -8,9 +8,9 @@ describe "Dashboards" do
 		login_as user
 	end
 
-	context "Choosing a dashboard for a chart" do
+	context "when creating a chart" do
 		
-		it "shows the field" do 
+		it "can add to a dashboard" do 
 			visit "/charts/new"
 			expect(page).to have_content "Dashboard"
 		end

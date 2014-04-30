@@ -12,6 +12,8 @@ class Chart < ActiveRecord::Base
     size: {in: 0..2.megabytes},
     presence: true
 
+  attr_accessor :dashboard_titles
+
   after_save :create_datapoints
   after_save :generate_dashboards
 
@@ -25,14 +27,12 @@ class Chart < ActiveRecord::Base
     csv.destroy
   end
 
-  attr_accessor :dashboard_titles
 
   def generate_dashboards
     unless dashboard_titles.nil?
       dashboard_titles.split.each do |title|
-        self.dashboards << Dashboard.create(title: title)
+        self.dashboards << Dashboard.find_or_create_by(title: title)
       end
     end
   end
-
 end
