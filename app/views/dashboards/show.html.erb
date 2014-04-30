@@ -1,1 +1,13 @@
-<%= render @dashboard.charts %>
+<div class="page-header">
+	<h1><%= @dashboard.title %></h1>
+</div>
+<div class = "row">
+<% @dashboard.charts.each do |chart| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <h2><%= link_to chart.name, chart_path(chart) %></h2>
+          <%= render chart %>
+      </div>
+    </div>
+  <% end %>
+</div>

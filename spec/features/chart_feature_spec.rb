@@ -59,3 +59,4 @@ describe "Charts and users" do
     expect(page).to have_css('.chart-author', :text => 'test@test.com')
   end
 end
+
