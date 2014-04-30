@@ -25,4 +25,12 @@ FactoryGirl.define do
     x_type 1
     csv { fixture_file_upload Rails.root.join('spec/extras/test.csv'), 'text/csv' }
   end
+
+  factory :chart_with_dashboards, class: 'Chart' do
+    name "US chart"
+    chart_type 1
+    x_type 1
+    csv { fixture_file_upload Rails.root.join('spec/extras/test3.csv'), 'text/csv' }
+    dashboard_titles "miami texas"
+  end
 end
