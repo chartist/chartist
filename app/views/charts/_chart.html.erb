@@ -10,7 +10,7 @@
 <% end %>
 
 <% if chart.dashboards.any? %>
-	<%= chart.dashboards.each do |dashboard| %>
+	<% chart.dashboards.each do |dashboard| %>
 		<%= link_to dashboard.title, dashboard_path(dashboard.id) %>
 	<% end %> 
 <% end %>
