@@ -44,7 +44,7 @@ a:hover {
 }
 
 .panel-heading {
-  font-size: 28px;
+  font-size: 23px;
   font-weight: 400;
   padding: 10px;
 }
@@ -79,7 +79,7 @@ a:hover {
 }
 
 .form-title {
-  padding-bottom: 0px;
+  padding-bottom: 10px;
   font-size: 18px;
   color: $dark-grey;
   font-weight: 300;
@@ -107,6 +107,10 @@ a:hover {
 .signup-footer {
   clear: both;
   text-align: center;
+}
+
+.reset-password-footer {
+  margin-bottom: -2px;
 }
 
 .alert {
