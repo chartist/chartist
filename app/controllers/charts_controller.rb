@@ -8,6 +8,8 @@ class ChartsController < ApplicationController
 
   def create
     @chart = Chart.new params[:chart].permit(:name, :chart_type, :csv)
+    @chart.user = current_user
+    
     if @chart.save
       redirect_to chart_path(@chart)
     else
@@ -22,5 +24,9 @@ class ChartsController < ApplicationController
       format.json { render json: @chart.datapoints.group(:x).sum(:y) }
       format.html
     end
+  end
+
+  def index
+    @charts = Chart.all
   end
 end
