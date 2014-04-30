@@ -45,4 +45,22 @@ describe Chart do
       expect(line_chart.pie_chart?).not_to be_true
     end
   end
+
+  context 'multi-series chart' do
+
+    let(:mult_chart) {create(:mult_chart)}
+
+    it 'creates datapoints with correct series id' do
+      expect(mult_chart.series.count).to eq 2
+      expect(mult_chart.datapoints.count).to eq 8
+      expect(mult_chart.series.first.datapoints.first.y).to eq 5
+      expect(mult_chart.series.last.datapoints.last.y).to eq 140
+    end
+
+    it 'assigns correct names to series' do
+      expect(mult_chart.series.first.name).to eq 'Product A'
+    end
+
+
+  end
 end
