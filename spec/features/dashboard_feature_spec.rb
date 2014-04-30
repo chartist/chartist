@@ -21,4 +21,17 @@ describe "Dashboards" do
 			expect(Chart.last.dashboards.count).to eq 2
 		end
 	end
+
+	context "Looking for dashboards" do
+
+		before do
+			create(:chart_with_dashboards, user: user)
+			create(:chart_with_dashboards, user: user, dashboard_titles: "foobar")
+		end
+
+		it "shows the boards that it has" do
+			visit "/charts"
+			expect(page).to have_link('miami')
+		end
+	end
 end
