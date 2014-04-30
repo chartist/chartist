@@ -19,7 +19,7 @@
 
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><a>Logged in as <%= current_user.email %></a></li>
+          <li><p class="navbar-text">Logged in as <%= current_user.email %></p></li>
           <li><a href="#">Sign out</a></li>
         <% else %>
           <li><%= link_to "Sign in", new_session_path(:user) %></li>

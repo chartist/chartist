@@ -1,5 +1,6 @@
 @import "mixins";
 
+/* logo */
 .navbar-brand {
     position: absolute;
     width: 100%;
@@ -13,6 +14,10 @@
     box-shadow: 0;
 }
 
+.navbar-brand img {
+  margin: -5px 10px 5px 0px;
+}
+
 .navbar-default .navbar-brand {
 	color: #ffffff;
 }
@@ -21,9 +26,7 @@
   color: #ffffff;
 }
 
-.navbar-brand img {
-  margin: -5px 10px 5px 0px;
-}
+/* background */
 
 .navbar {
   background: $accent; /* Old browsers */
@@ -34,5 +37,17 @@
   background: -ms-linear-gradient(top,  $accent-lighter 0%,$accent 100%); /* IE10+ */
   background: linear-gradient(to bottom,  $accent-lighter 0%,$accent 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b63d3c', endColorstr='$accent',GradientType=0 ); /* IE6-9 */
+}
 
+/* links and text */
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.navbar-default .navbar-text {
+  color: #ffffff;
+  margin: 0;
+  padding: 15px 15px;
+  color: #ffffff;
 }
