@@ -6,4 +6,5 @@
 	<% end %> 
 <% end %>
 
-<div class="chart-author"><%= chart.user.email if chart.user %></div>
+<div class="chart-author"><strong>Created by <%= chart.user.username if chart.user %></strong></div>
+
