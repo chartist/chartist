@@ -54,7 +54,7 @@ describe "Charts and users" do
   let(:user) { create(:user) }
   let(:chart) { create(:line_chart, user: user) }
 
-  xit 'belongs to a user' do
+  it 'belongs to a user' do
     visit chart_path(chart)
     expect(page).to have_css('.chart-author', :text => 'test@test.com')
   end

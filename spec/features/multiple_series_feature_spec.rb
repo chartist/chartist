@@ -4,14 +4,11 @@ describe "Multiple series chart" do
 
   let(:user) { create(:user) }
 
-  context "Pie chart" do
+  let(:chart) {create(:mult_chart, user: user, id: 1)}
 
-
-    let(:chart) {create(:mult_chart, user: user)}
-
-    xit "outputs a chart" do
-      visit chart_path(chart)
-
-    end
+  it "outputs a chart" do
+    visit chart_path(chart)
+    expect(page).to have_css '.chart_container'
+    expect(page).to have_css '#line_chart_1'
   end
 end
