@@ -1,9 +1,23 @@
-<div class="panel panel-danger chart_container">
-  <div class = "panel-heading">
-    <%= @chart.name %>
-  </div>
-  <div class = "panel-body">
-    <%= render @chart %>
-    <%= render 'layouts/share' %>
-  </div>
+<div class = "row">
+	<div class="col-sm-9 col-md-9 pull-left">
+		<div class="panel panel-danger chart_container">
+		  <div class = "panel-heading">
+		    <%= @chart.name %>
+		  </div>
+		  <div class = "panel-body">
+		    <%= render @chart %>
+		    <%= render 'layouts/share' %>
+		  </div>
+		</div>
+	</div>
+	<div class="col-sm-3 col-md-3">
+		<div class = "thumbnail">
+			<%= image_tag('navbar/chartist_avatar.png') %>
+			<div class="caption">
+				<h1><%= @chart.user.username %></h1>
+				<p>This is where info about the author goes</p>
+				<p>Contact</p>
+			</div>
+		</div>
+	</div>
 </div>
