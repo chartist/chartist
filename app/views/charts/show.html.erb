@@ -6,4 +6,7 @@
     <%= render @chart %>
     <%= render 'layouts/share' %>
   </div>
+  <div>
+    <%= link_to icon('fa fa-trash-o') + ' Delete', chart_path(@chart), method: :delete, class: 'btn btn-danger', id: 'delete-btn' if @chart.user == current_user %>
+  </div>
 </div>

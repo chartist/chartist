@@ -35,4 +35,10 @@ class ChartsController < ApplicationController
   def index
     @charts = Chart.all
   end
+
+  def destroy
+    @chart = Chart.find params[:id]
+    @chart.destroy
+    redirect_to '/charts'
+  end
 end
