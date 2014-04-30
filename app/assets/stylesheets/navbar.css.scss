@@ -2,16 +2,15 @@
 
 /* logo */
 .navbar-brand {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    margin: auto;
-    font-family: "Satisfy";
-    color: #ffffff;
-    font-size: 28px;
-    font-weight: 100;
-    box-shadow: 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  font-family: "Satisfy";
+  color: #ffffff;
+  font-size: 28px;
+  letter-spacing: -0.5px;
 }
 
 .navbar-brand img {
@@ -29,6 +28,7 @@
 /* background */
 
 .navbar {
+  font-weight: 300;
   background: $accent; /* Old browsers */
   background: -moz-linear-gradient(top,  $accent-lighter 0%, $accent 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$accent-lighter), color-stop(100%,$accent)); /* Chrome,Safari4+ */
@@ -50,4 +50,8 @@
   margin: 0;
   padding: 15px 15px;
   color: #ffffff;
+}
+
+.navbar-default .navbar-nav .navbar-username {
+  font-weight: 400;
 }
