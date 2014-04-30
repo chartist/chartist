@@ -25,7 +25,7 @@ describe "Building a chart" do
       expect(page).to have_css '#col_chart_2'
     end
   end
-  
+
   context "Bar chart" do
 
     let(:chart) {create(:bar_chart, user: user)}
@@ -36,7 +36,7 @@ describe "Building a chart" do
       expect(page).to have_css '#bar_chart_3'
     end
   end
-  
+
   context "Line chart" do
 
     let(:chart) {create(:line_chart, user: user)}

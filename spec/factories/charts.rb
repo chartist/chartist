@@ -11,7 +11,7 @@ FactoryGirl.define do
     name "Line chart"
     chart_type 1
     x_type 1
-    csv { fixture_file_upload Rails.root.join('spec/extras/test3.csv'), 'text/csv' }
+    csv { fixture_file_upload Rails.root.join('spec/extras/test4.csv'), 'text/csv' }
   end
   factory :col_chart, class: 'Chart' do
     name "Column chart"
@@ -32,5 +32,12 @@ FactoryGirl.define do
     x_type 1
     csv { fixture_file_upload Rails.root.join('spec/extras/test3.csv'), 'text/csv' }
     dashboard_titles "miami texas"
+  end
+
+  factory :mult_chart, class: 'Chart' do
+    name "Multiple Series Chart"
+    chart_type 1
+    x_type 1
+    csv { fixture_file_upload Rails.root.join('spec/extras/test5.csv'), 'text/csv' }
   end
 end

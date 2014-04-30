@@ -20,7 +20,10 @@ class ChartsController < ApplicationController
   def show
     @chart = Chart.find params[:id]
     respond_to do |format|
-      format.json { render json: @chart.datapoints.group(:x).sum(:y) }
+      format.json { render json: @chart.series.reverse.map { |series|
+                      { name: series.name, data: series.datapoints.group(:x).sum(:y) }
+                    }
+                    }
       format.html
     end
   end
