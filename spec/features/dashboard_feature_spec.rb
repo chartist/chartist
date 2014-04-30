@@ -10,7 +10,7 @@ describe "Dashboards" do
 
 	context "Choosing a dashboard for a chart" do
 		
-		it "shows field" do 
+		it "shows the field" do 
 			visit "/charts/new"
 			expect(page).to have_content "Dashboard"
 		end

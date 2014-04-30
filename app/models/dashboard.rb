@@ -1,4 +1,4 @@
 class Dashboard < ActiveRecord::Base
 
-	has_many :charts
+	has_and_belongs_to_many :charts
 end
