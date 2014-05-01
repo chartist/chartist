@@ -10,15 +10,15 @@
     
       <% if devise_mapping.rememberable? -%>
         <div class="form-rememberme"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-      <% end -%>
+      <% end %>
     
-      <div><%= f.submit "Sign in", :class => "btn btn-danger btn-default btn-signup" %></div>
+      <div><%= f.submit "Sign in", :class => "btn btn-primary btn-default btn-signup" %></div>
       
     <% end %>
     </div>
     <div class="panel-body right">
     <div class="form-title">Use other accounts</div>
-    <div class="form-text">You can also sign up using your Facebook, Linkedin or Google</div>
+    <div class="form-text">You can also sign in using your Facebook, LinkedIn or Google</div>
     <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-block btn-social btn-facebook" do %>
       <i class="fa fa-facebook"></i> Sign in with Facebook
     <% end %>

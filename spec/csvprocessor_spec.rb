@@ -10,7 +10,7 @@ describe CSVProcessor do
     expect(processor1.process.first).to eq({travel: "US", value: '75.00%'})
   end
   it "formats a multiple series csv file into an array of hashes" do
-    expect(processor2.process.first).to eq({date: Time.new(2014,04,23, 12, 00), product_a: 5, product_b: 15})
+    expect(processor2.process.first).to eq({date: Time.new(2014,12,23, 12, 00), product_a: 5, product_b: 15})
   end
 
   it 'parses the date' do

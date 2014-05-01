@@ -1,13 +1,17 @@
 <div class = "row">
 	<div class="col-sm-9 col-md-9 pull-left">
 		<div class="panel panel-danger chart_container">
-		  <div class = "panel-heading">
-		    <%= @chart.name %>
-		  </div>
-		  <div class = "panel-body">
-		    <%= render @chart %>
-		    <%= render 'layouts/share' %>
-		  </div>
+		  	<div class = "panel-heading">
+		  	  	<%= @chart.name %>
+		  	</div>
+		  	<div class = "panel-body">
+		  	  	<%= render @chart %>
+		  	  	<%= render 'layouts/share' %>
+		  	</div>
+		  	<div>
+    			<%= link_to icon('fa fa-pencil') + ' Edit', edit_chart_path(@chart), class: 'btn btn-info', id: 'edit-btn' if @chart.user == current_user %>
+    			<%= link_to icon('fa fa-trash-o') + ' Delete', chart_path(@chart), method: :delete, class: 'btn btn-danger', id: 'delete-btn' if @chart.user == current_user %>
+    		</div>
 		</div>
 	</div>
 	<div class="col-sm-3 col-md-3">
