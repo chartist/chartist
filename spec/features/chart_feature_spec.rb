@@ -87,7 +87,7 @@ describe 'Editing a chart' do
   let(:hacker) { create(:hacker) }
   let(:chart) { create(:line_chart, user: user) }
 
-  xit 'creator can edit chart title' do
+  it 'creator can edit chart title' do
     login_as user
     visit chart_path(chart)
     click_link 'edit-btn'
@@ -95,7 +95,7 @@ describe 'Editing a chart' do
     fill_in 'Name', with: 'Bla'
     click_button 'Edit'
     expect(current_path).to eq chart_path(chart)
-    expect(chart.name).to eq 'Bla'
+    expect(page).to have_css ".panel-heading", text: 'Bla'
   end
 
   it 'user can only delete own charts' do
