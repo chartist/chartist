@@ -17,7 +17,7 @@ class Chart < ActiveRecord::Base
     on: :create
 
 
-  attr_accessor :dashboard_titles, :name
+  attr_accessor :dashboard_titles
 
   after_save :prepare_chart, on: :create
 
