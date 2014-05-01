@@ -18,11 +18,11 @@
 	</div>
 	<div class="col-sm-3 col-md-3">
 		<div class = "thumbnail">
-			<%= image_tag('navbar/chartist_avatar.png') %>
+			<%= image_tag gravatar_url(@chart.user) %>
 			<div class="caption">
 				<h1><%= @chart.user.username %></h1>
-				<p>This is where info about the author goes</p>
-				<p>Contact</p>
+				<p><%= @chart.user.bio %></p>
+				<p><a href= "mailto:<%= @chart.user.email %>"><i class="fa fa-envelope"> Contact</i></a></p>
 			</div>
 		</div>
 	</div>
