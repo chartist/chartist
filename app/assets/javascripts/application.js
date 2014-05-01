@@ -16,6 +16,3 @@
 //= require jquery_ujs
 //= require canvas2image
 //= require_tree .
-
-
-
