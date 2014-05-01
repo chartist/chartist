@@ -4,10 +4,11 @@ $(document).ready(function(){
 
   /* ---- Countdown timer ---- */
 
-  $('#counter').countdown({
-    timestamp : new Date("2014-05-09T16:00:00Z")
-  });
-
+  if($('#counter').length) { 
+    $('#counter').countdown({
+      timestamp : new Date("2014-05-09T16:00:00Z")
+    });
+  }
 
   /* ---- Animations ---- */
 
