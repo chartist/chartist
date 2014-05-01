@@ -17,6 +17,9 @@
     <%= link_to new_registration_path(:user), :class=> 'btn btn-block btn-social btn-flickr' do %>
       <i class="fa fa-bar-chart-o"></i> Sign up with Chartist
     <% end %>
+    <%- if controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to "Forgot your password?", new_password_path(:user) %><br />
+    <% end %>
   </div>
   <div class="panel-body reset-password-footer"></div>
 </div>
