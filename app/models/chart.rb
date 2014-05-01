@@ -18,6 +18,7 @@ class Chart < ActiveRecord::Base
 
     attr_accessor :dashboard_titles
 
+
     after_save :prepare_chart
 
     enum chart_type: [:pie_chart, :line_chart, :col_chart, :bar_chart]
