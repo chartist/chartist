@@ -19,10 +19,15 @@ class Chart < ActiveRecord::Base
 
   attr_accessor :dashboard_titles, :name
 
-  after_save :create_series, :create_datapoints, :generate_dashboards, :on => :create
+  after_save :prepare_chart, on: :create
 
   enum chart_type: [:pie_chart, :line_chart, :col_chart, :bar_chart]
 
+  def prepare_chart
+    create_series
+    create_datapoints
+    generate_dashboards
+  end
 
   def create_series
     csv_headers = CSV.read(csv.path).first
