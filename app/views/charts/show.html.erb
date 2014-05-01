@@ -1,3 +1,4 @@
+<canvas id="canvas" style="display:none;"></canvas>
 <div class = "row">
 	<div class="col-sm-9 col-md-9 pull-left">
 		<div class="panel panel-danger chart_container">
@@ -11,6 +12,7 @@
 		  	<div>
     			<%= link_to icon('fa fa-pencil') + ' Edit', edit_chart_path(@chart), class: 'btn btn-info', id: 'edit-btn' if @chart.user == current_user %>
     			<%= link_to icon('fa fa-trash-o') + ' Delete', chart_path(@chart), method: :delete, class: 'btn btn-danger', id: 'delete-btn' if @chart.user == current_user %>
+    			<%= link_to icon('fa fa-picture-o') + ' Download', '#', class: 'btn btn-success', id: 'download-btn', data: { filename: @chart.name.parameterize + '.png' } %>
     		</div>
 		</div>
 	</div>
@@ -25,3 +27,4 @@
 		</div>
 	</div>
 </div>
+
