@@ -1,7 +1,7 @@
 <%= graphic_of(chart).html_safe %>
 
 <p>
-	widget: <input name="widget" type="text" value="<iframe src='<%= chart_widget_url(chart) %>' frameBorder='0'></iframe>">
+	widget: <input name="widget" value="<iframe src='<%= chart_widget_url(chart) %>' frameBorder='0'></iframe>" style="width: 40%;">
 </p>
 <% if chart.dashboards.any? %>
   <% chart.dashboards.each do |dashboard| %>
