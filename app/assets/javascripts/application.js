@@ -15,7 +15,5 @@
 //= require bootstrap
 //= require jquery_ujs
 //= require canvas2image
+//= require jquery.easing.min
 //= require_tree .
-
-
-
