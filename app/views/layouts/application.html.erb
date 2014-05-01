@@ -3,6 +3,7 @@
   <head>
     <title>Chartist</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
     <%= csrf_meta_tags %>
@@ -10,15 +11,6 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= render :partial => "layouts/navbar" %>
-    
-    <div class="container">
-      <%= debug(params) if Rails.env.development? %>
-      <br>
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>

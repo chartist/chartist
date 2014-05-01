@@ -1,59 +1,45 @@
-<div class="homepage_header">
-
-</div>
-
-<div class="homepage_body">
-<div class="form-container panel panel-default clearfix">
-  <div class="panel-heading">Sign up</div>
-  
-  <div class="panel-body left">
-  
-    <div class="form-title">Using your email</div>
-    
-    <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
-
-     <span class="alert"><%# devise_error_messages!%></span>
-    
-      <%= f.email_field :email, autofocus: true, :placeholder => "Email address", :class => "form-control" %>
-    
-      <%= f.password_field :password, autocomplete: "off", :placeholder => "Password", :class => "form-control" %>
-    
-      <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Password confirmation", :class => "form-control" %>
-    
-      <div><%= f.submit "Sign up", :class => "btn btn-danger btn-default btn-signup" %></div>
-    
-    <% end %>
-  
+<div class="wrapper">
+  <div class="homepage-header">
+    <%= image_tag "homepage/logo_home.png" %>
+    <div class="header-text">Chartist is an app that allows people quickly visualize and share simple data.</div>
+    <div class="btn btn-danger">Start making a new chart</div>
   </div>
-  
 
-  <div class="panel-body right">
+  <div class="homepage-info">
+  <div class="container-fluid">
+    <div class="home-info-header">What can I do with this awesome website?</div>
+    <div class="row">
+      <div class="col-md-4">
+         <%= image_tag "homepage/icons.png" %>
+         <div class="info-title">What a cool site</div>
+         <div class="info-text">Sed fringilla mi vel sem luctus pellentesque. Vestibulum vehicula nulla eget arcu sagittis, nec semper diam placerat.</div>
+      </div>
 
-    <div class="form-title">Use other accounts</div>
+      <div class="col-md-4">
+        <%= image_tag "homepage/icons.png" %>
+         <div class="info-title">Keep track of stuff</div>
+         <div class="info-text">Sed fringilla mi vel sem luctus pellentesque. Vestibulum vehicula nulla eget arcu sagittis, nec semper diam placerat.</div>
+      </div>
 
-    <div class="form-text">You can also sign up using your Facebook, Google or Twitter</div>
-  
-      <!-- THIS IS WRONG! Form url needs to be fixed, I just added it because the style wouldn't work otherwise-->
-      <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
-        <%= f.submit "Login with Facebook", :class => "btn btn-primary btn-default"  %>
-        <%= f.button "Login with Google", :class => "btn btn-danger btn-default"  %>
-        <%= f.button "Login with Twitter", :class => "btn btn-info btn-default"  %> 
-      <% end %>
-  
+      <div class="col-md-4">
+        <%= image_tag "homepage/icons.png" %>
+         <div class="info-title">Much share, wow</div>
+         <div class="info-text">Sed fringilla mi vel sem luctus pellentesque. Vestibulum vehicula nulla eget arcu sagittis, nec semper diam placerat.</div>
+      </div>
+    </div>
   </div>
-  
-  <div class="panel-body signup-footer">
-    Already have an account? <%= render "devise/shared/links" %>
   </div>
-  
-</div>
-  
-</div>
 
+  <div class="homepage-forms">
+    <%= render :file => "devise/registrations/new" %>
+  </div>
 
-<div class="homepage_footer">
-  MADE BY CHARTIST TEAM AT MAKERS ACADEMY   
-  © 2014 Chartist. All Rights Reserved.
-  Get in touch contact@chartist.com
-  Follow us @ChartistChat
+  <div class="homepage-footer">
+    Made by the <b>Chartist Team</b> at <a href="http://www.makersacademy.com" target="_blank">Makers Academy</a>.<br>
+    Follow us on 
+    <a href="https://twitter.com/ChartistChat" target="_blank"><i class="fa fa-twitter"></i> twitter</a>, 
+    <a href="http://chartistchat.tumblr.com/" target="_blank"><i class="fa fa-rss"></i> blog</a>,
+    <a href="https://github.com/chartist/chartist" target="_blank"><i class="fa fa-github"></i> github</a>.
+  </div>
+
 </div>

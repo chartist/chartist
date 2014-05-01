@@ -25,119 +25,91 @@ a:hover {
   color: $darker;
 }
 
-/* Homepage header */
-
-.homepage_header {
-  background: $medium-grey;
+.wrapper {
   width: 100%;
-  margin: 0px;
   height: 100%;
+  padding: 0px;
+  margin: 0px;
 }
 
-/* Homepage body */
+/* Header */
 
-.homepage_body {
-  height: 600px;
+.homepage-header {
+  width: 100%;
+  height: 100%;
+  background: grey;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 300;
+  padding-top: 18%;
 }
 
-.form-container {
-  width: 700px;
-  margin: 10% auto;
+.header-text {
+  margin: 10px 0px 25px 0px;
+}
+
+.homepage-header > .btn {
+  background: $accent;
+  border: 1px solid $accent;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 10px 15px;
+}
+
+.homepage-header > .btn:hover {
+  background: $accent-lighter;
+  border: 1px solid $accent-lighter;
+}
+
+/* Info */
+
+.homepage-info {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 10% 10px 10px 10px;
+}
+
+.home-info-header {
+  font-size: 26px;
+  color: $darker;
+  margin-bottom: 50px;
+}
+
+.info-title {
+  color: $accent-lighter;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.info-text {
+  color: $medium-grey;
+  width: 85%;
+  margin: 0 auto;
+}
+
+
+/* Sign up */
+
+.homepage-forms {
+  width: 100%;
+  height: 100%;
+  background: $pale-grey;
+  text-align: center;
+  display: flex;
+}
+
+
+/* Footer */
+
+.homepage-footer {
+  height: 200px;
   background: #ffffff;
-}
-
-.panel-heading {
-  font-size: 28px;
+  text-transform: uppercase;
+  font-size: 12px;
   font-weight: 400;
   padding: 20px;
-}
-
-.form-control {
-  margin-bottom: 10px;
-  background: #f1f1f1;
-
-  -webkit-box-shadow: inset 0 1px 1px rgba(165, 38, 37, 0.075);
-  box-shadow: inset 0 1px 1px rgba(165, 38, 37, 0.075);
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-}
-
-.form-control:focus {
-  border: 1px solid $accent;
-  
-}
-
-.panel-body {
-  margin-top: 15px;
-  padding: 20px;
-}
-
-.left {
-  float: left;
-  border-right: 1px solid $medium-grey; 
-  width: 50%;
-  padding-top: 0px;
-}
-
-.right {
-  float: right;
-  width: 50%;
-  padding-top: 0px;
-}
-
-.form-title {
-  padding-bottom: 0px;
-  font-size: 18px;
-  color: $dark-grey;
-  font-weight: 300;
-}
-
-.form-text {
-  margin: 17px 0px 8px 0px;
-}
-
-.homepage_body .btn {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-.btn-signup {
-  background: $dark-grey;
-  border: 1px solid $dark-grey;
-}
-
-.btn-signup:hover {
-  background: $medium-grey;
-   border: 1px solid $medium-grey;
-}
-
-.signup-footer {
-  clear: both;
   text-align: center;
-}
-
-.alert {
-  font-size: 16px;
-  margin: 0px 0px 5px 0px;
-  padding: 0px;
-  color: $accent;
-  font-size: 14px;
-}
-
-.alert *, .alert li {
-  padding: 0px;
-  margin: 0px;
-}
-
-.alert ul {
-  margin-top: -20px;
-
-}
-
-/* Homepage footer */
-
-.homepage_footer {
-  height: 400px;
-  background: grey;
+  line-height: 30px;
 }
