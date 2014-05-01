@@ -1,14 +1,5 @@
-// Place all the styles related to the charts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "mixins";
 
-
-/*basic reset*/
-* {margin: 0; padding: 0;}
-
-body {
-  font-family: montserrat, arial, verdana;
-}
 /*form styles*/
 #msform {
   width: 500px;
@@ -45,15 +36,15 @@ body {
   margin-bottom: 10px;
   width: 100%;
   box-sizing: border-box;
-  font-family: montserrat;
-  color: #2C3E50;
-  font-size: 13px;
+  color: $dark-blue;
+  font-size: 15px;
+  outline: 0;
 }
 
 /*buttons*/
 #msform .action-button {
   width: 100px;
-  background: #d44544;
+  background: $accent-lighter;
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -64,15 +55,17 @@ body {
 }
 
 #msform .action-button:hover, #msform .action-button:focus {
-  box-shadow: 0 0 0 2px white, 0 0 0 3px #a52625;
+  box-shadow: 0 0 0 2px white, 0 0 0 3px $accent;
+  outline: 0;
 }
 
 /*headings*/
 .fs-title {
-  font-size: 15px;
+  font-size: 20px;
   text-transform: uppercase;
-  color: #2C3E50;
-  margin-bottom: 10px;
+  color: $dark-blue;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
 .fs-subtitle {
@@ -109,8 +102,8 @@ body {
   line-height: 20px;
   display: block;
   font-size: 12px;
-  color: #201f1f;
-  background: white;
+  color: white;
+  background: $medium-grey;
   border-radius: 3px;
   margin: 0 auto 5px auto;
 }
