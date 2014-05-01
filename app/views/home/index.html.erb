@@ -1,15 +1,26 @@
-  <script src="js/jquery-1.8.2.min.js"></script>
-  <script src="js/jquery.scrollTo-1.4.3.1.min.js"></script>
-  <script src="js/jquery.scrollorama.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.scrolldeck.js"></script>
+ 
+  <script src="assets/jquery.scrollTo-1.4.3.1.min.js"></script>
+  <script src="assets/jquery.scrollorama.js"></script>
+  <script src="assets/jquery.easing.1.3.js"></script>
+  <script src="assets/jquery.scrolldeck.js"></script>
 
+  <script type="text/javascript">
+$(document).ready(function() {
+  var deck = new $.scrolldeck({
+    buttons: '.nav-button',
+    slides: '.slide',
+    duration: 600,
+    easing: 'easeInOutExpo',
+  offset: 0
+  });
+});
+</script>
 
 <div class="wrapper">
   <div class="homepage-header slide">
       <%= image_tag "homepage/logo_home.png" %>
       <div class="header-text">Chartist is an app that allows people quickly visualize and share simple data.</div>
-      <a href="#signup" class="nav-button btn btn-danger">Start creating</div></a>
+      <a href="#hpsignup" class="nav-button btn btn-danger">Start creating</div></a>
   </div>
 
   <div class="homepage-info slide">
@@ -37,7 +48,7 @@
   </div>
   </div>
 
-  <div class="homepage-forms slide" id="signup">
+  <div class="homepage-forms slide" id="hpsignup">
     <%= render :file => "devise/registrations/new" %>
   </div>
 
@@ -51,16 +62,3 @@
   </div>
 
 </div>
-
-  
-<script>
-$(document).ready(function() {
-  var deck = new $.scrolldeck({
-    buttons: '.nav-button',
-    slides: '.slide',
-    duration: 600,
-    easing: 'easeInOutExpo',
-  offset: 0
-  });
-});
-</script>
