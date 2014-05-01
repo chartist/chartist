@@ -56,7 +56,8 @@ describe "Charts and users" do
 
   it 'belongs to a user' do
     visit chart_path(chart)
-    expect(page).to have_css('.chart-author', :text => 'test@test.com')
+    expect(page).to have_content(user.username)
+    #expect(page).to have_css('.chart-author', :text => 'test@test.com')
   end
 end
 
