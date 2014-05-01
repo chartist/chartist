@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chartist</title>
+    <script src='http://code.jquery.com/jquery-2.1.0.min.js'></script>
+    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+  </head>
+
+  <body>
+	  <%= graphic_of(@chart).html_safe %>
+	</body>
+</html>

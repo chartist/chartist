@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Sharing a chart" do
 
   let!(:user) { create(:user) }
-  let!(:chart) { create(:pie_chart, user: user) }
+  let!(:chart) { create(:pie_chart, user: user, id: 2) }
 
   before { visit chart_path(chart) }
   
@@ -19,6 +19,8 @@ describe "Sharing a chart" do
 
   	it "generates a script for the chart" do
   		click_link "widget:"
+  		puts current_path.to_s
+  		expect(page).not_to have_css('.nav')
   	end
   end
 

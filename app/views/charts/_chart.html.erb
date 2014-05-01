@@ -1,7 +1,7 @@
 <%= graphic_of(chart).html_safe %>
 
 <h2>
-	 <%= link_to "widget:", "#" %>
+	 <%= link_to "widget:", "/charts/#{chart.id}/widget" %>
 </h2>
 <% if chart.dashboards.any? %>
   <% chart.dashboards.each do |dashboard| %>
