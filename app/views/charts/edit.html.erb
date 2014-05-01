@@ -1,0 +1,12 @@
+<div class="container">
+  <%= form_for @chart, html: { multipart: true, class: 'form-horizontal' } do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :dashboard_titles, 'Dashboards' %>
+      <%= f.text_field :dashboard_titles %>
+      <%= f.submit 'Edit' %>
+    <% end %>
+  </div>
+</div>

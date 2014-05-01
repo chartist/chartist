@@ -1,6 +1,6 @@
 class ChartsController < ApplicationController
 
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, except: [:show]
 
   def new
     @chart = Chart.new
@@ -34,5 +34,21 @@ class ChartsController < ApplicationController
 
   def index
     @charts = Chart.all
+  end
+
+  def destroy
+    @chart = Chart.find params[:id]
+    @chart.destroy
+    redirect_to '/charts'
+  end
+
+  def edit
+    @chart = Chart.find params[:id]
+  end
+
+  def update
+    @chart = Chart.find params[:id]
+    @chart.update params[:chart].permit(:name, :chart_type, :csv, :dashboard_titles)
+    redirect_to chart_path(@chart)
   end
 end
