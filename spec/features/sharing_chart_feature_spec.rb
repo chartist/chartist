@@ -14,14 +14,13 @@ describe "Sharing a chart" do
   context "Embedding a chart" do
 
   	it "shows the link for the widget" do
-  		expect(page).to have_content 'widget:'
+  		find_field('widget').value.should eq("<iframe src='http://www.example.com/charts/#{chart.id}/widget' frameBorder='0'></iframe>")
   	end
 
   	it "generates a script for the chart" do
-  		click_link "widget:"
-  		puts current_path.to_s
+  		visit chart_widget_path(chart)
   		expect(page).not_to have_css('.nav')
   	end
   end
-
 end
+

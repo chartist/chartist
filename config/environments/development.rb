@@ -28,6 +28,9 @@ Rails.application.configure do
   config.assets.debug = true
   config.assets.compress = false
 
+  config.action_dispatch.default_headers = {
+    'X-Frame-Options' => 'ALLOWALL'}
+
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.

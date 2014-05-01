@@ -1,8 +1,8 @@
 <%= graphic_of(chart).html_safe %>
 
-<h2>
-	 <%= link_to "widget:", "/charts/#{chart.id}/widget" %>
-</h2>
+<p>
+	widget: <input name="widget" type="text" value="<iframe src='<%= chart_widget_url(chart) %>' frameBorder='0'></iframe>">
+</p>
 <% if chart.dashboards.any? %>
   <% chart.dashboards.each do |dashboard| %>
     <%= link_to dashboard.title, dashboard_path(dashboard.id) %>
