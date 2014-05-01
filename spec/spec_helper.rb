@@ -77,9 +77,12 @@ RSpec.configure do |config|
 end
 
 def add_pie_chart(name, dashboard_titles)
-  fill_in 'Name', with: name
-  fill_in 'Dashboards', with: dashboard_titles
-  choose 'Pie chart'
+  fill_in 'Add a title', with: name
+  fill_in 'Create Dashboard', with: dashboard_titles
   attach_file 'chart_csv', Rails.root.join('spec/extras/test.csv')
+  click_button 'Next'
+  choose 'Pie chart'
+  click_button 'Next'
+  click_button 'Next'
   click_button 'Generate'
 end
