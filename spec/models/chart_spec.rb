@@ -60,6 +60,14 @@ describe Chart do
     it 'assigns correct names to series' do
       expect(mult_chart.series.first.name).to eq 'Product A'
     end
+  end
+  context 'different colorts' do
+
+    let(:color_chart) {create(:color_chart, colorscheme: 0 )}
+
+    it 'color is correctly processed' do
+      expect(color_chart.default?).to be_true
+    end
 
 
   end
