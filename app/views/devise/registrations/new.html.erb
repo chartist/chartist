@@ -6,7 +6,7 @@
       <%= f.email_field :email, autofocus: true, :placeholder => "Email address", :class => "form-control" %>
       <%= f.password_field :password, autocomplete: "off", :placeholder => "Password", :class => "form-control" %>
       <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Password confirmation", :class => "form-control" %>
-      <div><%= f.submit "Sign up", :class => "btn btn-danger btn-default btn-signup" %></div>
+      <div><%= f.submit "Sign up", :class => "btn btn-default" %></div>
     <% end %>
   </div>
   
@@ -29,7 +29,7 @@
 
   <div class="panel-body signup-footer">
     Already have an account?
-    <%= render "devise/shared/links" %>
+    <%= link_to "Sign in", new_session_path(:user) %>
   </div>
 
 </div>

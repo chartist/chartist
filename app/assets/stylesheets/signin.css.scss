@@ -47,7 +47,6 @@ a:hover {
 .panel-heading {
   font-size: 23px;
   font-weight: 400;
-  padding: 10px;
 }
 
 .form-control {
@@ -67,6 +66,19 @@ a:hover {
   padding: 20px;
 }
 
+.panel-body .btn-default {
+  background: $dark-grey;
+  border: 1px solid #666666;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.panel-body .btn-default:hover {
+  background: #555555;
+  border: 1px solid #444444;
+  color: #ffffff;
+}
+
 .left {
   float: left;
   border-right: 1px solid $medium-grey; 
@@ -81,7 +93,7 @@ a:hover {
 }
 
 .form-title {
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   font-size: 18px;
   color: $dark-grey;
   font-weight: 300;
@@ -103,7 +115,7 @@ a:hover {
 
 .btn-signup:hover {
   background: $medium-grey;
-   border: 1px solid $medium-grey;
+  border: 1px solid $medium-grey;
 }
 
 .signup-footer {

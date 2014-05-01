@@ -1,40 +1,47 @@
+  <script src="js/jquery-1.8.2.min.js"></script>
+  <script src="js/jquery.scrollTo-1.4.3.1.min.js"></script>
+  <script src="js/jquery.scrollorama.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.scrolldeck.js"></script>
+
+
 <div class="wrapper">
-  <div class="homepage-header">
-    <%= image_tag "homepage/logo_home.png" %>
-    <div class="header-text">Chartist is an app that allows people quickly visualize and share simple data.</div>
-    <div class="btn btn-danger">Start making a new chart</div>
+  <div class="homepage-header slide">
+      <%= image_tag "homepage/logo_home.png" %>
+      <div class="header-text">Chartist is an app that allows people quickly visualize and share simple data.</div>
+      <a href="#signup" class="nav-button btn btn-danger">Start creating</div></a>
   </div>
 
-  <div class="homepage-info">
+  <div class="homepage-info slide">
   <div class="container-fluid">
     <div class="home-info-header">What can I do with this awesome website?</div>
     <div class="row">
       <div class="col-md-4">
          <%= image_tag "homepage/icons.png" %>
-         <div class="info-title">What a cool site</div>
+         <div class="info-title">Upload</div>
          <div class="info-text">Sed fringilla mi vel sem luctus pellentesque. Vestibulum vehicula nulla eget arcu sagittis, nec semper diam placerat.</div>
       </div>
 
       <div class="col-md-4">
         <%= image_tag "homepage/icons.png" %>
-         <div class="info-title">Keep track of stuff</div>
+         <div class="info-title">Create</div>
          <div class="info-text">Sed fringilla mi vel sem luctus pellentesque. Vestibulum vehicula nulla eget arcu sagittis, nec semper diam placerat.</div>
       </div>
 
       <div class="col-md-4">
         <%= image_tag "homepage/icons.png" %>
-         <div class="info-title">Much share, wow</div>
+         <div class="info-title">Share</div>
          <div class="info-text">Sed fringilla mi vel sem luctus pellentesque. Vestibulum vehicula nulla eget arcu sagittis, nec semper diam placerat.</div>
       </div>
     </div>
   </div>
   </div>
 
-  <div class="homepage-forms">
+  <div class="homepage-forms slide" id="signup">
     <%= render :file => "devise/registrations/new" %>
   </div>
 
-  <div class="homepage-footer">
+  <div class="homepage-footer slide">
     Made by the <b>Chartist Team</b> at <a href="http://www.makersacademy.com" target="_blank">Makers Academy</a> &copy; 2014 All Rights Reserved.
     <br>
     Follow us on 
@@ -44,3 +51,16 @@
   </div>
 
 </div>
+
+  
+<script>
+$(document).ready(function() {
+  var deck = new $.scrolldeck({
+    buttons: '.nav-button',
+    slides: '.slide',
+    duration: 600,
+    easing: 'easeInOutExpo',
+  offset: 0
+  });
+});
+</script>
