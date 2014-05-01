@@ -1,4 +1,8 @@
 <%= graphic_of(chart).html_safe %>
+
+<h2>
+	 <%= link_to "widget:", "#" %>
+</h2>
 <% if chart.dashboards.any? %>
   <% chart.dashboards.each do |dashboard| %>
     <%= link_to dashboard.title, dashboard_path(dashboard.id) %>
