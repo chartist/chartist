@@ -41,6 +41,7 @@ a:hover {
   width: 700px;
   margin: 10% auto;
   background: #ffffff;
+  text-align: left;
 }
 
 .panel-heading {
@@ -58,6 +59,7 @@ a:hover {
 .form-control:focus {
   border: 1px solid $accent;
   -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .panel-body {
