@@ -69,6 +69,13 @@ describe Chart do
       expect(color_chart.default?).to be_true
     end
 
+    let(:color_chart2) {create(:color_chart)}
+
+    it 'if colorscheme not selected default is applied' do
+      expect(color_chart2.default?).to be_true
+    end
+
+
 
   end
 end

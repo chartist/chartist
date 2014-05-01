@@ -29,6 +29,7 @@ class Chart < ActiveRecord::Base
       create_series
       create_datapoints
       generate_dashboards
+      self.colorscheme ||= 0
     end
 
     def create_series
