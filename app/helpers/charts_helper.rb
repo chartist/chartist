@@ -11,7 +11,8 @@ module ChartsHelper
   def color_select(colorscheme)
     colors = {
       "default" => ['#3366cc', '#dc3912', '#ff9900', '#109618'],
-      'hockeytown' => ['#E56717', '#1796E6', '#FDD017', '#9DC209', 'A690BF']
+      'hockeytown' => ['#E56717', '#1796E6', '#FDD017', '#9DC209', 'A690BF'],
+      'summmer' => []
     }
     colors[colorscheme]
   end
