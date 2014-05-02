@@ -43,7 +43,7 @@ a:hover {
   color: #ffffff;
   font-size: 24px;
   font-weight: 300;
-  padding-top: 18%;
+  padding-top: 15%;
 }
 
 .header-text {
@@ -85,16 +85,28 @@ a:hover {
   margin-bottom: 50px;
 }
 
+.col-md-4 {
+  text-align: center;
+}
+
 .info-title {
   color: $accent-lighter;
   font-size: 24px;
-  padding: 20px;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 .info-text {
   color: $medium-grey;
   width: 85%;
   margin: 0px auto 20px auto;
+  font-size: 16px;
+}
+
+.homepage-info img {
+  padding: 5px;
+  border: 1px solid $pale-grey;
+  border-radius: 5px;
 }
 
 
