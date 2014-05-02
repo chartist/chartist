@@ -22,7 +22,7 @@ class Chart < ActiveRecord::Base
     after_save :prepare_chart
 
     enum chart_type: [:pie_chart, :line_chart, :col_chart, :bar_chart]
-    enum colorscheme: [:default, :scheme1, :scheme2, :scheme3]
+    enum colorscheme: [:default, :hockeytown, :scheme2, :scheme3]
 
     def prepare_chart
       return true unless csv.present?
@@ -49,6 +49,12 @@ class Chart < ActiveRecord::Base
       end
       csv.destroy
     end
+
+    # def table_data=(json)
+    #   data = JSON.parse(json)
+    #   data.each do |row|
+    #   end
+    # end
 
 
     def generate_dashboards
