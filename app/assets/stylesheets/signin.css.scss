@@ -3,10 +3,18 @@
 /* any form */
 
 .panel {
-  width: 700px;
+  width: 70%;
   margin: 5% auto;
   background: #ffffff;
   text-align: left;
+}
+
+@media (min-width: 1200px) {
+  
+  .panel {
+    width: 40%;
+  }
+  
 }
 
 .panel-body {
@@ -20,17 +28,8 @@
   font-weight: 400;
 }
 
-.left {
-  float: left;
-  width: 50%;
-  padding-top: 0px;
+.column-border {
   border-right: 1px solid $medium-grey; 
-}
-
-.right {
-  float: right;
-  width: 50%;
-  padding-top: 0px;
 }
 
 .form-footer {
