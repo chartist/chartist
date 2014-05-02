@@ -11,8 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
+//= require jquery.easing.min
 //= turbolinks
 //= require bootstrap
-//= require jquery_ujs
+//= require canvas2image
 //= require_tree .
-
