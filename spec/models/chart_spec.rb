@@ -61,21 +61,22 @@ describe Chart do
       expect(mult_chart.series.first.name).to eq 'Product A'
     end
   end
+
   context 'different colorts' do
 
-    let(:color_chart) {create(:color_chart, colorscheme: 0 )}
+    let(:color_chart) {create(:pie_chart, colorscheme: 0 )}
+    let(:hockey_chart) {create(:pie_chart, colorscheme: 1 )}
 
     it 'color is correctly processed' do
       expect(color_chart.default?).to be_true
+      expect(hockey_chart.hockeytown?).to be_true
+      expect(hockey_chart.default?).to be_false
     end
 
-    let(:color_chart2) {create(:color_chart)}
+    let(:color_chart2) {create(:pie_chart)}
 
     it 'if colorscheme not selected default is applied' do
       expect(color_chart2.default?).to be_true
     end
-
-
-
   end
 end
