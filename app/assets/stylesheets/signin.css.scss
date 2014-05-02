@@ -1,5 +1,43 @@
 @import "mixins";
 
+/* any form */
+
+.panel {
+  width: 700px;
+  margin: 5% auto;
+  background: #ffffff;
+  text-align: left;
+}
+
+.panel-body {
+  margin-top: 15px;
+  padding: 20px;
+}
+
+.panel-heading {
+  margin: 0px;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.left {
+  float: left;
+  width: 50%;
+  padding-top: 0px;
+  border-right: 1px solid $medium-grey; 
+}
+
+.right {
+  float: right;
+  width: 50%;
+  padding-top: 0px;
+}
+
+.form-footer {
+  clear: both;
+  text-align: center;
+}
+
 .form-signin {
   width: 300px;
 }
@@ -12,60 +50,44 @@
   font-weight: 400;
 }
 
-a {
-  color: $dark-grey;
-  font-weight: 600;
-}
-
-a:hover {
-  color: $darker;
-  text-decoration: none;
-}
-
-/* Homepage header */
-
-.homepage_header {
-  background: $medium-grey;
-  width: 100%;
-  margin: 0px;
-  height: 100%;
-}
-
-/* Homepage body */
-
-.homepage_body {
-  height: 600px;
-}
-
-.form-container {
-  width: 700px;
-  margin: 10% auto;
-  background: #ffffff;
-  text-align: left;
-  min-height: 300px;
-  max-height: 400px;
-}
-
-.panel-heading {
-  font-size: 23px;
-  font-weight: 400;
-}
+/* input fields */
 
 .form-control {
-  margin-top: 20px;
   margin-bottom: 10px;
   background: #f1f1f1;
 }
 
 .form-control:focus {
   border: 1px solid $accent;
+  -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-.panel-body {
-  margin-top: 15px;
-  padding: 20px;
+/* text styles */
+
+.form-title {
+  padding: 0px 0px 10px 0px;
+  font-size: 18px;
+  color: $dark-grey;
+  font-weight: 300;
+}
+
+.form-text {
+  margin: 0px 0px 8px 0px;
+}
+
+
+/* buttons */
+
+.btn-signup {
+  background: $dark-grey;
+  border: 1px solid $dark-grey;
+}
+
+.btn-signup:hover {
+  background: $medium-grey;
+  border: 1px solid $medium-grey;
 }
 
 .panel-body .btn-default {
@@ -81,53 +103,13 @@ a:hover {
   color: #ffffff;
 }
 
-.left {
-  float: left;
-  border-right: 1px solid $medium-grey; 
-  width: 50%;
-  padding-top: 0px;
-}
+/* social buttons */ 
 
-.right {
-  float: right;
-  width: 50%;
-  padding-top: 0px;
-}
-
-.form-title {
-  padding-bottom: 0px;
-  font-size: 18px;
-  color: $dark-grey;
-  font-weight: 300;
-}
-
-.form-text {
-  margin: 17px 0px 8px 0px;
-}
-
-.homepage_body .btn {
-  width: 100%;
+.right > .btn-social {
   margin-bottom: 10px;
 }
 
-.btn-signup {
-  background: $dark-grey;
-  border: 1px solid $dark-grey;
-}
-
-.btn-signup:hover {
-  background: $medium-grey;
-  border: 1px solid $medium-grey;
-}
-
-.signup-footer {
-  clear: both;
-  text-align: center;
-}
-
-.reset-password-footer {
-  margin-bottom: -2px;
-}
+/* alerts */ 
 
 .alert {
   font-size: 16px;
@@ -144,10 +126,4 @@ a:hover {
 
 .alert ul {
   margin-top: -20px;
-}
-/* Homepage footer */
-
-.homepage_footer {
-  height: 400px;
-  background: grey;
 }
