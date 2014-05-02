@@ -64,4 +64,13 @@ class Chart < ActiveRecord::Base
         end
       end
     end
+    def generate_json
+      if self.pie_chart?
+        self.datapoints.group(:x).sum(:y)
+      else
+        self.series.reverse.map { |series|
+          { name: series.name, data: series.datapoints.group(:x).sum(:y) }
+        }
+      end
+    end
   end
