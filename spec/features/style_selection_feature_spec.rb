@@ -7,7 +7,7 @@ describe 'Choosing colors' do
 
 
 
-  # let(:chart) { create(:line_chart, user: user) }
+  let(:color_chart) { create(:pie_chart, user: user, colorscheme: 0, id: 4) }
 
   before do
     login_as user
@@ -23,6 +23,14 @@ describe 'Choosing colors' do
     choose_colours
     click_button 'Generate'
     expect(Chart.last.hockeytown?).to be_true
+  end
+
+  it 'Chart is rendered in the right color scheme', js: true do
+    visit chart_path(color_chart)
+    sleep 3
+    puts "*" * 30
+    expect(page.first('path')['fill']).to eq '#dc3912'
+
   end
 end
 
