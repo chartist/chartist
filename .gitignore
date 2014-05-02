@@ -19,3 +19,4 @@ doc/
 .DS_Store
 .gitignore
 .rspec
+/config/secrets.yml
