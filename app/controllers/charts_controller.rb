@@ -20,15 +20,10 @@ class ChartsController < ApplicationController
   def show
     @chart = Chart.find params[:id]
     respond_to do |format|
-      if @chart.pie_chart?
-        format.json {render json: @chart.datapoints.group(:x).sum(:y) }
-      else
-        format.json { render json: @chart.series.reverse.map { |series|
-                        { name: series.name, data: series.datapoints.group(:x).sum(:y) }
-                      }
-                      }
-      end
+      format.json {render json: @chart.generate_json }
       format.html
+      format.csv { send_data @chart.to_csv}
+      # format.xlsx { send_data @chart.to_csv(col_sep: "\t") }
     end
   end
 
