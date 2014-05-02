@@ -2,9 +2,10 @@
 
 /*form styles*/
 #msform {
-  width: 500px;
-  height: 650px;
+  width: 600px;
+  height: 550px;
   margin: 50px auto;
+  padding: -20px;
   text-align: center;
   position: relative;
 }
@@ -44,7 +45,7 @@
 /*buttons*/
 #msform .action-button {
   width: 100px;
-  background: $accent-lighter;
+  background: $dark-grey;
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -55,14 +56,13 @@
 }
 
 #msform .action-button:hover, #msform .action-button:focus {
-  box-shadow: 0 0 0 2px white, 0 0 0 3px $accent;
+  box-shadow: 0 0 0 2px white, 0 0 0 3px $darker;
   outline: 0;
 }
 
 /*headings*/
 .fs-title {
   font-size: 20px;
-  text-transform: uppercase;
   color: $dark-blue;
   margin-top: 5px;
   margin-bottom: 20px;
@@ -70,7 +70,7 @@
 
 .fs-subtitle {
   font-weight: normal;
-  font-size: 13px;
+  font-size: 15px;
   color: #666;
   margin-bottom: 20px;
 }
@@ -86,7 +86,7 @@
 
 #progressbar li {
   list-style-type: none;
-  color: white;
+  color: $dark-grey;
   text-transform: uppercase;
   font-size: 12px;
   font-weight: bold;
@@ -125,9 +125,46 @@
   content: none; 
 }
 
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
   background: #d44544;
   color: white;
+}
+
+.form-charts >input[type=radio] {
+  display: none;
+}
+
+input[type=radio]:checked + img{
+  border: 2px solid $accent-lighter;
+  border-radius: 5px;
+}
+
+.form-charts img{
+  width: 150px;
+  margin-top: 10px; 
+  margin-bottom: 5px;
+}
+
+.form-charts img.image-col-2 {
+  margin-left: 20px;
+}
+
+.charts-theme >input[type=radio] {
+  display: none;
+}
+
+.charts-theme input[type=radio]:checked + img{
+  border: 2px solid $pale-grey;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.charts-theme img{
+  width: 180px;
+  margin-top: 10px; 
+  margin-bottom: 5px;
+}
+
+.charts-theme img.image-col-2 {
+  margin-left: 20px;
 }

@@ -8,52 +8,64 @@
     <li class="active">Start Creating</li>
     <li>Choose Design</li>
     <li>Choose Colour</li>
-    <li>Share your Chart</li>
+    <li>Save your Chart</li>
   </ul>
   <!-- fieldsets -->
   <fieldset>
-    <h2 class="fs-title">Start Creating</h2>
+    <h2 class="fs-title">Import Sources</h2>
     <div class="form-group">
-      <%= f.label :name, 'Add a title' %>
-      <%= f.text_field :name %>
-      <br>
-      <%= f.label :dashboard_titles, 'Create Dashboard' %>
-      <%= f.text_field :dashboard_titles %>
-      <br>
       <%= f.file_field :csv %>
-      <input type="button" name="next" class="next action-button" value="Next" />
+    <div class="form-group">
+    
+    <textarea rows="3" type="text" placeholder="Enter your data"></textarea>
+    <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
     <fieldset>
-      <h2 class="fs-title">Choose Design</h2>
-      <h3 class="fs-subtitle">What chart are you feeling today?</h3>
+      <h2 class="fs-title">What chart are you feeling today?</h2>
       <div class="form-group">
+      <label class='form-charts'>
         <%= f.radio_button :chart_type, :pie_chart %>
-        <%= f.label :chart_type, 'Pie chart', value: :pie_chart %>
+        <%= image_tag('charts/piechart.png') %>
+      </label>
+      <label class='form-charts'>
         <%= f.radio_button :chart_type, :line_chart %>
-        <%= f.label :chart_type, 'Line chart', value: :line_chart %>
+        <%= image_tag('charts/linechart.png', class: 'image-col-2') %>
+      </label>
+      <label class='form-charts'>
         <%= f.radio_button :chart_type, :col_chart %>
-        <%= f.label :chart_type, 'Column chart', value: :col_chart %>
+        <%= image_tag('charts/columnchart.png') %>
+      </label>
+      <label class='form-charts'>
         <%= f.radio_button :chart_type, :bar_chart %>
-        <%= f.label :chart_type, 'Bar chart', value: :bar_chart %>
+        <%= image_tag('charts/barchart.png', class: 'image-col-2') %>
+      </label>
       </div>
       <input type="button" name="previous" class="previous action-button" value="Previous" />
       <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
     <fieldset>
-      <h2 class="fs-title">Choose Colour</h2>
-      <h3 class="fs-subtitle">What colour are you feeling today?</h3>
+      <h2 class="fs-title">What colour are you feeling today?</h2>
       <div class ="form-group">
+      <label class='charts-theme'>
         <%= f.radio_button :colorscheme, :default %>
-        <%= f.label :colorscheme, 'Default', value: :default %>
-        <%= f.radio_button :colorscheme, :hockeytown %>
+        <%= image_tag('charts/summer.png', class: 'image-col-2') %>
+      </label>
+      <label class='charts-theme'>
+        <%= f.radio_button :colorscheme, :default %>
         <%= f.label :colorscheme, 'hockeytown', value: :hockeytown %>
         <input type="button" name="previous" class="previous action-button" value="Previous" />
         <input type="button" name="next" class="next action-button" value="Next" />
       </fieldset>
       <fieldset>
-        <h2 class="fs-title">Share your Chart</h2>
+        <h2 class="fs-title">Save your Chart</h2>
         <h3 class="fs-subtitle">Share</h3>
         <input type="text" name="twitter" placeholder="Twitter" />
+        <%= f.label :name, 'Add a title' %>
+        <%= f.text_field :name %>
+        <br>
+        <%= f.label :dashboard_titles, 'Create Dashboard' %>
+        <%= f.text_field :dashboard_titles %>
+        <br />
         <input type="button" name="previous" class="previous action-button" value="Previous" />
         <%= f.submit 'Generate', class: 'action-button' %>
       </fieldset>
