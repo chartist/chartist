@@ -19,33 +19,14 @@ $(document).ready(function() {
 <div class="wrapper">
   <div class="homepage-header slide" id="homepage-cover">
       <%= image_tag "homepage/logo_home.png" %>
-      <div class="header-text">Chartist is an app that allows people quickly visualize and share simple data.</div>
-      <a href="#hpsignup" class="nav-button btn btn-danger">Start creating</div></a>
+      <div class="header-text">Chartist is an app that allows people quickly visualize and share simple data.<br>
+      Coming on May 9th.</div>
+      <a href="#hpsignup" class="nav-button btn btn-danger">Start creating</a><br>
+      <a href="#hpinfo" class="nav-button header-link">Or have a look at what Chartist has to offer!</a>
   </div>
 
-  <div class="homepage-info slide">
-  <div class="container-fluid">
-    <div class="home-info-header">What can I do with this awesome website?</div>
-    <div class="row">
-      <div class="col-md-4">
-         <%= image_tag "homepage/icons.png" %>
-         <div class="info-title">Upload</div>
-         <div class="info-text">Sed fringilla mi vel sem luctus pellentesque. Vestibulum vehicula nulla eget arcu sagittis, nec semper diam placerat.</div>
-      </div>
-
-      <div class="col-md-4">
-        <%= image_tag "homepage/icons.png" %>
-         <div class="info-title">Create</div>
-         <div class="info-text">Sed fringilla mi vel sem luctus pellentesque. Vestibulum vehicula nulla eget arcu sagittis, nec semper diam placerat.</div>
-      </div>
-
-      <div class="col-md-4">
-        <%= image_tag "homepage/icons.png" %>
-         <div class="info-title">Share</div>
-         <div class="info-text">Sed fringilla mi vel sem luctus pellentesque. Vestibulum vehicula nulla eget arcu sagittis, nec semper diam placerat.</div>
-      </div>
-    </div>
-  </div>
+  <div class="homepage-info slide" id="hpinfo">
+    <%= render :file => "home/homepage_info" %>
   </div>
 
   <div class="homepage-forms slide" id="hpsignup">
