@@ -5,11 +5,6 @@ html, body {
   min-height: 100%;
 }
 
-div#homepage-cover {
-  position: absolute;
-  top: 0px;
-}
-
 body {
   font-family: "Open Sans";
   color: $darker;
@@ -39,6 +34,7 @@ a:hover {
 .homepage-header {
   width: 100%;
   height: 100%;
+  display: block;
   background: image-url("homepage/bg_header2.png") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -48,7 +44,7 @@ a:hover {
   color: #ffffff;
   font-size: 24px;
   font-weight: 300;
-  padding-top: 8%;
+  padding-top: 15%;
 }
 
 .header-text {
@@ -84,6 +80,7 @@ a.header-link {
   text-decoration: none;
   font-size: 16px;
   font-weight: 300;
+  text-shadow: 1px 1px 5px $darker;
 }
 
 a.header-link:hover {
@@ -97,7 +94,8 @@ text-decoration: underline;
   width: 100%;
   height: 100%;
   text-align: center;
-  padding-top: 20px
+  padding-top: 5%;
+  
 }
 
 .home-info-header {
@@ -130,7 +128,6 @@ text-decoration: underline;
   border-radius: 5px;
 }
 
-
 /* Sign up */
 
 .homepage-forms {
@@ -157,4 +154,38 @@ text-decoration: underline;
   padding: 20px;
   text-align: center;
   line-height: 30px;
+}
+
+.homepage-clearfix {
+  clear:both;
+}
+
+/* responsive fixes */
+@media (max-width: 465px) {
+.homepage-header img {
+    width: 80%;
+  }
+
+ 
+}
+
+@media (max-width: 992px) {
+  .homepage-info {
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .homepage-info img {
+    width: 250px;
+    margin-top: 20px;
+  }
+
+  .header-text {
+    padding: 10px;
+    font-size: 20px;
+  }  
+}
+
+@media (min-width: 1200px) {
+  height: auto;
 }
