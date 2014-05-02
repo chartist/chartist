@@ -15,11 +15,10 @@ describe "Dashboards" do
       expect(page).to have_content "Dashboard"
     end
 
-    it "adds dashboards to that chart", js: true do
+    it "adds dashboards to that chart" do
       visit "/charts/new"
       add_pie_chart('Pie chart', 'uk london')
 
-      p current_path
       expect(page).to have_content 'uk london'
     end
   end
