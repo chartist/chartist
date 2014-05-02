@@ -25,31 +25,7 @@ $(document).ready(function() {
   </div>
 
   <div class="homepage-info slide" id="hpinfo">
-  <div class="container-fluid">
-    <div class="home-info-header">What can I do with this awesome website?</div>
-    <div class="row">
-      <div class="col-md-4">
-         <%= image_tag "homepage/icons.png" %>
-         <div class="info-title">Upload</div>
-         <div class="info-text">Just upload your own CSV document, or input a few data to start.</div>
-      </div>
-
-      <div class="col-md-4">
-        <%= image_tag "homepage/icons.png" %>
-         <div class="info-title">Create</div>
-         <div class="info-text">Choose between different chart styles and color schemes to create a chart quickly and without the use of any additional software.</div>
-      </div>
-
-      <div class="col-md-4">
-        <%= image_tag "homepage/icons.png" %>
-         <div class="info-title">Share</div>
-         <div class="info-text">Share your charts on your favourite social network or embed it on your blog.</div>
-      </div>
-    </div>
-    
-    <a href="#hpsignup" class="nav-button btn btn-danger">Loving it? Start creating</a>
-    
-  </div>
+    <%= render :file => "home/homepage_info" %>
   </div>
 
   <div class="homepage-forms slide" id="hpsignup">
