@@ -5,7 +5,6 @@
     <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
       <%= f.text_field :username, autofocus: true, :placeholder => "Username", :class => "form-control" %>
       <%= f.email_field :email, autofocus: true, :placeholder => "Email address", :class => "form-control" %>
-      <%= f.text_field :bio, autofocus: true, :placeholder => "About you", :class => "form-control" %>
       <%= f.password_field :password, autocomplete: "off", :placeholder => "Password", :class => "form-control" %>
       <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Password confirmation", :class => "form-control" %>
       <div><%= f.submit "Sign up", :class => "btn btn-default" %></div>
