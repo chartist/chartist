@@ -1,6 +1,7 @@
-<div class="form-container panel panel-default clearfix">
+<div class="container-fluid">
+<div class="panel panel-default">
   <div class="panel-heading">Sign up</div>
-  <div class="panel-body left">
+  <div class="panel-body col-md-6 column-border">
     <div class="form-title">Using your email</div>
     <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
       <%= f.text_field :username, autofocus: true, :placeholder => "Username", :class => "form-control" %>
@@ -11,7 +12,7 @@
     <% end %>
   </div>
   
-  <div class="panel-body right">
+  <div class="panel-body col-md-6">
     
     <div class="form-title">Use other accounts</div>
 
@@ -28,9 +29,10 @@
       </div>
  
 
-  <div class="panel-body signup-footer">
+  <div class="panel-body form-footer">
     Already have an account?
     <%= link_to "Sign in", new_session_path(:user) %>
   </div>
 
+</div>
 </div>
