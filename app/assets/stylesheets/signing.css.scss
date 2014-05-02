@@ -41,12 +41,14 @@ a:hover {
   width: 700px;
   margin: 10% auto;
   background: #ffffff;
+  text-align: left;
+  min-height: 300px;
+  max-height: 400px;
 }
 
 .panel-heading {
   font-size: 23px;
   font-weight: 400;
-  padding: 10px;
 }
 
 .form-control {
@@ -58,11 +60,25 @@ a:hover {
 .form-control:focus {
   border: 1px solid $accent;
   -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .panel-body {
   margin-top: 15px;
   padding: 20px;
+}
+
+.panel-body .btn-default {
+  background: $dark-grey;
+  border: 1px solid #666666;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.panel-body .btn-default:hover {
+  background: #555555;
+  border: 1px solid #444444;
+  color: #ffffff;
 }
 
 .left {
@@ -79,7 +95,7 @@ a:hover {
 }
 
 .form-title {
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   font-size: 18px;
   color: $dark-grey;
   font-weight: 300;
@@ -101,7 +117,7 @@ a:hover {
 
 .btn-signup:hover {
   background: $medium-grey;
-   border: 1px solid $medium-grey;
+  border: 1px solid $medium-grey;
 }
 
 .signup-footer {
