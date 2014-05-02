@@ -51,15 +51,20 @@ a:hover {
   text-shadow: 1px 1px 5px $darker;
 }
 
-.homepage-header > .btn{
+.homepage-header > .btn, .homepage-info .btn {
   background: $accent;
   border: 1px solid $accent;
   font-size: 20px;
   font-weight: 300;
-  padding: 10px 25px;
+  padding: 15px 45px;
+  margin: 0px 5px;
 }
 
-.homepage-header > .btn:hover {
+.homepage-info .btn {
+  margin-top: 10px;
+}
+
+.homepage-header > .btn:hover, .homepage-info .btn:hover {
   background: $accent-lighter;
   border: 1px solid $accent-lighter;
 }
@@ -67,6 +72,17 @@ a:hover {
 .homepage-header a {
   padding: 0px;
   margin: 0px;
+}
+
+a.header-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+a.header-link:hover {
+text-decoration: underline;
 }
 
 /* Info */
@@ -98,7 +114,7 @@ a:hover {
 
 .info-text {
   color: $medium-grey;
-  width: 85%;
+  width: 70%;
   margin: 0px auto 20px auto;
   font-size: 16px;
 }
@@ -129,7 +145,7 @@ a:hover {
 .homepage-footer {
   width: 100%;
   height: 200px;
-  background: #ffffff;
+  background: $pale-grey;
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 400;
