@@ -1,18 +1,31 @@
-# require 'spec_helper'
+require 'spec_helper'
 
 
-# describe 'Choosing colors' do
-#   let(:user) { create(:user) }
+describe 'Choosing colors' do
 
-#   # let(:chart) { create(:line_chart, user: user) }
+  let(:user) { create(:user) }
 
-#   it '', js: true do
 
-#   end
 
-#   xit 'user can only delete own charts' do
-#     login_as hacker
-#     visit chart_path(chart)
-#     expect(page).not_to have_css '#delete-btn'
-#   end
-# end
+  # let(:chart) { create(:line_chart, user: user) }
+
+  before do
+    login_as user
+    visit "/charts/new"
+  end
+
+  it 'shows the option to pic a color' do
+    fill_in 'Add a title', with: "name"
+    fill_in 'Create Dashboard', with: "dashboard_titles"
+    attach_file 'chart_csv', Rails.root.join('spec/extras/test.csv')
+    choose 'Pie chart'
+    choose 'Default'
+    click_button 'hockeytown'
+    save_and_open_page
+  end
+
+  xit '' do
+    login_as user
+
+  end
+end
