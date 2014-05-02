@@ -64,6 +64,7 @@ class Chart < ActiveRecord::Base
         end
       end
     end
+
     def generate_json
       if self.pie_chart?
         self.datapoints.group(:x).sum(:y)
@@ -71,6 +72,15 @@ class Chart < ActiveRecord::Base
         self.series.reverse.map { |series|
           { name: series.name, data: series.datapoints.group(:x).sum(:y) }
         }
+      end
+    end
+
+    def to_csv(options = {})
+      CSV.generate(options) do |csv|
+        csv << [nil] + self.series.map(&:name)
+        self.series.first.datapoints.map(&:x).sort.each do |x|
+          csv << [x] + self.datapoints.where(x: x).map(&:y)
+        end
       end
     end
   end

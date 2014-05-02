@@ -22,6 +22,7 @@ class ChartsController < ApplicationController
     respond_to do |format|
       format.json {render json: @chart.generate_json }
       format.html
+      format.csv { send_data @chart.to_csv}
     end
   end
 
