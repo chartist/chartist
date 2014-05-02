@@ -28,7 +28,6 @@ describe 'Choosing colors' do
   it 'Chart is rendered in the right color scheme', js: true do
     visit chart_path(color_chart)
     sleep 3
-    puts "*" * 30
     expect(page.first('path')['fill']).to eq '#dc3912'
 
   end
