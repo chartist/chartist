@@ -14,13 +14,13 @@ FactoryGirl.define do
     csv { fixture_file_upload Rails.root.join('spec/extras/test4.csv'), 'text/csv' }
   end
   factory :col_chart, class: 'Chart' do
-    name "Column chart"
+    name "jobs for undergrads"
     chart_type 2
     x_type 1
     csv { fixture_file_upload Rails.root.join('spec/extras/test.csv'), 'text/csv' }
   end
   factory :bar_chart, class: 'Chart' do
-    name "Bar chart"
+    name "Mortality rates in Australia"
     chart_type 3
     x_type 1
     csv { fixture_file_upload Rails.root.join('spec/extras/test.csv'), 'text/csv' }
