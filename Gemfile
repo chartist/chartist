@@ -25,6 +25,9 @@ gem 'omniauth-google-oauth2'
 gem 'groupdate'
 gem 'chronic'
 
+gem 'roo'
+gem 'spreadsheet'
+
 
 
 group :production do

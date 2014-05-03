@@ -4,15 +4,24 @@ require 'chronic'
 
 class CSVProcessor
 
-  def initialize(file)
-    @file = file
+  def initialize(input, has_file)
+    @input = input
+    @has_file = has_file
+  end
+
+  def read
+    CSV.read(@input, converters: :numeric)
   end
 
   def process
-    array = SmarterCSV.process(@file)
-    col_name = array.first.keys.first
-    result = array.each do |hash|
-      hash[col_name] = Chronic.parse(hash[col_name]) if Chronic.parse(hash[col_name])
+    @has_file ? array = self.read : array = self.parse
+    array.each do |sub_array|
+      sub_array[0] = Chronic.parse(sub_array.first) if Chronic.parse(sub_array.first)
     end
   end
+
+  def parse
+    CSV.parse(@input)
+  end
+
 end

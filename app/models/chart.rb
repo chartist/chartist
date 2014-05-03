@@ -40,14 +40,14 @@ class Chart < ActiveRecord::Base
     end
 
     def create_datapoints
-      processor = CSVProcessor.new(csv.path)
-      processor.process.each do |row|
+      processor = CSVProcessor.new(csv.path, csv.present?)
+      processor.process[1..-1].each do |row|
         (1...row.size).each do |series_order|
           current_series = Series.where(chart_id: self.id, order: series_order).first
-          Datapoint.create(x: row.values[0], y: row.values[series_order], chart_id: self.id, series_id: current_series.id)
+          Datapoint.create(x: row[0], y: row[series_order], chart_id: self.id, series_id: current_series.id)
         end
       end
-      csv.destroy
+      csv.destroy if csv.present?
     end
 
     # def table_data=(json)
