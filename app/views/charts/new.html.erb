@@ -48,12 +48,20 @@
     <h2 class="fs-title">What colour are you feeling today?</h2>
     <div class ="form-group">
       <label class='charts-theme'>
-        <%= f.radio_button :colorscheme, :default %>
+        <%= f.radio_button :colorscheme, :spring %>
+        <%= image_tag('charts/spring.png') %>
+      </label>
+      <label class='charts-theme'>
+        <%= f.radio_button :colorscheme, :summer %>
         <%= image_tag('charts/summer.png', class: 'image-col-2') %>
       </label>
       <label class='charts-theme'>
-        <%= f.radio_button :colorscheme, :default %>
-        <%= f.label :colorscheme, 'hockeytown', value: :hockeytown %>
+        <%= f.radio_button :colorscheme, :autumn %>
+        <%= image_tag('charts/autumn.png') %>
+      </label>
+      <label class='charts-theme'>
+        <%= f.radio_button :colorscheme, :winter %>
+        <%= image_tag('charts/winter.png', class: 'image-col-2') %>
       </label>
     </div>
     <input type="button" name="previous" class="previous action-button" value="Previous" />
