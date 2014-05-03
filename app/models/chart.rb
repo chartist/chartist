@@ -18,6 +18,10 @@ class Chart < ActiveRecord::Base
 
     attr_accessor :dashboard_titles
 
+    searchable do
+      text :name
+    end
+
 
     after_save :prepare_chart
 
