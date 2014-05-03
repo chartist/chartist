@@ -12,7 +12,7 @@ class Chart < ActiveRecord::Base
   validates_attachment :csv,
     content_type: {content_type: 'text/csv'},
     size: {in: 0..2.megabytes},
-    presence: true,
+    # presence: true,
   if: :new_record?
 
 
@@ -25,36 +25,40 @@ class Chart < ActiveRecord::Base
     enum colorscheme: [:default, :hockeytown, :scheme2, :scheme3]
 
     def prepare_chart
+      self.colorscheme ||= 0
+      generate_dashboards
       return true unless csv.present?
       create_series
       create_datapoints
-      generate_dashboards
-      self.colorscheme ||= 0
     end
 
-    def create_series
-      csv_headers = CSV.read(csv.path).first
+    def create_series(string = nil)
+      input = string || csv.path
+      processor = CSVProcessor.new(input, string.nil?)
+      csv_headers = processor.process.first
       csv_headers[1...csv_headers.size].each_with_index do |header, i|
-        Series.create(name: header, order: i+1, chart_id: self.id)
+        self.series << Series.create(name: header, order: i+1)
       end
     end
 
-    def create_datapoints
-
-      csv.present? ? input = csv.path : input = @data
-
-      processor = CSVProcessor.new(input, csv.present?)
+    def create_datapoints(string = nil)
+      input = string || csv.path
+      processor = CSVProcessor.new(input, string.nil?)
+      series_ids = self.series.map(&:id)
       processor.process[1..-1].each do |row|
+        puts '*' * 100
+        p row
+        puts '*' * 100
         (1...row.size).each do |series_order|
-          current_series = Series.where(chart_id: self.id, order: series_order).first
-          Datapoint.create(x: row[0], y: row[series_order], chart_id: self.id, series_id: current_series.id)
+          self.datapoints << Datapoint.create(x: row[0], y: row[series_order], series_id: series_ids[series_order-1])
         end
       end
-      csv.destroy if csv.present?
+      csv.destroy unless string
     end
 
     def table_data=(string)
-      @data = string
+      create_series(string)
+      create_datapoints(string)
     end
 
 
@@ -70,7 +74,7 @@ class Chart < ActiveRecord::Base
       if self.pie_chart?
         self.datapoints.group(:x).sum(:y)
       else
-        self.series.reverse.map { |series|
+        self.series.map { |series|
           { name: series.name, data: series.datapoints.group(:x).sum(:y) }
         }
       end
