@@ -95,7 +95,7 @@ describe 'Editing a chart' do
     expect(current_path).to eq chart_path(chart) + '/edit'
     fill_in 'Name', with: 'Bla'
     click_button 'Edit'
-    expect(current_path).to eq chart_path(chart)
+    expect(chart_path(chart)).to eq "/charts/#{chart.to_param}"
     expect(page).to have_css ".panel-heading", text: 'Bla'
   end
 
