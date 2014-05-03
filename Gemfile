@@ -18,7 +18,11 @@ gem 'jquery-rails'
 gem 'smarter_csv'
 
 gem 'sunspot_rails'
-gem 'sunspot_solr'
+
+
+group :development do 
+  gem 'sunspot_solr'
+end
 
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -46,6 +50,7 @@ group :development, :test do
   gem 'annotate', ">=2.6.0"
   gem 'capybara-email'
   gem 'mailcatcher'
+  gem 'progress_bar'
 end
 
 group :test do

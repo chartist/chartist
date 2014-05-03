@@ -14,7 +14,12 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
         <li><%= link_to "New chart", new_chart_path %></li>
-        <li></li>
+        <li>
+          <%= form_tag charts_path, :method => :get do %>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", :name => nil %>
+          <% end %>
+        </li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">

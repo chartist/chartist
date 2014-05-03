@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: git://github.com/thoughtbot/paperclip.git
-  revision: 41da3a3c4c139964a9877c77220f94200d73c87a
+  revision: a1e33538c54511baa5ed61e763de2d4848208436
   specs:
     paperclip (4.1.1)
       activemodel (>= 3.0.0)
@@ -247,6 +247,7 @@ GEM
       multi_json (~> 1.3)
       oauth2 (~> 0.9.3)
       omniauth (~> 1.2)
+    options (2.3.2)
     orm_adapter (0.5.0)
     parslet (1.5.0)
       blankslate (~> 2.0)
@@ -259,6 +260,9 @@ GEM
     polyglot (0.3.4)
     posix-spawn (0.3.8)
     pr_geohash (1.0.0)
+    progress_bar (1.0.0)
+      highline (~> 1.6.1)
+      options (~> 2.3.0)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -432,6 +436,7 @@ DEPENDENCIES
   paperclip!
   pg
   poltergeist
+  progress_bar
   rails
   rails_12factor
   rspec-rails
