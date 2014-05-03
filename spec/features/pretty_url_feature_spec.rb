@@ -25,8 +25,9 @@ describe "Pretty URLs" do
 	context "Dashboards" do
 
 		it "URL is the same as the title" do
-			visit "/dashboards/uk"
-			expect(page).to have_css ".line_chart_1"
+			dashboard = chart.dashboards.last
+			visit dashboard_path(dashboard)
+			expect(current_path).to eq "/dashboards/#{dashboard.id}-foobar"
 		end 
 	end
 end
