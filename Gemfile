@@ -16,6 +16,7 @@ gem 'websocket-rails'
 gem "chartkick"
 gem 'jquery-rails'
 gem 'smarter_csv'
+gem 'sunspot_rails'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
