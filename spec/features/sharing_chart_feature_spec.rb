@@ -14,7 +14,7 @@ describe "Sharing a chart" do
   context "Embedding a chart" do
 
   	it "shows the link for the widget" do
-  		find_field('widget').value.should eq("<iframe src='http://www.example.com/charts/#{chart.id}/widget' frameBorder='0'></iframe>")
+  		find_field('widget').value.should eq("<iframe src='http://www.example.com#{chart_path(chart)}/widget' frameBorder='0'></iframe>")
   	end
 
   	it "generates a script for the chart" do
