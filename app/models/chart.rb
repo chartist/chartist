@@ -23,6 +23,7 @@ class Chart < ActiveRecord::Base
 
     enum chart_type: [:pie_chart, :line_chart, :col_chart, :bar_chart]
     enum colorscheme: [:default, :hockeytown, :scheme2, :scheme3]
+    # enum x_type: [:normal, :date]
 
     def prepare_chart
       self.colorscheme ||= 0

@@ -1,6 +1,4 @@
-
-require 'smarter_csv'
-require 'chronic'
+# require 'chronic'
 
 class CSVProcessor
 
@@ -16,7 +14,7 @@ class CSVProcessor
   def process
     @has_file ? array = self.read : array = self.parse
     array.each do |sub_array|
-      sub_array[0] = Chronic.parse(sub_array.first) unless not_chronicable?(sub_array)
+      sub_array[0] = Chronic.parse(sub_array.first).strftime('%F') unless not_chronicable?(sub_array)
     end
   end
 

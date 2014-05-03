@@ -17,11 +17,11 @@ describe CSVProcessor do
     end
 
     it "formats a multiple series csv file into an array of hashes" do
-      expect(processor2.process[1]).to eq [Time.new(2014,12,23, 12, 00), 5, 15]
+      expect(processor2.process[1]).to eq ['2014-12-23', 5, 15]
     end
 
     it 'parses the date' do
-      next_tuesday = Time.now.next_week(:tuesday) + 60*60*12
+      next_tuesday = (Time.now.next_week(:tuesday) + 60*60*12).strftime('%F')
       expect(processor2.process.last).to eq [next_tuesday, 45, 140]
     end
   end
