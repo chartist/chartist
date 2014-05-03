@@ -42,8 +42,8 @@ describe "Charts API" do
       get chart_path(mult_chart, format: :json)
       expect(response).to be_success
       chart_data = JSON.parse(response.body)
-      expect(chart_data[0]['name']).to eq 'Product A'
-      expect(chart_data[1]['name']).to eq 'Product B'
+      expect(chart_data[0]['name']).to eq 'Product B'
+      expect(chart_data[1]['name']).to eq 'Product A'
       expect(chart_data[0]['data']['2014-12-24 12:00:00.000000']).to eq 7
       expect(chart_data[1]['data']['2014-12-24 12:00:00.000000']).to eq 17
     end

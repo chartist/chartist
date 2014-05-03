@@ -46,9 +46,6 @@ class Chart < ActiveRecord::Base
       processor = CSVProcessor.new(input, string.nil?)
       series_ids = self.series.map(&:id)
       processor.process[1..-1].each do |row|
-        puts '*' * 100
-        p row
-        puts '*' * 100
         (1...row.size).each do |series_order|
           self.datapoints << Datapoint.create(x: row[0], y: row[series_order], series_id: series_ids[series_order-1])
         end

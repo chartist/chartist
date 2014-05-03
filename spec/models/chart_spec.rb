@@ -58,7 +58,7 @@ describe Chart do
     end
 
     it 'assigns correct names to series' do
-      expect(mult_chart.series.first.name).to eq 'Product A'
+      expect(mult_chart.series.first.name).to eq 'Product B'
     end
   end
 
