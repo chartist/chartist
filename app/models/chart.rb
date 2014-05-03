@@ -40,7 +40,10 @@ class Chart < ActiveRecord::Base
     end
 
     def create_datapoints
-      processor = CSVProcessor.new(csv.path, csv.present?)
+
+      csv.present? ? input = csv.path : input = @data
+
+      processor = CSVProcessor.new(input, csv.present?)
       processor.process[1..-1].each do |row|
         (1...row.size).each do |series_order|
           current_series = Series.where(chart_id: self.id, order: series_order).first
@@ -50,11 +53,9 @@ class Chart < ActiveRecord::Base
       csv.destroy if csv.present?
     end
 
-    # def table_data=(json)
-    #   data = JSON.parse(json)
-    #   data.each do |row|
-    #   end
-    # end
+    def table_data=(string)
+      @data = string
+    end
 
 
     def generate_dashboards

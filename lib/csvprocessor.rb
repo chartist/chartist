@@ -16,12 +16,16 @@ class CSVProcessor
   def process
     @has_file ? array = self.read : array = self.parse
     array.each do |sub_array|
-      sub_array[0] = Chronic.parse(sub_array.first) if Chronic.parse(sub_array.first)
+      sub_array[0] = Chronic.parse(sub_array.first) unless chronicable?(sub_array)
     end
   end
 
   def parse
-    CSV.parse(@input)
+    CSV.parse(@input, converters: :numeric)
+  end
+
+  def chronicable?(array)
+    Chronic.parse(array.first).nil? || array.first.class == Fixnum
   end
 
 end
