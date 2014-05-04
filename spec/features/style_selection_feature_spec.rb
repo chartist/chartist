@@ -16,19 +16,19 @@ describe 'Choosing colors' do
 
   it 'shows the option to pick a color' do
     choose_colours
-    expect(page).to have_checked_field 'hockeytown'
+    expect(page).to have_checked_field 'spring'
   end
 
   it 'The right color is assigned to the chart' do
     choose_colours
     click_button 'Generate'
-    expect(Chart.last.hockeytown?).to be_true
+    expect(Chart.last.spring?).to be_true
   end
 
   it 'Chart is rendered in the right color scheme', js: true do
     visit chart_path(color_chart)
     sleep 3
-    expect(page.first('path')['fill']).to eq '#dc3912'
+    expect(page.first('path')['fill']).to eq '#4EB8E6'
 
   end
 end
@@ -39,5 +39,5 @@ def choose_colours
   fill_in 'Create Dashboard', with: "dashboard_titles"
   attach_file 'chart_csv', Rails.root.join('spec/extras/test.csv')
   choose 'Pie chart'
-  choose 'hockeytown'
+  choose 'spring'
 end
