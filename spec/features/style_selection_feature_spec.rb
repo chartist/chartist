@@ -15,8 +15,7 @@ describe 'Choosing colors' do
   end
 
   it 'shows the option to pick a color' do
-    choose_colours
-    expect(page).to have_checked_field 'spring'
+    expect(page).to have_css '#chart_colorscheme_spring'
   end
 
   it 'The right color is assigned to the chart' do
@@ -28,7 +27,7 @@ describe 'Choosing colors' do
   it 'Chart is rendered in the right color scheme', js: true do
     visit chart_path(color_chart)
     sleep 3
-    expect(page.first('path')['fill']).to eq '#4EB8E6'
+    expect(page.first('path')['fill']).to eq '#ea729a'
 
   end
 end
