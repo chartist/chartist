@@ -60,8 +60,9 @@ class Chart < ActiveRecord::Base
     def generate_dashboards
       unless dashboard_titles.nil?
         dashboard_titles.split.each do |title|
-          self.dashboards << Dashboard.find_or_create_by(title: title)
+          self.dashboards << Dashboard.find_or_create_by(title: title, user_id: self.user.id)
         end
+
       end
     end
 
