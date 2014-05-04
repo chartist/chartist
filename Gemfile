@@ -8,14 +8,14 @@ gem 'pg'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'paperclip', github: 'thoughtbot/paperclip'
-gem 'aws-sdk'
+# gem 'aws-sdk'
 gem 'font-awesome-sass'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-gem 'geocoder'
-gem 'websocket-rails'
+# gem 'geocoder'
+# gem 'websocket-rails'
 gem "chartkick"
 gem 'jquery-rails'
-gem 'smarter_csv'
+# gem 'smarter_csv'
 
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -27,6 +27,8 @@ gem 'chronic'
 
 gem 'roo'
 gem 'spreadsheet'
+
+
 
 
 
