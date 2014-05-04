@@ -7,7 +7,7 @@ class ChartsController < ApplicationController
   end
 
   def create
-    @chart = Chart.new params[:chart].permit(:name, :chart_type, :csv, :dashboard_titles, :colorscheme)
+    @chart = Chart.new params[:chart].permit(:name, :description, :chart_type, :csv, :dashboard_titles, :colorscheme)
     @chart.user = current_user
     if @chart.save
       redirect_to chart_path(@chart)
