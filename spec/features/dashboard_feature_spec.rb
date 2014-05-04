@@ -12,7 +12,7 @@ describe "Dashboards" do
 
     it "can add to a dashboard" do
       visit "/charts/new"
-      expect(page).to have_content "Dashboard"
+      expect(page).to have_content "Pick a Board"
     end
 
     it "adds dashboards to that chart" do
