@@ -131,3 +131,26 @@
   background: #d44544;
   color: white;
 }
+
+/* Chart styles   */
+
+.chart-title {
+  margin-left: 10px;
+  font-size: 2em;
+}
+
+.chart-graphic {
+  margin-bottom: 10px;
+  border: 1px solid #ecf0f1;
+}
+
+.chart-embed, .download-chart, .edit-chart {
+  margin-top: 20px;
+}
+
+.chart-container {
+  background: #ecf0f1;
+}
+
+
+
