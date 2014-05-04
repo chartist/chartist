@@ -7,7 +7,7 @@ describe 'Choosing colors' do
 
 
 
-  let(:color_chart) { create(:pie_chart, user: user, colorscheme: 0, id: 4) }
+  let!(:color_chart) { create(:pie_chart, user: user, colorscheme: 0, id: 4) }
 
   before do
     login_as user
@@ -19,8 +19,6 @@ describe 'Choosing colors' do
   end
 
   it 'The right color is assigned to the chart' do
-    choose_colours
-    click_button 'Generate'
     expect(Chart.last.spring?).to be_true
   end
 
@@ -28,15 +26,5 @@ describe 'Choosing colors' do
     visit chart_path(color_chart)
     sleep 3
     expect(page.first('path')['fill']).to eq '#ea729a'
-
   end
-end
-
-
-def choose_colours
-  fill_in 'Add a title', with: "name"
-  fill_in 'Create Dashboard', with: "dashboard_titles"
-  attach_file 'chart_csv', Rails.root.join('spec/extras/test.csv')
-  choose 'Pie chart'
-  choose 'spring'
 end
