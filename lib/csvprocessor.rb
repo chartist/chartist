@@ -9,12 +9,25 @@ class CSVProcessor
 
   def read
     # CSV.read(@input, converters: :numeric)
-    roo = Roo::CSV.new(@input.to_s, csv_options: {converters: :numeric})
+    # p  @input
+    roo = roo(@input)
     result = []
     (1..roo.last_row).each do |i|
       result << roo.row(i)
     end
     result
+  end
+
+  def roo(string)
+
+    case Pathname.new(string).extname
+    when '.csv'
+      Roo::CSV.new(string, csv_options: {converters: :numeric})
+    when '.xlsx'
+      Roo::Excelx.new(string, csv_options: {converters: :numeric})
+    else
+      raise "Unknown file type: #{pathname.extname}"
+    end
   end
 
   def process

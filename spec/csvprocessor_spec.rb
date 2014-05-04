@@ -3,13 +3,13 @@ require 'csvprocessor'
 
 describe CSVProcessor do
 
-  let(:processor1) { CSVProcessor.new(Rails.root.join('spec/extras/test.csv'), true) }
-  let(:processor2) { CSVProcessor.new(Rails.root.join('spec/extras/test5.csv'), true) }
+  let(:processor1) { CSVProcessor.new(Rails.root.join('spec/extras/test.csv').to_s, true) }
+  let(:processor2) { CSVProcessor.new(Rails.root.join('spec/extras/test5.csv').to_s, true) }
 
   context 'Processing files' do
 
-    let(:processor1) { CSVProcessor.new(Rails.root.join('spec/extras/test.csv'), true) }
-    let(:processor2) { CSVProcessor.new(Rails.root.join('spec/extras/test5.csv'), true) }
+    let(:processor1) { CSVProcessor.new(Rails.root.join('spec/extras/test.csv').to_s, true) }
+    let(:processor2) { CSVProcessor.new(Rails.root.join('spec/extras/test5.csv').to_s, true) }
 
 
     it "formats a simple csv file into an array of hashes" do
