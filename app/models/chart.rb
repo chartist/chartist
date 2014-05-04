@@ -10,7 +10,7 @@ class Chart < ActiveRecord::Base
 
   has_attached_file :csv, :default_url => "/images/missing.csv"
   validates_attachment :csv,
-    content_type: {content_type: 'text/csv'},
+    content_type: {content_type: ['text/csv', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']},
     size: {in: 0..2.megabytes},
     # presence: true,
   if: :new_record?

@@ -1,6 +1,4 @@
-# require 'roo'
 class CSVProcessor
-
 
   def initialize(input, has_file)
     @input = input
@@ -8,8 +6,6 @@ class CSVProcessor
   end
 
   def read
-    # CSV.read(@input, converters: :numeric)
-    # p  @input
     roo = roo(@input)
     result = []
     (1..roo.last_row).each do |i|
@@ -19,14 +15,13 @@ class CSVProcessor
   end
 
   def roo(string)
-
     case Pathname.new(string).extname
     when '.csv'
       Roo::CSV.new(string, csv_options: {converters: :numeric})
     when '.xlsx'
-      Roo::Excelx.new(string, csv_options: {converters: :numeric})
-    else
-      raise "Unknown file type: #{pathname.extname}"
+      Roo::Excelx.new(string, csv_options: {converters: :numeric, encoding: Encoding::UTF_8})
+    when '.xls'
+      Roo::Excel.new(string, csv_options: {converters: :numeric})
     end
   end
 
