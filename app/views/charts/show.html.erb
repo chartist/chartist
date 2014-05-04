@@ -3,21 +3,33 @@
 <div class = "row">
   <div class="col-sm-9 col-md-9 pull-left">
     
-    <div class="panel panel-default chart_container">
-      
-      <div class = "panel-heading">
-        <%= @chart.name %>
-      </div>
-      
-      <div class = "panel-body">
-        <%= render @chart %>
-        <%= render 'layouts/share' %>
-      </div>
+    <div class="thumbnail chart_container">
+      <h2><%= @chart.name %></h2>
+      <%= render @chart %>
 
-        <%= link_to icon('fa fa-pencil') + ' Edit', edit_chart_path(@chart), class: 'btn btn-info', id: 'edit-btn' if @chart.user == current_user %>
-        <%= link_to icon('fa fa-trash-o') + ' Delete', chart_path(@chart), method:  delete, class: 'btn btn-danger', id: 'delete-btn' if @chart.user == current_user %>
-        
-        <div class="btn-group">
+      <div class = "caption">
+
+        <div class="chart-about">
+          <div class="chart-description">
+            This is where the chart description goes
+          </div>
+          <div class="chart-dashboards">
+            <% if @chart.dashboards.any? %>
+              <% @chart.dashboards.each do |dashboard| %>
+                <%= link_to dashboard.title, dashboard_path(dashboard.id) %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class= "chart-share"> 
+          <div class = "chart-embed">
+            Embed: <input name="widget" value="<iframe src='<%= chart_widget_url(@chart) %>' frameBorder='0'></iframe>" style="width: 40%;">
+            <%= render 'layouts/share' %>
+          </div>
+        </div>
+
+        <div class="chart-download btn-group">
           <button type="button" class="btn btn-success dropdown-toggle" data-toggle=" dropdown">
             <%= icon('fa fa-download') %>
             Download
@@ -28,6 +40,11 @@
             <li><%= link_to ' PNG', '#', id: 'download-btn', data: { filename: @chart.name.parameterize + '.png' } %></li>
             <li><%= link_to ' CSV', chart_path(format: "csv"), id: 'download-csv-b',   download: @chart.name.parameterize + '.csv' %></li>
           </ul>
+        </div>
+
+        <div class="chart-admin">
+          <%= link_to icon('fa fa-pencil') + ' Edit', edit_chart_path(@chart), class: ' btn btn-info', id: 'edit-btn' if @chart.user == current_user %>
+          <%= link_to icon('fa fa-trash-o') + ' Delete', chart_path(@chart), method:    delete, class: 'btn btn-danger', id: 'delete-btn' if @chart.user == current_user %>
         </div>
       </div>
   </div>
