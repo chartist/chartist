@@ -68,15 +68,15 @@ describe Chart do
     let(:hockey_chart) {create(:pie_chart, colorscheme: 1 )}
 
     it 'color is correctly processed' do
-      expect(color_chart.default?).to be_true
-      expect(hockey_chart.hockeytown?).to be_true
-      expect(hockey_chart.default?).to be_false
+      expect(color_chart.spring?).to be_true
+      expect(hockey_chart.summer?).to be_true
+      expect(hockey_chart.spring?).to be_false
     end
 
     let(:color_chart2) {create(:pie_chart)}
 
     it 'if colorscheme not selected default is applied' do
-      expect(color_chart2.default?).to be_true
+      expect(color_chart2.spring?).to be_true
     end
   end
 end
