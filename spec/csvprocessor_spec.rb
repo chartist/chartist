@@ -12,11 +12,11 @@ describe CSVProcessor do
     let(:processor2) { CSVProcessor.new(Rails.root.join('spec/extras/test5.csv').to_s, true) }
 
 
-    it "formats a simple csv file into an array of hashes" do
+    it "formats a simple csv file into an array" do
       expect(processor1.process[1]).to eq ["US", '75.00%']
     end
 
-    it "formats a multiple series csv file into an array of hashes" do
+    it "formats a multiple series csv file into an array" do
       expect(processor2.process[1]).to eq ['2014-12-23', 5, 15]
     end
 
@@ -33,6 +33,20 @@ describe CSVProcessor do
     it 'correctly processes a string' do
       expect(processor3.process.last).to eq [2012, 2, 2422, 5399, 776, 4151]
     end
+  end
+
+  context 'Processing Excel files' do
+    let(:excel_processor) { CSVProcessor.new(Rails.root.join('spec/extras/test.xlsx').to_s, true) }
+    let(:excel_multiple_processor) { CSVProcessor.new(Rails.root.join('spec/extras/test5.xlsx').to_s, true) }
+
+    it 'formats a simple Excel file into an array' do
+      expect(excel_processor.process[1]).to eq ["US", 0.75]
+    end
+
+    it "formats a multiple series Excel file into an array" do
+      expect(excel_multiple_processor.process[1]).to eq ['2014-12-23', 5, 15]
+    end
+
   end
 
 end
