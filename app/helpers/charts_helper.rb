@@ -12,7 +12,7 @@ module ChartsHelper
     colors = {
       'spring' => ['#4EB8E6', '#EA729A', '#FDD017', '#9DC209', '#B1B1B1'],
       'summer' => ['#E20E0B', '#FFE833', '#BED334', '#4C9BDB', '#B5CEE2'],
-      'autumn' => ['#AE3A12', '#D17A17', '#CBB266', '#AFBDA5', '#4A7051'],
+      'autumn' => ['#305E5C', '#6D833D', '#FCC362', '#F2872B', '#D36613'],
       'winter' => ['#606A82', '#93110A', '#C91000', '#B7915F', '#DDCABC']
     }
     colors[colorscheme]

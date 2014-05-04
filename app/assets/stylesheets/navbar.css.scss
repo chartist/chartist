@@ -43,16 +43,25 @@
 }
 
 /* links and text */
+.navbar-nav {
+  margin-left: -15px;
+}
 .navbar-default .navbar-nav > li > a {
   color: #ffffff;
   font-weight: 400;
+  background-color: $accent;
 }
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #ffffff;
+  font-weight: 400;
+}
+
 
 .navbar-default .navbar-text {
   color: #ffffff;
   margin: 0;
   padding: 15px 15px;
-  color: #ffffff;
 }
 
 .navbar-default .navbar-nav .navbar-username {
