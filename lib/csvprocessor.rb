@@ -21,7 +21,7 @@ class CSVProcessor
     when '.xlsx'
       Roo::Excelx.new(string, csv_options: {converters: :numeric, encoding: Encoding::UTF_8})
     when '.xls'
-      Roo::Excel.new(string, csv_options: {converters: :numeric})
+      Roo::Excel.new(string, csv_options: {converters: :numeric, encoding: Encoding::UTF_8})
     end
   end
 
