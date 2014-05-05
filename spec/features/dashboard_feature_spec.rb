@@ -3,11 +3,11 @@ require 'spec_helper'
 describe "Dashboards" do
 
   let(:user) { create(:user, email: "foo@bar.com") }
+  let(:pie_chart) {create(:pie_chart, user: user, dashboard_titles: "food")}
+  let!(:chart_dashboards) {create(:chart_with_dashboards, user: user)}
 
   before do
     login_as user
-    create(:chart_with_dashboards, user: user)
-    create(:pie_chart, user: user, dashboard_titles: "food")
   end
 
   context "when creating a chart" do
@@ -18,7 +18,7 @@ describe "Dashboards" do
     end
 
     it "adds dashboards to that chart" do
-      visit "/charts"
+      visit chart_path(pie_chart)
       expect(page).to have_content 'food'
     end
   end
@@ -26,7 +26,7 @@ describe "Dashboards" do
   context "Looking for dashboards" do
 
     before do
-      visit "/charts"
+      visit chart_path(pie_chart)
     end
 
     it "shows them" do
