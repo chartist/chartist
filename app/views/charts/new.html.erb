@@ -32,16 +32,15 @@
       <br>
       <%= f.label :dashboard_titles, 'Create Dashboard' %>
       <%= f.text_field :dashboard_titles %>
-      <br>
-      <%= f.file_field :csv %>
+
       <input type="button" name="next" class="next action-button" value="Next" />
     </fieldset>
     <fieldset>
       <h2 class="fs-title">Choose a chart type</h2>
       <div class="form-group">
-
+      <label class="form-charts">
         <%= f.radio_button :chart_type, :pie_chart %>
-        <%= image_tag("charts/piechart.png") %>
+        <%= image_tag("charts/piechart.png", class: "image-col-2") %>
       </label>
       <label class="form-charts">
         <%= f.radio_button :chart_type, :line_chart %>
@@ -49,7 +48,7 @@
       </label>
       <label class="form-charts">
         <%= f.radio_button :chart_type, :col_chart %>
-        <%= image_tag("charts/columnchart.png") %>
+        <%= image_tag("charts/columnchart.png", class: "image-col-2") %>
       </label>
       <label class="form-charts">
         <%= f.radio_button :chart_type, :bar_chart %>
@@ -64,7 +63,7 @@
     <div class ="form-group">
       <label class="charts-theme">
         <%= f.radio_button :colorscheme, :spring %>
-        <%= image_tag("charts/spring.png") %>
+        <%= image_tag("charts/spring.png", class: "image-col-2") %>
       </label>
       <label class="charts-theme">
         <%= f.radio_button :colorscheme, :summer %>
@@ -72,7 +71,7 @@
       </label>
       <label class="charts-theme">
         <%= f.radio_button :colorscheme, :autumn %>
-        <%= image_tag("charts/autumn.png") %>
+        <%= image_tag("charts/autumn.png", class: "image-col-2") %>
       </label>
       <label class="charts-theme">
         <%= f.radio_button :colorscheme, :winter %>
