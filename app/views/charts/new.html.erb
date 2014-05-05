@@ -1,7 +1,7 @@
 <!-- To be taken off -->
 <!-- multistep form -->
 <%= javascript_tag "var dashboards = #{current_user.dashboards.map(&:title).to_json}" %>
-<%= form_for @chart, html: { multipart: true, id: 'msform' } do |f| %>
+<%= form_for @chart, class: "form-vertical", html: { multipart: true, id: 'msform' } do |f| %>
   <!-- progressbar -->
   <ul id="progressbar">
     <li class="active">Start Creating</li>
@@ -100,19 +100,21 @@
     <input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
   <fieldset>
+    <div class="form-group">
     <%= f.label :name, "Add a Title" %>
-    <%= f.text_field :name, :autofocus => true, :placeholder => "My New Awesome Chart" %>
+    <%= f.text_field :name, :autofocus => true, :placeholder => "My New Awesome Chart", class: "form-control" %>
     <br>
     <%= f.label :description, 'Add a description' %>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: 'form-control' %>
     <br>
     <br>
     <%= f.label :dashboard_titles, "Create New Board" %>
-    <%= f.text_field :dashboard_titles, class: 'dashboards' %>
+    <%= f.text_field :dashboard_titles, class: 'form-control dashboards' %>
     <br />
     <%= f.hidden_field :table_data, value: "xxxx", class: "hidden-field" %>
     <input type="button" name="previous" class="previous action-button" value="Previous" />
     <%= f.submit "Create", class: "action-button" %>
+  </div>
   </fieldset>
 <% end %>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

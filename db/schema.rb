@@ -42,10 +42,12 @@ ActiveRecord::Schema.define(version: 20140504182111) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id_id"
     t.integer  "user_id"
   end
 
   add_index "dashboards", ["user_id"], name: "index_dashboards_on_user_id", using: :btree
+  add_index "dashboards", ["user_id_id"], name: "index_dashboards_on_user_id_id", using: :btree
 
   create_table "datapoints", force: true do |t|
     t.string   "x"
