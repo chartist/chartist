@@ -99,5 +99,4 @@ class Chart < ActiveRecord::Base
         all
       end
     end
-
   end
