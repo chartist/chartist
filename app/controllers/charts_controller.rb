@@ -10,7 +10,6 @@ class ChartsController < ApplicationController
     @chart = Chart.new params[:chart].permit(:name, :chart_type, :csv, :dashboard_titles, :colorscheme, :table_data)
     @chart.user = current_user
     if @chart.save
-      @chart.csv.destroy
       redirect_to chart_path(@chart)
     else
       flash[:error] = "Oops! something went wrong"
