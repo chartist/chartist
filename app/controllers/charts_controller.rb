@@ -7,7 +7,7 @@ class ChartsController < ApplicationController
   end
 
   def create
-    @chart = Chart.new params[:chart].permit(:name, :chart_type, :csv, :dashboard_titles, :colorscheme)
+    @chart = Chart.new params[:chart].permit(:name, :chart_type, :csv, :dashboard_titles, :colorscheme, :table_data)
     @chart.user = current_user
     if @chart.save
       @chart.csv.destroy

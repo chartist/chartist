@@ -8,14 +8,14 @@ gem 'pg'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'paperclip', github: 'thoughtbot/paperclip'
-gem 'aws-sdk'
+# gem 'aws-sdk'
 gem 'font-awesome-sass'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-gem 'geocoder'
-gem 'websocket-rails'
+# gem 'geocoder'
+# gem 'websocket-rails'
 gem "chartkick"
 gem 'jquery-rails'
-gem 'smarter_csv'
+# gem 'smarter_csv'
 
 gem 'sunspot_rails'
 
@@ -31,6 +31,11 @@ gem 'omniauth-google-oauth2'
 
 gem 'groupdate'
 gem 'chronic'
+
+gem 'roo'
+gem 'spreadsheet'
+
+
 
 
 
@@ -55,7 +60,7 @@ end
 
 group :test do
   # gem 'webmock'
-  gem "sunspot_test"
+  # gem "sunspot_test"
 end
 
 
@@ -78,7 +83,7 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-gem 'github-pages'
+# gem 'github-pages'
 
 
 group :doc do

@@ -10,9 +10,9 @@ class Chart < ActiveRecord::Base
 
   has_attached_file :csv, :default_url => "/images/missing.csv"
   validates_attachment :csv,
-    content_type: {content_type: 'text/csv'},
+    content_type: {content_type: ['text/csv', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']},
     size: {in: 0..2.megabytes},
-    presence: true,
+    # presence: true,
   if: :new_record?
 
 
@@ -26,39 +26,45 @@ class Chart < ActiveRecord::Base
     after_save :prepare_chart
 
     enum chart_type: [:pie_chart, :line_chart, :col_chart, :bar_chart]
+
     enum colorscheme: [:spring, :summer, :autumn, :winter]
 
+    # enum x_type: [:normal, :date]
+
+
     def prepare_chart
+      self.colorscheme ||= 0
+      generate_dashboards
       return true unless csv.present?
       create_series
       create_datapoints
-      generate_dashboards
-      self.colorscheme ||= 0
     end
 
-    def create_series
-      csv_headers = CSV.read(csv.path).first
+    def create_series(string = nil)
+      input = string || csv.path
+      processor = CSVProcessor.new(input, string.nil?)
+      csv_headers = processor.process.first
       csv_headers[1...csv_headers.size].each_with_index do |header, i|
-        Series.create(name: header, order: i+1, chart_id: self.id)
+        self.series << Series.create(name: header, order: i+1)
       end
     end
 
-    def create_datapoints
-      processor = CSVProcessor.new(csv.path)
-      processor.process.each do |row|
+    def create_datapoints(string = nil)
+      input = string || csv.path
+      processor = CSVProcessor.new(input, string.nil?)
+      series_ids = self.series.map(&:id)
+      processor.process[1..-1].each do |row|
         (1...row.size).each do |series_order|
-          current_series = Series.where(chart_id: self.id, order: series_order).first
-          Datapoint.create(x: row.values[0], y: row.values[series_order], chart_id: self.id, series_id: current_series.id)
+          self.datapoints << Datapoint.create(x: row[0], y: row[series_order], series_id: series_ids[series_order-1])
         end
       end
-      csv.destroy
+      csv.destroy unless string
     end
 
-    # def table_data=(json)
-    #   data = JSON.parse(json)
-    #   data.each do |row|
-    #   end
-    # end
+    def table_data=(string)
+      create_series(string)
+      create_datapoints(string)
+    end
 
 
     def generate_dashboards
@@ -73,7 +79,7 @@ class Chart < ActiveRecord::Base
       if self.pie_chart?
         self.datapoints.group(:x).sum(:y)
       else
-        self.series.reverse.map { |series|
+        self.series.map { |series|
           { name: series.name, data: series.datapoints.group(:x).sum(:y) }
         }
       end

@@ -30,9 +30,9 @@ describe "Charts API" do
       get chart_path(line_chart, format: :json)
       expect(response).to be_success
       chart_data = JSON.parse(response.body)
-      apr_23 = "2014-12-23 12:00:00.000000"
+      apr_23 = "2014-12-23"
       expect(chart_data[0]['data'][apr_23]).to eq 5
-      next_tuesday = "2014-05-06 11:00:00.000000"
+      next_tuesday = "2014-05-06"
       expect(chart_data[0]['data'][next_tuesday]).to eq 45
     end
 
@@ -42,10 +42,10 @@ describe "Charts API" do
       get chart_path(mult_chart, format: :json)
       expect(response).to be_success
       chart_data = JSON.parse(response.body)
-      expect(chart_data[0]['name']).to eq 'Product A'
-      expect(chart_data[1]['name']).to eq 'Product B'
-      expect(chart_data[0]['data']['2014-12-24 12:00:00.000000']).to eq 7
-      expect(chart_data[1]['data']['2014-12-24 12:00:00.000000']).to eq 17
+      expect(chart_data[0]['name']).to eq 'Product B'
+      expect(chart_data[1]['name']).to eq 'Product A'
+      expect(chart_data[0]['data']['2014-12-24']).to eq 7
+      expect(chart_data[1]['data']['2014-12-24']).to eq 17
     end
   end
 end

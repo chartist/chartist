@@ -6,6 +6,7 @@
         <%= @chart.name %>
       </div>
       <div class = "panel-body">
+        <%= @chart.datapoints.first.x.class %>
         <%= render @chart %>
         <%= render 'layouts/share' %>
       </div>

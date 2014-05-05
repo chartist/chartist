@@ -1,6 +1,4 @@
 <!-- To be taken off -->
-<div id="example" class="handsontable"></div><br>
-<a href='#' id='download'>Download</a><br>
 <!-- multistep form -->
 <%= form_for @chart, html: { multipart: true, id: 'msform' } do |f| %>
   <!-- progressbar -->
@@ -14,8 +12,9 @@
   <fieldset>
     <h2 class="fs-title">Import Sources</h2>
     <%= f.file_field :csv %>
-    <div class="form-group">    
-      <textarea rows="3" type="text" placeholder="Enter your data"></textarea>
+    <div class="form-group">
+      <div id="example" class="handsontable"></div><br>
+      <a href='#' id='download'>Download</a><br>
       <input type="button" name="next" class="next action-button" value="Next" />
     </div>
   </fieldset>
@@ -76,6 +75,7 @@
     <%= f.label :dashboard_titles, "Create New Board" %>
     <%= f.text_field :dashboard_titles %>
     <br />
+    <%= f.hidden_field :table_data, value: "xxxx", class: "hidden-field" %>
     <input type="button" name="previous" class="previous action-button" value="Previous" />
     <%= f.submit "Create", class: "action-button" %>
   </fieldset>
