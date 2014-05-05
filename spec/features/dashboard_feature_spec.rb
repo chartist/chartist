@@ -19,7 +19,7 @@ describe "Dashboards" do
 
     it "adds dashboards to that chart" do
       visit "/charts"
-      expect(page).to have_content 'miami'
+      expect(page).to have_content 'food'
     end
   end
 
@@ -30,13 +30,13 @@ describe "Dashboards" do
     end
 
     it "shows them" do
-      expect(page).to have_link('miami')
+      expect(page).to have_link('food')
     end
 
     it "shows only the charts associated with that board" do
-      click_link 'miami'
-      expect(page).not_to have_content 'food'
-      expect(page).to have_content "miami"
+      click_link 'food'
+      expect(page).not_to have_content 'miami'
+      expect(page).to have_content "food"
     end
   end
 end
