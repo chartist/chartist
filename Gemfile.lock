@@ -328,8 +328,6 @@ GEM
     websocket-driver (0.3.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
-    zurb-ink-rails (1.0.5)
-      railties (>= 3.2, < 5.0)
 
 PLATFORMS
   ruby
@@ -372,4 +370,3 @@ DEPENDENCIES
   sunspot_solr
   turbolinks
   uglifier
-  zurb-ink-rails (~> 1.0.5)
