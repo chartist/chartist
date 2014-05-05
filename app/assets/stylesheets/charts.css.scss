@@ -60,6 +60,31 @@
   outline: 0;
 }
 
+.btn {
+  margin-bottom: 10px;
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input#chart_csv {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
 /*headings*/
 .fs-title {
   font-size: 20px;

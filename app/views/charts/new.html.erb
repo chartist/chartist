@@ -13,11 +13,30 @@
   <!-- fieldsets -->
   <fieldset>
     <h2 class="fs-title">Import Sources</h2>
-    <%= f.file_field :csv %>
-    <div class="form-group">    
-      <textarea rows="3" type="text" placeholder="Enter your data"></textarea>
-      <input type="button" name="next" class="next action-button" value="Next" />
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <h3 class="panel-title pull-left">Upload CSV</h3>        
+      </div>
+      <div class="panel-body">
+      <div class="input-group">
+          <span class="input-group-btn">
+            <span class="btn btn-default btn-file">
+              Browse  <%= f.file_field :csv %>
+            </span>
+          </span>
+          <input type="text" class="form-control" readonly="">
+        </div>
+      </div>
     </div>
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <h3 class="panel-title pull-left">Import CSV</h3>
+      </div>
+      <div class="panel-body">
+        <textarea rows="3" type="text" placeholder="Enter your data"></textarea>
+      </div>
+    </div>
+    <input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
   <fieldset>
     <h2 class="fs-title">What chart are you feeling today?</h2>
