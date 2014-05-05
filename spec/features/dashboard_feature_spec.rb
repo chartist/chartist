@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe "Dashboards" do
 
-  let(:user) { create(:user, email: "foo@bar.com") }
-  let(:pie_chart) {create(:pie_chart, user: user, dashboard_titles: "food")}
+  let(:user) { create(:user, email: "foo@bar.com", username: "foobartastic") }
+  let!(:pie_chart) {create(:pie_chart, user: user, dashboard_titles: "food")}
   let!(:chart_dashboards) {create(:chart_with_dashboards, user: user)}
 
   before do
@@ -20,6 +20,12 @@ describe "Dashboards" do
     it "adds dashboards to that chart" do
       visit chart_path(pie_chart)
       expect(page).to have_content 'food'
+    end
+
+    it "adds the dashboard to the user's default dashboard" do
+
+      visit "/dashboards/9-foobartastic"
+      expect(page).to have_content "Pie chart"
     end
   end
 
