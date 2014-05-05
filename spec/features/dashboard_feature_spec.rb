@@ -6,20 +6,19 @@ describe "Dashboards" do
 
   before do
     login_as user
+    create(:chart_with_dashboards, user: user, dashboard_titles: "foobar")
   end
 
   context "when creating a chart" do
 
     it "can add to a dashboard" do
       visit "/charts/new"
-      expect(page).to have_content "Dashboard"
+      expect(page).to have_content "Pick a Board"
     end
 
     it "adds dashboards to that chart" do
-      visit "/charts/new"
-      add_pie_chart('Pie chart', 'uk london')
-
-      expect(page).to have_content 'uk london'
+      visit "/charts"
+      expect(page).to have_content 'foobar'
     end
   end
 
@@ -27,7 +26,6 @@ describe "Dashboards" do
 
     before do
       create(:chart_with_dashboards, user: user)
-      create(:chart_with_dashboards, user: user, dashboard_titles: "foobar")
       visit "/charts"
     end
 
