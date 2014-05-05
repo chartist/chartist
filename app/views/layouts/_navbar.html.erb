@@ -16,6 +16,11 @@
         <li><%= link_to new_chart_path do%>
           <i class="fa fa-download"></i> New Chart
         <% end %>
+        <li>
+          <%= form_tag charts_path, :method => :get do %>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", :name => nil %>
+          <% end %>
         </li>
       </ul>
 

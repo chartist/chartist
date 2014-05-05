@@ -97,6 +97,7 @@ describe 'Managing charts' do
     expect(page).to have_css ".panel-heading", text: 'Bla'
   end
 
+
     it 'user can only delete own charts' do
       login_as hacker
       visit chart_path(chart)

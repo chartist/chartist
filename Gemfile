@@ -17,6 +17,13 @@ gem "chartkick"
 gem 'jquery-rails'
 gem 'smarter_csv'
 
+gem 'sunspot_rails'
+
+
+group :development do 
+  gem 'sunspot_solr'
+end
+
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
@@ -24,6 +31,7 @@ gem 'omniauth-google-oauth2'
 
 gem 'groupdate'
 gem 'chronic'
+
 
 
 
@@ -42,6 +50,7 @@ group :development, :test do
   gem 'annotate', ">=2.6.0"
   gem 'capybara-email'
   gem 'mailcatcher'
+  gem 'progress_bar'
 end
 
 group :test do
