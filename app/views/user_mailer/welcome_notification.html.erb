@@ -1,3 +1,29 @@
-<p>Hi <%= @user.username %>,</p> 
-<p>Welcome to Chartist!</p>
-<p>From the Chartist Team</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width"/>
+
+    <style type="text/css">
+
+      body {
+      	font-family: Arial;
+      	font-size: 12px;
+      	padding: 20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <table class="body">
+      <tr>
+        <td class="center" align="center" valign="top">
+          	<p>Hi <%= @user.username %>,</p>
+			<p>Welcome to Chartist! We hope you have making beautiful charts on the go.</p>
+			<p>We have created <a href="#">a handy guide</a> to help you get started. If you need help <a href="#">contact one of our friendly team</a>.</p>
+			<p>From the Chartist Team.</p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

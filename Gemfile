@@ -16,9 +16,7 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem "chartkick"
 gem 'jquery-rails'
 # gem 'smarter_csv'
-
 gem 'sunspot_rails'
-
 
 group :development do
   gem 'sunspot_solr'
