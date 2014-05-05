@@ -61,6 +61,7 @@ class Chart < ActiveRecord::Base
     end
 
 
+
     def generate_dashboards
       if dashboard_titles
         dashboard_titles << " #{self.user.username}"
