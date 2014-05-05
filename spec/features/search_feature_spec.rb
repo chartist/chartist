@@ -20,7 +20,7 @@ describe "Search engine" do
 		expect(page).not_to have_content 'Mortality rates'
 	end
 
-	it 'shows results for dashboards' do
+	xit 'shows results for dashboards' do
 		fill_in 'search', with: 'miami'
 		click_button 'Search'
 		expect(page).to have_content 'US chart'
