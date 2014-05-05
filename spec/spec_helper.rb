@@ -89,3 +89,9 @@ def add_pie_chart(name, dashboard_titles)
   # click_button 'Next'
   click_button 'Generate'
 end
+
+def date_of_next(day)
+  date  = Date.parse(day)
+  delta = date > Date.today ? 0 : 7
+  date + delta
+end
