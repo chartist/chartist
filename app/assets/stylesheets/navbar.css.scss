@@ -29,7 +29,6 @@
 }
 
 /* background */
-
 .navbar {
   font-weight: 300;
   background: $accent; /* Old browsers */
@@ -46,15 +45,23 @@
 .navbar-nav {
   margin-left: -15px;
 }
+
+.navbar-nav > li > a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .navbar-default .navbar-nav > li > a {
   color: #ffffff;
   font-weight: 400;
   background-color: $accent;
+  text-decoration: none;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
   color: #ffffff;
   font-weight: 400;
+  text-decoration: none;
 }
 
 
@@ -66,4 +73,25 @@
 
 .navbar-default .navbar-nav .navbar-username {
   font-weight: 400;
+}
+
+.navbar-default .navbar-nav > .open > a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+  background-color: $accent-lighter;
+}
+
+.navbar-default .navbar-nav > .open > a:hover, {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+  background-color: $accent-lighter;
+}
+
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+  background-color: $accent-lighter;
 }
