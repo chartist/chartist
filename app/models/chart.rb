@@ -62,9 +62,15 @@ class Chart < ActiveRecord::Base
 
 
     def generate_dashboards
-      dashboard_titles ||= "#{dashboard_titles} #{self.user.username}"
-      dashboard_titles.split.each do |title|
-        self.dashboards << Dashboard.find_or_create_by(title: title, user_id: self.user.id)
+      # dashboard_titles << " #{self.user.username}" if dashboard_titles
+      # dashboard_titles = " #{self.user.username}" if dashboard_titles.nil?
+      if dashboard_titles
+        dashboard_titles << " #{self.user.username}"
+        dashboard_titles.split.each do |title|
+          self.dashboards << Dashboard.find_or_create_by(title: title, user_id: self.user.id)
+        end
+      else
+        self.dashboards << Dashboard.find_or_create_by(title: self.user.username, user_id: self.user.id)
       end
     end
 

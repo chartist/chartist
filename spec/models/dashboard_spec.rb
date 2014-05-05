@@ -7,8 +7,8 @@ describe Dashboard do
     let!(:chart) { create(:chart_with_dashboards, user: user) }
 
     it 'belongs to user on creation' do
-      expect(user.dashboards.count).to eq 1
-      expect(user.dashboards.first.title).to eq 'foo'
+      expect(user.dashboards.count).to eq 4
+      expect(user.dashboards.first.title).to eq 'miami'
     end
   end
 
