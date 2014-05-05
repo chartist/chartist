@@ -1,5 +1,6 @@
 <!-- To be taken off -->
 <!-- multistep form -->
+<%= javascript_tag "var dashboards = #{current_user.dashboards.map(&:title).to_json}" %>
 <%= form_for @chart, html: { multipart: true, id: 'msform' } do |f| %>
   <!-- progressbar -->
   <ul id="progressbar">
@@ -73,7 +74,7 @@
     <br />
     <br>
     <%= f.label :dashboard_titles, "Create New Board" %>
-    <%= f.text_field :dashboard_titles %>
+    <%= f.text_field :dashboard_titles, class: 'dashboards' %>
     <br />
     <%= f.hidden_field :table_data, value: "xxxx", class: "hidden-field" %>
     <input type="button" name="previous" class="previous action-button" value="Previous" />
