@@ -1,0 +1,134 @@
+May 5, 2014 10:39:18 AM org.apache.solr.core.SolrCore initIndex
+WARNING: [development] WARNING: Solr index directory '/Users/duboff/Projects/chartist/solr/./development/data/index/' is locked.  Unlocking...
+May 5, 2014 10:39:18 AM org.apache.solr.core.CoreContainer recordAndThrow
+SEVERE: Unable to create core: development
+org.apache.solr.common.SolrException: Cannot forcefully unlock a NativeFSLock which is held by another indexer component: /Users/duboff/Projects/chartist/solr/./development/data/index/write.lock
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:806)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:619)
+	at org.apache.solr.core.CoreContainer.createFromLocal(CoreContainer.java:1021)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:1051)
+	at org.apache.solr.core.CoreContainer$3.call(CoreContainer.java:634)
+	at org.apache.solr.core.CoreContainer$3.call(CoreContainer.java:629)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:695)
+Caused by: org.apache.lucene.store.LockReleaseFailedException: Cannot forcefully unlock a NativeFSLock which is held by another indexer component: /Users/duboff/Projects/chartist/solr/./development/data/index/write.lock
+	at org.apache.lucene.store.NativeFSLock.release(NativeFSLockFactory.java:295)
+	at org.apache.lucene.index.IndexWriter.unlock(IndexWriter.java:4089)
+	at org.apache.solr.core.SolrCore.initIndex(SolrCore.java:479)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:730)
+	... 13 more
+May 5, 2014 10:39:18 AM org.apache.solr.common.SolrException log
+SEVERE: null:org.apache.solr.common.SolrException: Unable to create core: development
+	at org.apache.solr.core.CoreContainer.recordAndThrow(CoreContainer.java:1672)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:1057)
+	at org.apache.solr.core.CoreContainer$3.call(CoreContainer.java:634)
+	at org.apache.solr.core.CoreContainer$3.call(CoreContainer.java:629)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:695)
+Caused by: org.apache.solr.common.SolrException: Cannot forcefully unlock a NativeFSLock which is held by another indexer component: /Users/duboff/Projects/chartist/solr/./development/data/index/write.lock
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:806)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:619)
+	at org.apache.solr.core.CoreContainer.createFromLocal(CoreContainer.java:1021)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:1051)
+	... 10 more
+Caused by: org.apache.lucene.store.LockReleaseFailedException: Cannot forcefully unlock a NativeFSLock which is held by another indexer component: /Users/duboff/Projects/chartist/solr/./development/data/index/write.lock
+	at org.apache.lucene.store.NativeFSLock.release(NativeFSLockFactory.java:295)
+	at org.apache.lucene.index.IndexWriter.unlock(IndexWriter.java:4089)
+	at org.apache.solr.core.SolrCore.initIndex(SolrCore.java:479)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:730)
+	... 13 more
+
+May 5, 2014 10:41:19 AM org.apache.solr.core.CachingDirectoryFactory close
+SEVERE: Timeout waiting for all directory ref counts to be released
+May 5, 2014 10:41:19 AM org.apache.solr.core.CoreContainer recordAndThrow
+SEVERE: Unable to create core: test
+org.apache.solr.common.SolrException: Error opening new searcher
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:806)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:619)
+	at org.apache.solr.core.CoreContainer.createFromLocal(CoreContainer.java:1021)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:1051)
+	at org.apache.solr.core.CoreContainer$3.call(CoreContainer.java:634)
+	at org.apache.solr.core.CoreContainer$3.call(CoreContainer.java:629)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:695)
+Caused by: org.apache.solr.common.SolrException: Error opening new searcher
+	at org.apache.solr.core.SolrCore.openNewSearcher(SolrCore.java:1415)
+	at org.apache.solr.core.SolrCore.getSearcher(SolrCore.java:1527)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:781)
+	... 13 more
+Caused by: java.io.FileNotFoundException: /Users/duboff/Projects/chartist/solr/test/data/index/segments_7m (No such file or directory)
+	at java.io.RandomAccessFile.open(Native Method)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:216)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:409)
+	at org.apache.lucene.store.NIOFSDirectory$NIOFSIndexInput.<init>(NIOFSDirectory.java:123)
+	at org.apache.lucene.store.NIOFSDirectory.openInput(NIOFSDirectory.java:80)
+	at org.apache.lucene.store.NRTCachingDirectory.openInput(NRTCachingDirectory.java:232)
+	at org.apache.lucene.index.SegmentInfos.read(SegmentInfos.java:285)
+	at org.apache.lucene.index.StandardDirectoryReader$1.doBody(StandardDirectoryReader.java:56)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:783)
+	at org.apache.lucene.index.StandardDirectoryReader.open(StandardDirectoryReader.java:52)
+	at org.apache.lucene.index.DirectoryReader.open(DirectoryReader.java:87)
+	at org.apache.solr.core.StandardIndexReaderFactory.newReader(StandardIndexReaderFactory.java:34)
+	at org.apache.solr.search.SolrIndexSearcher.<init>(SolrIndexSearcher.java:124)
+	at org.apache.solr.core.SolrCore.openNewSearcher(SolrCore.java:1391)
+	... 15 more
+May 5, 2014 10:41:19 AM org.apache.solr.common.SolrException log
+SEVERE: null:org.apache.solr.common.SolrException: Unable to create core: test
+	at org.apache.solr.core.CoreContainer.recordAndThrow(CoreContainer.java:1672)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:1057)
+	at org.apache.solr.core.CoreContainer$3.call(CoreContainer.java:634)
+	at org.apache.solr.core.CoreContainer$3.call(CoreContainer.java:629)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:439)
+	at java.util.concurrent.FutureTask$Sync.innerRun(FutureTask.java:303)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:138)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:895)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:918)
+	at java.lang.Thread.run(Thread.java:695)
+Caused by: org.apache.solr.common.SolrException: Error opening new searcher
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:806)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:619)
+	at org.apache.solr.core.CoreContainer.createFromLocal(CoreContainer.java:1021)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:1051)
+	... 10 more
+Caused by: org.apache.solr.common.SolrException: Error opening new searcher
+	at org.apache.solr.core.SolrCore.openNewSearcher(SolrCore.java:1415)
+	at org.apache.solr.core.SolrCore.getSearcher(SolrCore.java:1527)
+	at org.apache.solr.core.SolrCore.<init>(SolrCore.java:781)
+	... 13 more
+Caused by: java.io.FileNotFoundException: /Users/duboff/Projects/chartist/solr/test/data/index/segments_7m (No such file or directory)
+	at java.io.RandomAccessFile.open(Native Method)
+	at java.io.RandomAccessFile.<init>(RandomAccessFile.java:216)
+	at org.apache.lucene.store.FSDirectory$FSIndexInput.<init>(FSDirectory.java:409)
+	at org.apache.lucene.store.NIOFSDirectory$NIOFSIndexInput.<init>(NIOFSDirectory.java:123)
+	at org.apache.lucene.store.NIOFSDirectory.openInput(NIOFSDirectory.java:80)
+	at org.apache.lucene.store.NRTCachingDirectory.openInput(NRTCachingDirectory.java:232)
+	at org.apache.lucene.index.SegmentInfos.read(SegmentInfos.java:285)
+	at org.apache.lucene.index.StandardDirectoryReader$1.doBody(StandardDirectoryReader.java:56)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:783)
+	at org.apache.lucene.index.StandardDirectoryReader.open(StandardDirectoryReader.java:52)
+	at org.apache.lucene.index.DirectoryReader.open(DirectoryReader.java:87)
+	at org.apache.solr.core.StandardIndexReaderFactory.newReader(StandardIndexReaderFactory.java:34)
+	at org.apache.solr.search.SolrIndexSearcher.<init>(SolrIndexSearcher.java:124)
+	at org.apache.solr.core.SolrCore.openNewSearcher(SolrCore.java:1391)
+	... 15 more
+

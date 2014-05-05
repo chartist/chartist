@@ -20,7 +20,7 @@ gem 'smarter_csv'
 gem 'sunspot_rails'
 
 
-group :development do 
+group :development do
   gem 'sunspot_solr'
 end
 
@@ -54,7 +54,8 @@ group :development, :test do
 end
 
 group :test do
-  gem 'webmock'
+  # gem 'webmock'
+  gem "sunspot_test"
 end
 
 

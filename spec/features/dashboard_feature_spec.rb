@@ -6,7 +6,8 @@ describe "Dashboards" do
 
   before do
     login_as user
-    create(:chart_with_dashboards, user: user, dashboard_titles: "foobar")
+    create(:chart_with_dashboards, user: user)
+    create(:pie_chart, user: user, dashboard_titles: "food")
   end
 
   context "when creating a chart" do
@@ -18,14 +19,13 @@ describe "Dashboards" do
 
     it "adds dashboards to that chart" do
       visit "/charts"
-      expect(page).to have_content 'foobar'
+      expect(page).to have_content 'miami'
     end
   end
 
   context "Looking for dashboards" do
 
     before do
-      create(:chart_with_dashboards, user: user)
       visit "/charts"
     end
 
@@ -34,9 +34,9 @@ describe "Dashboards" do
     end
 
     it "shows only the charts associated with that board" do
-      click_link 'foobar'
-      expect(page).not_to have_content "miami"
-      expect(page).to have_content "foobar"
+      click_link 'miami'
+      expect(page).not_to have_content 'food'
+      expect(page).to have_content "miami"
     end
   end
 end
