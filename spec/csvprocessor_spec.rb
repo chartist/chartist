@@ -21,7 +21,7 @@ describe CSVProcessor do
     end
 
     it 'parses the date' do
-      next_tuesday = (Time.now.next_week(:tuesday) + 60*60*12).strftime('%F')
+      next_tuesday = (date_of_next "Tuesday").strftime('%F')
       expect(processor2.process.last).to eq [next_tuesday, 45, 140]
     end
   end
