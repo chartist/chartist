@@ -17,11 +17,8 @@ gem "chartkick"
 gem 'jquery-rails'
 # gem 'smarter_csv'
 
-gem 'sunspot_rails'
-
 
 group :development do
-  gem 'sunspot_solr'
 end
 
 gem 'omniauth'

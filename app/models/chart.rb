@@ -18,19 +18,12 @@ class Chart < ActiveRecord::Base
 
     attr_accessor :dashboard_titles
 
-    searchable do
-      text :name
-    end
-
 
     after_save :prepare_chart
 
     enum chart_type: [:pie_chart, :line_chart, :col_chart, :bar_chart]
 
     enum colorscheme: [:spring, :summer, :autumn, :winter]
-
-    # enum x_type: [:normal, :date]
-
 
     def prepare_chart
       self.colorscheme ||= 0
@@ -97,6 +90,14 @@ class Chart < ActiveRecord::Base
 
     def to_param
       "#{id}-#{name.parameterize}"
+    end
+
+    def self.search(search)
+      if search
+        where("name like ?", "%#{search}%")
+      else
+        all
+      end
     end
 
   end

@@ -28,10 +28,7 @@ class ChartsController < ApplicationController
   end
 
   def index
-    @search = Chart.search do
-      fulltext params[:search]
-    end
-    @charts = @search.results
+    @charts = Chart.search(params[:search])
   end
 
   def destroy
