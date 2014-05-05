@@ -1,14 +1,5 @@
 <%= graphic_of(chart).html_safe %>
 
-<p>
-	widget: <input name="widget" value="<iframe src='<%= chart_widget_url(chart) %>' frameBorder='0'></iframe>" style="width: 40%;">
-</p>
-<% if chart.dashboards.any? %>
-  <% chart.dashboards.each do |dashboard| %>
-    <%= link_to dashboard.title, dashboard_path(dashboard) %>
-  <% end %>
-<% end %>
-<div class="chart-author"><strong>Created by <%= chart.user.username if chart.user %></strong></div> 
 
 
 

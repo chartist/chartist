@@ -77,26 +77,28 @@ describe 'Managing charts' do
       expect(Chart.count).to eq(0)
     end
 
+    it 'creator can edit chart title' do
+      login_as user
+      visit chart_path(chart)
+      click_link 'edit-btn'
+      expect(current_path).to eq chart_path(chart) + '/edit'
+      fill_in 'Name', with: 'Bla'
+      click_button 'Edit'
+      expect(chart_path(chart)).to eq "/charts/#{chart.to_param}"
+      expect(page).to have_css ".caption", text: 'Bla'
+    end
+
+    
+  end
+
+  context "Deleting" do
+
+  
     it 'user can only delete own charts' do
       login_as hacker
       visit chart_path(chart)
       expect(page).not_to have_css '#delete-btn'
     end
-  end
-
-  context "Deleting" do
-
-  it 'creator can edit chart title' do
-    login_as user
-    visit chart_path(chart)
-    click_link 'edit-btn'
-    expect(current_path).to eq chart_path(chart) + '/edit'
-    fill_in 'Name', with: 'Bla'
-    click_button 'Edit'
-    expect(chart_path(chart)).to eq "/charts/#{chart.to_param}"
-    expect(page).to have_css ".panel-heading", text: 'Bla'
-  end
-
 
     it 'user can only delete own charts' do
       login_as hacker

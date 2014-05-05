@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140504182111) do
     t.datetime "csv_updated_at"
     t.integer  "user_id"
     t.integer  "colorscheme"
+    t.text     "description"
   end
 
   add_index "charts", ["user_id"], name: "index_charts_on_user_id", using: :btree

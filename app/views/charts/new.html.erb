@@ -14,6 +14,7 @@
     <h2 class="fs-title">Import Sources</h2>
     <%= f.file_field :csv %>
     <div class="form-group">
+
       <div id="example" class="handsontable"></div><br>
       <a href='#' id='download'>Download</a><br>
       <input type="button" name="next" class="next action-button" value="Next" />
@@ -23,6 +24,22 @@
     <h2 class="fs-title">What chart are you feeling today?</h2>
     <div class="form-group">
       <label class="form-charts">
+      <%= f.label :name, 'Add a title' %>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :description, 'Add a description' %>
+      <%= f.text_field :description %>
+      <br>
+      <%= f.label :dashboard_titles, 'Create Dashboard' %>
+      <%= f.text_field :dashboard_titles %>
+      <br>
+      <%= f.file_field :csv %>
+      <input type="button" name="next" class="next action-button" value="Next" />
+    </fieldset>
+    <fieldset>
+      <h2 class="fs-title">Choose a chart type</h2>
+      <div class="form-group">
+
         <%= f.radio_button :chart_type, :pie_chart %>
         <%= image_tag("charts/piechart.png") %>
       </label>
