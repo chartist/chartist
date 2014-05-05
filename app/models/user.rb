@@ -11,6 +11,12 @@ class User < ActiveRecord::Base
   has_many :charts
   has_many :dashboards
 
+  after_create :send_email
+
+  def send_email
+    UserMailer.welcome_notification.deliver
+  end
+
   def self.find_for_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
