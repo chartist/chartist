@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width"/>
@@ -7,23 +7,106 @@
     <style type="text/css">
 
       body {
-      	font-family: Arial;
-      	font-size: 12px;
-      	padding: 20px;
+        font-family: "Helvetica Neue", sans-serif;
+        font-size: 16px;
+        padding: 20px;
+        background: #dfdfdf;
+        color: #201f1f;
+      }
+
+      table {
+        width: 600px;
+        background: #ffffff;
+        margin: 0 auto;
+        padding: 15px;
+        border: 0px;
+        text-align: center;
+      }
+
+
+
+      tr.mailer-header {
+        text-align: center;
+      }
+
+      tr.mailer-header td {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #dfdfdf;
+      }
+
+      tr.mailer-body td {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #dfdfdf;
+      }
+
+      a {
+        color: #a52625;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #d44544;
+        text-decoration: underline;
+      }
+
+      p {
+        margin: 7px 0px;
+        line-height: 26px;
+      }
+
+      p.mailer-username {
+        font-size: 24px;
+        margin-top: 15px;
+      }
+
+      .mailer-footer {
+        font-size: 14px;
+        color: #a9a9a9;
+      }
+
+      .mailer-footer a {
+        color: #777777;
+      }
+
+      .mailer-footer a:hover {
+        color: #a9a9a9;
+      }
+
+      tr.mailer-footer p{
+        margin-top: 15px;
       }
 
     </style>
   </head>
   <body>
-    <table class="body">
-      <tr>
-        <td class="center" align="center" valign="top">
-          	<p>Hi <%= @user.username %>,</p>
-			<p>Welcome to Chartist! We hope you have making beautiful charts on the go.</p>
-			<p>We have created <a href="#">a handy guide</a> to help you get started. If you need help <a href="#">contact one of our friendly team</a>.</p>
-			<p>From the Chartist Team.</p>
+
+    <table>
+
+      <tr class="mailer-header">
+        <td>
+          <%= image_tag "mailer/logo.png" %>
         </td>
       </tr>
+
+      <tr class="mailer-body">
+        <td>
+          <p class="mailer-username">Hi <strong><%= @user.username %></strong>,</p>
+            <p>Welcome to Chartist! We hope you have fun making beautiful charts on the go.</p>
+            <p>We have created <a href="#">a handy guide</a> to help you get started. If you need help <a href="#">contact one of our friendly team members</a>.</p>
+            <p>&#8212; From <strong>the Chartist Team</strong> &#8212;</p>
+        </td>
+      </tr>
+
+      <tr class="mailer-footer">
+        <td>
+          <p><a href="#">Charti.st</a> &#8212; Follow us on <a href="#">twitter</a> and on our <a href="#">blog</a>.</p>
+        </td>
+      </tr>
+
+
     </table>
+    
+
+
   </body>
 </html>
