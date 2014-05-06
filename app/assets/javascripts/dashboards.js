@@ -23,15 +23,18 @@ $(document).ready(function() {
       };
     };
      
-     
-    $('.dashboards').typeahead({
-      hint: true,
-      highlight: true,
-      minLength: 1
-    },
-    {
-      name: 'dashboards',
-      displayKey: 'value',
-      source: substringMatcher(dashboards)
-    });
-    });
+    if(typeof dashboards === 'undefined') {
+      // do nothing
+    } else {
+      $('.dashboards').typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 1
+      },
+      {
+        name: 'dashboards',
+        displayKey: 'value',
+        source: substringMatcher(dashboards)
+      });
+    }
+  });
