@@ -10,7 +10,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'welcome@charti.st'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -232,9 +232,9 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :facebook, "1476282805921943", "0dfe0d7e0ea89f614f100715bc7153e8"
-  config.omniauth :linkedin, "7722gbu1wyz652", "WghP6FrIbTgv7LBG"
-  config.omniauth :google_oauth2, "534117741134-j3jpp4mjkhpa9k5rqc9qoua9lnd3edem.apps.googleusercontent.com", "z6YYlqqacwuU20Pgdi9FGwcT"
+  config.omniauth :facebook, Rails.application.secrets[:facebook_key], Rails.application.secrets[:facebook_token]
+  config.omniauth :linkedin, Rails.application.secrets[:linkedin_key], Rails.application.secrets[:linkedin_token]
+  config.omniauth :google_oauth2, Rails.application.secrets[:google_key], Rails.application.secrets[:google_token]
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
