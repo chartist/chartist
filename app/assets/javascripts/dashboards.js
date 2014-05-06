@@ -1,4 +1,7 @@
 $(document).ready(function() {
+ 
+
+
     var substringMatcher = function(strs) {
       return function findMatches(q, cb) {
         var matches, substringRegex;
@@ -22,6 +25,9 @@ $(document).ready(function() {
         cb(matches);
       };
     };
+    var results = null;
+    if (dashboards) {results = dashboards}
+    
      
      
     $('.dashboards').typeahead({
@@ -32,6 +38,6 @@ $(document).ready(function() {
     {
       name: 'dashboards',
       displayKey: 'value',
-      source: substringMatcher(dashboards)
+      source: substringMatcher(results)
     });
     });

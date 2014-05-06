@@ -13,8 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.easing.min
+//= utils
+//= jquery.gridster.min
+//= jquery.coords
+//= jquery.collision
+//= jquery.draggable
+//= jquery.gridster.with-extras.min
 //= turbolinks
 //= require bootstrap
 //= require canvas2image
 //= require typeahead
+//= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .

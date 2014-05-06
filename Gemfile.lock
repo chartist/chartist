@@ -365,6 +365,7 @@ DEPENDENCIES
   sass-rails
   sdoc
   spreadsheet
+  sprockets
   stripe!
   sunspot_rails
   sunspot_solr
