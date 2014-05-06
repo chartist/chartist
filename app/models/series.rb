@@ -5,4 +5,8 @@ class Series < ActiveRecord::Base
   def sorted
   	self.datapoints.map(&:x).sort
   end
+
+  def data
+		self.datapoints.group(:x).sum(:y)
+ 	end
 end
