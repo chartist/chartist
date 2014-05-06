@@ -30,12 +30,14 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? && current_user.dashboards.any? %>
-            <li><%= link_to user_dashboard(current_user) do %>
-                <i class="fa fa-folder-o"></i>
-                My Charts
-              <% end %>
-            </li>
+          <% if user_signed_in? %>
+            <% if current_user.dashboards.any? %>
+              <li><%= link_to user_dashboard(current_user) do %>
+                  <i class="fa fa-folder-o"></i>
+                  My Charts
+                <% end %>
+              </li>
+            <% end %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Welcome,
@@ -44,14 +46,14 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
-                  <%= link_to user_dashboard(current_user) do %>
+                  <%= link_to '#' do %>
                     <i class="glyphicon glyphicon-user"></i>
                     Profile
                   <% end %>
                 </li>
                 <li class="divider"></li>
                 <li>
-                  <%= link_to user_dashboard(current_user) do %>
+                  <%= link_to '#' do %>
                     <i class="fa fa-bar-chart-o"></i>
                     Charts
                   <% end %>
