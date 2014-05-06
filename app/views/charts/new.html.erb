@@ -10,13 +10,13 @@
   </ul>
   <!-- fieldsets -->
   <fieldset>
-    <h4>Choose one option below</h4>
+    <h5>There are three different options for uploading your data. Please choose whichever one works best for you.</h5>
     <div class="panel-group" id="accordion">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed">
-              Upload CSV or Excel file
+              Upload File
             </a>
           </h3>
         </div>
@@ -28,7 +28,7 @@
                   Browse <%= f.file_field :csv %>
                 </span>
               </span>
-              <input type="text" class="form-control filename" readonly="">
+              <input type="text" class="form-control filename">
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@
           <div class="panel-heading">
             <h3 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                Enter Data Manually
+                Enter Data
               </a>
             </h3>
           </div>
@@ -51,7 +51,7 @@
             <div class="panel-heading">
               <h3 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                Upload file from Google Docs
+                Link to Google Spreadsheet
               </a>
             </h3>
           </div>
