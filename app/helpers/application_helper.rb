@@ -5,6 +5,11 @@ module ApplicationHelper
     "http://gravatar.com/avatar/{gravatar_id}.png?s=300&d=mm"
   end
 
+  def user_dashboard(current_user)
+    dash = Dashboard.find_by(title: current_user.username)
+    dashboard_path(dash).html_safe
+  end
+
 end
 
 module Chartkick::Helper
