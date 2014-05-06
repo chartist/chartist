@@ -41,14 +41,39 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b63d3c', endColorstr='$accent',GradientType=0 ); /* IE6-9 */
 }
 
-/* links and text */
-.navbar-nav {
-  margin-left: -15px;
+/* search form */
+.navbar-default .navbar-form {
+  margin-bottom: 3px;
+  padding-top: 2px
 }
 
-.navbar-nav > li > a {
+/* buttons */
+.btn-default {
+  color: grey;
+}
+
+input:focus, button:focus {
+  box-shadow: none !important;
+  border: 1px solid #DDD !important;
+  outline: none !important;
+}
+
+/* links and text */
+.navbar-nav {
+  margin-left: -23px;
+}
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:focus {
   color: #ffffff;
   text-decoration: none;
+}
+
+
+.navbar-default .navbar-nav {
+  color: #ffffff;
+  font-weight: 400;
+  text-decoration: none;
+  margin-bottom: -5px;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -64,7 +89,6 @@
   text-decoration: none;
 }
 
-
 .navbar-default .navbar-text {
   color: #ffffff;
   margin: 0;
@@ -79,19 +103,19 @@
   color: #ffffff;
   text-decoration: none;
   font-weight: 400;
-  background-color: $accent-lighter;
+  background-color: $accent;
 }
 
 .navbar-default .navbar-nav > .open > a:hover, {
   color: #ffffff;
   text-decoration: none;
   font-weight: 400;
-  background-color: $accent-lighter;
+  background-color: transparent;
 }
 
 .navbar-default .navbar-nav > .open > a:focus {
   color: #ffffff;
   text-decoration: none;
   font-weight: 400;
-  background-color: $accent-lighter;
+  background-color: transparent;
 }
