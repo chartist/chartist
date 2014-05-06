@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'csvprocessor'
+require 'chronic'
 
 describe CSVProcessor do
 

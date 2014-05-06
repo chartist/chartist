@@ -19,6 +19,7 @@ class Chart < ActiveRecord::Base
     attr_accessor :dashboard_titles
 
 
+
     after_save :prepare_chart
 
     enum chart_type: [:pie_chart, :line_chart, :col_chart, :bar_chart]
@@ -60,14 +61,23 @@ class Chart < ActiveRecord::Base
     end
 
 
-    def generate_dashboards
-      unless dashboard_titles.nil?
-        dashboard_titles.split.each do |title|
-          self.dashboards << Dashboard.find_or_create_by(title: title, user_id: self.user.id)
-        end
 
+    def generate_dashboards
+      if dashboard_titles
+        dashboard_titles << " #{self.user.username}"
+        dashboard_titles.split.each do |title|
+          add_dashboards(title, user.id)
+        end
+      else
+        add_dashboards(self.user.username, user.id)
       end
     end
+
+    def add_dashboards(title, user)
+      self.dashboards << Dashboard.find_or_create_by(title: title, user_id: user)
+    end
+
+
 
     def generate_json
       if self.pie_chart?

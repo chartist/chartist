@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe 'Chart index page' do
 
-
-  let!(:chart) {create(:pie_chart, id: 1)}
-  let!(:pie_chart) { create(:pie_chart, id: 2) }
+	let(:user) { create(:user) }
+  let!(:chart) {create(:pie_chart, id: 1, user: user)}
+  let!(:pie_chart) { create(:pie_chart, id: 2, user: user)}
 
   before { visit '/charts' }
 
