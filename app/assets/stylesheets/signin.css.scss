@@ -1,6 +1,6 @@
 @import "mixins";
 
-.homepage-forms .panel {
+/* .homepage-forms .panel {
   width: 70%;
   margin: 5% auto;
   background: #ffffff;
@@ -17,10 +17,9 @@
   .homepage-forms .panel {
     width: 50%;
   }
-}
+} */
 
 .panel-body {
-  margin-top: 15px;
   padding: 20px;
 }
 
@@ -34,13 +33,18 @@
   border-right: 1px solid $medium-grey; 
 }
 
+@media (max-width: 992px) {
+  .column-border {
+    border-right: 0px;
+    border-bottom: 1px solid $medium-grey; 
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+}
+
 .form-footer {
   clear: both;
   text-align: center;
-}
-
-.form-signin {
-  width: 300px;
 }
 
 .form-rememberme {
