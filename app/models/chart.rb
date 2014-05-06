@@ -35,12 +35,17 @@ class Chart < ActiveRecord::Base
     end
 
     def create_series(string = nil)
-      input = string || csv.path
-      processor = CSVProcessor.new(input, string.nil?)
-      csv_headers = processor.process.first
+      # input = string || csv.path
+      # processor = CSVProcessor.new(input, string.nil?)
+      csv_headers = processor(string).process.first
       csv_headers[1...csv_headers.size].each_with_index do |header, i|
         self.series << Series.create(name: header, order: i+1)
       end
+    end
+
+    def processor(string = nil)
+      input = string || csv.path
+      CSVProcessor.new(input, string.nil?)
     end
 
     def create_datapoints(string = nil)
