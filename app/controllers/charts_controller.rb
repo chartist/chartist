@@ -43,7 +43,7 @@ class ChartsController < ApplicationController
   def update
     @chart = Chart.find params[:id]
     @chart.csv = nil
-    @chart.update! params[:chart].permit(:name, :chart_type, :dashboard_titles)
+    @chart.update! params[:chart].permit(:name, :description, :chart_type, :dashboard_titles)
     redirect_to chart_path(@chart)
   end
 end
