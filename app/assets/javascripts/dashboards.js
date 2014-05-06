@@ -1,4 +1,7 @@
 $(document).ready(function() {
+ 
+
+
     var substringMatcher = function(strs) {
       return function findMatches(q, cb) {
         var matches, substringRegex;
@@ -22,7 +25,7 @@ $(document).ready(function() {
         cb(matches);
       };
     };
-     
+
     if(typeof dashboards === 'undefined') {
       // do nothing
     } else {
@@ -38,3 +41,4 @@ $(document).ready(function() {
       });
     }
   });
+

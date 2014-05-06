@@ -34,25 +34,37 @@ class Chart < ActiveRecord::Base
       create_datapoints
     end
 
+    def rows(string)
+      row = first_processed_row(string)
+      row[1...row.size]
+    end
+
     def create_series(string = nil)
-      input = string || csv.path
-      processor = CSVProcessor.new(input, string.nil?)
-      csv_headers = processor.process.first
-      csv_headers[1...csv_headers.size].each_with_index do |header, i|
+      rows(string).each_with_index do |header, i|
         self.series << Series.create(name: header, order: i+1)
       end
     end
 
-    def create_datapoints(string = nil)
+    def processor(string = nil)
       input = string || csv.path
-      processor = CSVProcessor.new(input, string.nil?)
-      series_ids = self.series.map(&:id)
-      processor.process[1..-1].each do |row|
+      CSVProcessor.new(input, string.nil?)
+    end
+
+    def first_processed_row(string)
+      processor(string).process.first
+    end
+
+    def create_datapoints(string = nil)
+      processor(string).process[1..-1].each do |row|
         (1...row.size).each do |series_order|
           self.datapoints << Datapoint.create(x: row[0], y: row[series_order], series_id: series_ids[series_order-1])
         end
       end
       csv.destroy unless string
+    end
+
+    def series_ids
+      self.series.map(&:id)
     end
 
     def table_data=(string)
@@ -83,19 +95,31 @@ class Chart < ActiveRecord::Base
       if self.pie_chart?
         self.datapoints.group(:x).sum(:y)
       else
-        self.series.map { |series|
-          { name: series.name, data: series.datapoints.group(:x).sum(:y) }
-        }
+        self.series.map do |series|
+          { name: series.name, data: series.data }
+        end
       end
+    end
+
+    def csv_headers
+      [nil] + self.series.map(&:name)
     end
 
     def to_csv(options = {})
       CSV.generate(options) do |csv|
-        csv << [nil] + self.series.map(&:name)
-        self.series.first.datapoints.map(&:x).sort.each do |x|
-          csv << [x] + self.datapoints.where(x: x).map(&:y)
+        csv << csv_headers
+        series_sorted.each do |x|
+          csv << mapped_datapoints(x)
         end
       end
+    end
+
+    def mapped_datapoints(x)
+      [x] + self.datapoints.where(x: x).map(&:y)
+    end
+
+    def series_sorted
+      self.series.first.sorted
     end
 
     def to_param
