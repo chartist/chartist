@@ -10,55 +10,71 @@
       </button>
       <a class="navbar-brand" href="/charts"><%= image_tag "navbar/logo_pic.png" %>Chartist</a>
     </div>
-
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
         <li><%= link_to new_chart_path do%>
-          <i class="fa fa-plus fa-lg"></i> New Chart
-        <% end %>
-     
-       
-         <li>
-          <div class="col-sm-15 col-md-15 pull-left">
-          <%= form_tag charts_path, :method => :get, class: "navbar-form" do %>
-          <div class="input-group">
-            <%= text_field_tag :search, params[:search], class: "form-control", id: 'search', placeholder: "Search", autocomplete: "off" %>
-             <div class="input-group-btn">
-            <%= submit_tag "Search", :name => nil, class: "btn btn-default", id: 'search-btn' %>
-            </div>
-            </div>
+            <i class="fa fa-plus fa-lg"></i>
+            New Chart
           <% end %>
-          </div>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? && current_user.dashboards.any? %>
-          <li><%= link_to user_dashboard(current_user) do %>
-            <i class="fa fa-folder-o"></i> My Charts
-            <% end %>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Welcome, <%= current_user.username %> <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="/user/preferences"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
-              <li class="divider"></li>
-              <li><a href="/user/preferences"><i class="fa fa-bar-chart-o"></i> Charts</a></li>
-              <li class="divider"></li>
-              <li><a href="/help/support"><i class="fa fa-envelope-o"></i> Contact Support</a></li>
-              <li class="divider"></li>
-              <li><%= link_to destroy_user_session_path, method: 'delete' do %>
-              <i class="fa fa-power-off"></i> Sign Out </i>
+          <li>
+            <div class="col-sm-15 col-md-15 pull-left">
+              <%= form_tag charts_path, :method => :get, class: "navbar-form" do %>
+                <div class="input-group">
+                  <%= text_field_tag :search, params[:search], class: "form-control", id: 'search', placeholder: "Search", autocomplete: "off" %>
+                  <div class="input-group-btn">
+                    <%= submit_tag "Search", :name => nil, class: "btn btn-default", id: 'search-btn' %>
+                  </div>
+                </div>
               <% end %>
-              </li>
-              </ul>
+            </div>
           </li>
-        <% else %>
-          <li><%= link_to "Sign in", new_session_path(:user) %></li>
-          <li><%= link_to "Sign up", new_registration_path(:user) %></li>
-        <% end %>        
-      </ul>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? && current_user.dashboards.any? %>
+            <li><%= link_to user_dashboard(current_user) do %>
+                <i class="fa fa-folder-o"></i>
+                My Charts
+              <% end %>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Welcome,
+                <%= current_user.username %>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to user_dashboard(current_user) do %>
+                    <i class="glyphicon glyphicon-user"></i>
+                    Profile
+                  <% end %>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to user_dashboard(current_user) do %>
+                    <i class="fa fa-bar-chart-o"></i>
+                    Charts
+                  <% end %>
+                </li>
+                <li class="divider"></li>
+                <li><%= mail_to 'support@charti.st' do %>
+                    <i class="fa fa-envelope-o"></i>
+                    Support
+                  <% end %>
+                </li>
+                <li class="divider"></li>
+                <li><%= link_to destroy_user_session_path, method: 'delete' do %>
+                    <i class="fa fa-power-off"></i>
+                    Sign Out
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Sign in", new_session_path(:user) %></li>
+            <li><%= link_to "Sign up", new_registration_path(:user) %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
