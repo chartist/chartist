@@ -17,4 +17,5 @@
 //= require bootstrap
 //= require canvas2image
 //= require typeahead
+//= require zeroclipboard
 //= require_tree .

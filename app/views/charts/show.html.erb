@@ -23,10 +23,6 @@
           <% end %></p>
         </div>
 
-        <div class = "chart-share"> 
-          <input name="widget" class="form-control" value="<iframe src='<%= chart_widget_url(@chart)%>' frameBorder='0'></iframe>" style="width: 68%;">
-        </div>
-
         <div class = "chart-embed">
             <%= render 'layouts/share', :chart => @chart %>
         </div>
@@ -48,6 +44,8 @@
               </li>
             </ul>
           </div>
+
+          <button type="button" class='my_clip_button btn btn-default' data-clipboard-text="<iframe src='<%= chart_widget_url(@chart)%>' frameBorder='0'></iframe>" id='d_clip_button' title='Click me to copy to embed the chart.'><%= icon("fa fa-files-o") %> Embed chart</button>
          
           <%= link_to icon('fa fa-pencil') + ' Edit', edit_chart_path(@chart), type: "button", class: 'btn btn-default', id: 'edit-btn' if @chart.user == current_user %>
    

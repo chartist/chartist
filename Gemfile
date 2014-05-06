@@ -28,7 +28,7 @@ gem 'chronic'
 gem 'roo'
 gem 'spreadsheet'
 
-
+gem 'zeroclipboard-rails'
 
 
 

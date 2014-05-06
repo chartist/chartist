@@ -7,21 +7,22 @@ var data = [
 ];
 
 $(document).ready(function() {
-
-    $('#example').handsontable({
-        data: data,
-        minSpareRows: 0,
-        startCols: 10,
-        colWidths: [80, 80, 80, 80, 80, 80],
-        colHeaders: true,
-        contextMenu: false
-    });
-    
-    $('#example table').addClass('table');
-    $('#example table').addClass('table-bordered');
-    $('#example table').addClass('table-striped');
-    $('#example table').addClass('table-hover');
-    $('#example table').addClass('table-condensed');
+    if($('#example').length) {
+        $('#example').handsontable({
+            data: data,
+            minSpareRows: 0,
+            startCols: 10,
+            colWidths: [80, 80, 80, 80, 80, 80],
+            colHeaders: true,
+            contextMenu: false
+        });
+        
+        $('#example table').addClass('table');
+        $('#example table').addClass('table-bordered');
+        $('#example table').addClass('table-striped');
+        $('#example table').addClass('table-hover');
+        $('#example table').addClass('table-condensed');
+    }
 
     function bindDumpButton() {
         $('body').on('click', 'button[name=dump]', function() {
