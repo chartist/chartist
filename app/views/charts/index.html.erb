@@ -3,7 +3,7 @@
   <% @charts.each do |chart| %>
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
-        <h2><%= link_to chart.name, charts_path(chart) %></h2>
+        <h2><%= link_to chart.name, chart_path(chart) %></h2>
         <%= render chart %>
       </div>
     </div>
