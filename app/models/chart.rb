@@ -18,9 +18,6 @@ class Chart < ActiveRecord::Base
 
     attr_accessor :dashboard_titles
 
-    searchable do
-      text :name
-    end
 
 
     after_save :prepare_chart
@@ -28,9 +25,6 @@ class Chart < ActiveRecord::Base
     enum chart_type: [:pie_chart, :line_chart, :col_chart, :bar_chart]
 
     enum colorscheme: [:spring, :summer, :autumn, :winter]
-
-    # enum x_type: [:normal, :date]
-
 
     def prepare_chart
       self.colorscheme ||= 0
@@ -67,14 +61,23 @@ class Chart < ActiveRecord::Base
     end
 
 
-    def generate_dashboards
-      unless dashboard_titles.nil?
-        dashboard_titles.split.each do |title|
-          self.dashboards << Dashboard.find_or_create_by(title: title, user_id: self.user.id)
-        end
 
+    def generate_dashboards
+      if dashboard_titles
+        dashboard_titles << " #{self.user.username}"
+        dashboard_titles.split.each do |title|
+          add_dashboards(title, user.id)
+        end
+      else
+        add_dashboards(self.user.username, user.id)
       end
     end
+
+    def add_dashboards(title, user)
+      self.dashboards << Dashboard.find_or_create_by(title: title, user_id: user)
+    end
+
+
 
     def generate_json
       if self.pie_chart?
@@ -99,4 +102,14 @@ class Chart < ActiveRecord::Base
       "#{id}-#{name.parameterize}"
     end
 
+    def self.search(search)
+      result = []
+      if search
+        where("name like ?", "%#{search}%").each {|x| result << x }
+        joins(:dashboards).where("title like ?", "%#{search}%").each {|x| result << x  }
+        result
+      else
+        all
+      end
+    end
   end

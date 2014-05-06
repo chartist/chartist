@@ -1,3 +1,5 @@
+
+
 <canvas id="canvas" style="display:none;"></canvas>
 
 <div class = "row">
@@ -14,11 +16,11 @@
         <div class= "chart-about" >
           <p><strong>Added <%= (@chart.created_at).strftime("%a %b %d, %Y") %></strong></p>
           <p><%= @chart.description %></p>
-          <% if @chart.dashboards.any? %>
+          <p>Dashboards: <% if @chart.dashboards.any? %>
             <% @chart.dashboards.each do |dashboard| %>
-              <p>Dashboards: <%= link_to dashboard.title, dashboard_path(dashboard) %></p>
+               <%= link_to dashboard.title, dashboard_path(dashboard) %>
             <% end %>
-          <% end %>
+          <% end %></p>
         </div>
 
         <div class = "chart-share"> 
@@ -26,7 +28,7 @@
         </div>
 
         <div class = "chart-embed">
-            <%= render 'layouts/share' %>
+            <%= render 'layouts/share', :chart => @chart %>
         </div>
 
         <div class="btn-group edit-chart">
@@ -51,13 +53,10 @@
    
           <%= link_to icon('fa fa-trash-o') + ' Delete', chart_path(@chart), method: :delete, type: "button", class: 'btn btn-danger', id: 'delete-btn' if @chart.user == current_user %>
         </div>
-
       </div>
-
     </div>
 
   </div>
-
   <div class="col-sm-3 col-md-3 pull-right">
     <div class = "thumbnail">
       <%= image_tag gravatar_url(@chart.user) %>

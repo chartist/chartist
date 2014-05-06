@@ -78,20 +78,3 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 end
-
-def add_pie_chart(name, dashboard_titles)
-  fill_in 'Add a title', with: name
-  fill_in 'Create Dashboard', with: dashboard_titles
-  attach_file 'chart_csv', Rails.root.join('spec/extras/test.csv')
-  # click_button 'Next'
-  choose 'Pie chart'
-  # click_button 'Next'
-  # click_button 'Next'
-  click_button 'Generate'
-end
-
-def date_of_next(day)
-  date  = Date.parse(day)
-  delta = date > Date.today ? 0 : 7
-  date + delta
-end
