@@ -1,6 +1,6 @@
 @import "mixins";
 
-/*form styles*/
+/*form*/
 #msform {
   width: 600px;
   height: 550px;
@@ -18,7 +18,7 @@
   
   box-sizing: border-box;
   width: 80%;
-  margin: 0 10%;
+  margin: 0 10%;  
   
   /*stacking fieldsets above each other*/
   position: absolute;
@@ -27,6 +27,11 @@
 /*Hide all except first fieldset*/
 #msform fieldset:not(:first-of-type) {
   display: none;
+}
+
+/*collapse*/
+.panel-group {
+margin-bottom: 20px;
 }
 
 /*inputs*/
@@ -195,8 +200,7 @@ input[type=radio]:checked + img{
   margin-left: 20px;
 }
 
-/* Chart styles   */
-
+/*charts*/
 .chart-title {
   margin-left: 10px;
   font-size: 2em;
@@ -214,5 +218,3 @@ input[type=radio]:checked + img{
 .chart-container {
   background: #ecf0f1;
 }
-
-
