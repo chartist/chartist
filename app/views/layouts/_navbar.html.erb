@@ -16,17 +16,19 @@
         <li><%= link_to new_chart_path do%>
           <i class="fa fa-plus fa-lg"></i> New Chart
         <% end %>
-        <li>
-        <div class="col-sm-15 col-md-15 pull-left">
-          <form class="navbar-form" role="search">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search" autocomplete="off" name="search" id="search">
-            <div class="input-group-btn">
-              <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+     
+       
+         <li>
+          <div class="col-sm-15 col-md-15 pull-left">
+          <%= form_tag charts_path, :method => :get, class: "navbar-form" do %>
+          <div class="input-group">
+            <%= text_field_tag :search, params[:search], class: "form-control", id: 'search', placeholder: "Search", autocomplete: "off" %>
+             <div class="input-group-btn">
+            <%= submit_tag "Search", :name => nil, class: "btn btn-default", id: 'search-btn' %>
             </div>
             </div>
-          </form>
-        </div>
+          <% end %>
+          </div>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
