@@ -30,7 +30,7 @@ gem 'roo'
 gem 'spreadsheet'
 
 gem 'zeroclipboard-rails'
-
+gem 'angularjs-rails'
 
 
 

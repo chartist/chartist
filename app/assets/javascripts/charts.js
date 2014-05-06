@@ -101,7 +101,7 @@ $(document).ready(function(){
 $(document).ready(function() {
     var clip = new ZeroClipboard($("#d_clip_button"));
     clip.on('load', function(){
-      console.log('hi');
+     
       clip.on('complete', function(){
         alert('Copied to clipboard');
       })
