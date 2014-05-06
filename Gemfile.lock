@@ -356,6 +356,7 @@ DEPENDENCIES
   sass-rails
   sdoc
   spreadsheet
+  sprockets
   stripe!
   turbolinks
   uglifier
