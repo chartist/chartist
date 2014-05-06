@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'csvprocessor'
+require 'chronic'
 
 describe CSVProcessor do
 
@@ -21,8 +22,8 @@ describe CSVProcessor do
     end
 
     it 'parses the date' do
-      next_tuesday = (date_of_next "Tuesday").strftime('%F')
-      expect(processor2.process.last).to eq [next_tuesday, 45, 140]
+      date = Chronic.parse(processor2.process.last.first)
+      expect(date).to eq Chronic.parse("next tuesday")
     end
   end
 
