@@ -79,8 +79,15 @@ input:focus, button:focus {
 .navbar-default .navbar-nav > li > a {
   color: #ffffff;
   font-weight: 400;
-  background-color: $accent;
   text-decoration: none;
+}
+
+.navbar-default .navbar-nav > li:hover {
+  background-color: $accent;
+}
+
+.navbar-default .navbar-nav > li.search-box:hover {
+  background-color: transparent;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -103,7 +110,6 @@ input:focus, button:focus {
   color: #ffffff;
   text-decoration: none;
   font-weight: 400;
-  background-color: $accent;
 }
 
 .navbar-default .navbar-nav > .open > a:hover, {
