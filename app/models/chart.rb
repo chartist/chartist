@@ -89,13 +89,25 @@ class Chart < ActiveRecord::Base
       end
     end
 
+    def csv_headers
+      [nil] + self.series.map(&:name)
+    end
+
     def to_csv(options = {})
       CSV.generate(options) do |csv|
-        csv << [nil] + self.series.map(&:name)
-        self.series.first.datapoints.map(&:x).sort.each do |x|
-          csv << [x] + self.datapoints.where(x: x).map(&:y)
+        csv << csv_headers
+        series_sorted.each do |x|
+          csv << mapped_datapoints(x)
         end
       end
+    end
+
+    def mapped_datapoints(x)
+      [x] + self.datapoints.where(x: x).map(&:y)
+    end
+
+    def series_sorted
+      self.series.first.sorted
     end
 
     def to_param
