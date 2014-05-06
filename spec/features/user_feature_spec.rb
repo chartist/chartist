@@ -24,15 +24,21 @@ describe "User" do
 
   context "while logged in" do
 
-
-    let(:user) { create(:user, email: "mario@mario.com") }
-
-    before do
-      create(:line_chart, user: user)
-    end
+    let(:user1) { create(:user, email: "mario@mario.com") }
+    let(:user2) { create(:hacker, email: "hacker@test.com") }
+    let!(:line_chart) { create(:line_chart, user: user1) }
+    let!(:pie_chart) { create(:pie_chart, user: user2) }
 
     it "can create a chart" do
-      expect(user.charts.count).to eq 1
+      expect(user1.charts.count).to eq 1
+    end
+
+    it "user can view all of her charts" do
+      login_as user1
+      visit '/charts'
+      click_link('My Charts')
+      expect(page).to have_content('Line chart')
+      expect(page).not_to have_content('Pie chart')
     end
   end
 end
