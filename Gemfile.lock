@@ -52,6 +52,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    angularjs-rails (1.2.16)
     annotate (2.6.3)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -326,6 +327,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  angularjs-rails
   annotate (>= 2.6.0)
   bootstrap-sass
   capybara

@@ -1,15 +1,50 @@
 <div class="container">
+  <div class="col-sm-offset-2 col-sm-10">
+    <h1>Edit your chart</h1>
+  </div>
   <%= form_for @chart, html: { multipart: true, class: 'form-horizontal' } do |f| %>
     <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <br>
-      <%= f.label :description, 'Edit description' %>
-      <%= f.text_field :description %>
-      <br>
-      <%= f.label :dashboard_titles, 'Dashboards' %>
-      <%= f.text_field :dashboard_titles %>
-      <%= f.submit 'Edit' %>
-    <% end %>
+      <%= f.label :name, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :name, "ng-init" => "name='#{@chart.name}'", "ng-model" => "name", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :description, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_area:description, "ng-init" => "description='#{@chart.description}'", "ng-model" => "description", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :dashboard_titles, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :dashboard_titles, "ng-init" => "dashTitles='#{(@chart.dashboards.map(&:title) -[@chart.user.username]).join(' ').to_s}'", "ng-model" => "dashTitles", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit 'Edit', class: "btn btn-default"%>
+      </div>
+    </div>
+  <% end %>
+  <div class = "row">
+    <div class="col-sm-offset-2 col-sm-10">
+      <h1>Live Preview</h1>
+      <div class="thumbnail chart_container">
+        <div class = "chart-graphic">
+          <%= render @chart %>
+        </div>
+        <div class = "caption">
+          <h1>{{name}}</h1>
+          <div class= "chart-about" >
+            <p><strong>Added
+                <%= (@chart.created_at).strftime("%a %b %d, %Y") %></strong></p>
+            <p>{{description}}</p>
+            <p>Dashboards:
+              <a href='#'>{{dashTitles}}</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
