@@ -5,13 +5,18 @@
   <script src="assets/jquery.scrolldeck.js"></script>
 
   <script type="text/javascript">
-$(document).ready(function() {
-  var deck = new $.scrolldeck({
-    buttons: '.nav-button',
-    slides: '.slide',
-    duration: 600,
-    easing: 'easeInOutExpo',
-  offset: 0
+  $(document).ready(function(){
+  $('a[href^="#"]').on('click',function (e) {
+      e.preventDefault();
+
+      var target = this.hash,
+      $target = $(target);
+
+      $('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+      }, 900, 'easeInOutExpo', function () {
+          window.location.hash = target;
+      });
   });
 });
 </script>
