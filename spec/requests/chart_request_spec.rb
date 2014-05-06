@@ -32,7 +32,7 @@ describe "Charts API" do
       chart_data = JSON.parse(response.body)
       apr_23 = "2014-12-23"
       expect(chart_data[0]['data'][apr_23]).to eq 5
-      next_tuesday = "2014-05-06"
+      next_tuesday = Chronic.parse("next tuesday").strftime("%Y-%m-%d")
       expect(chart_data[0]['data'][next_tuesday]).to eq 45
     end
 
