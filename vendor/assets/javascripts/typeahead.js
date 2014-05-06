@@ -30,6 +30,7 @@
         bind: $.proxy,
         each: function(collection, cb) {
             $.each(collection, reverseArgs);
+
             function reverseArgs(index, value) {
                 return cb(value, index);
             }
@@ -69,6 +70,7 @@
         }(),
         templatify: function templatify(obj) {
             return $.isFunction(obj) ? obj : template;
+
             function template() {
                 return String(obj);
             }
@@ -79,7 +81,9 @@
         debounce: function(func, wait, immediate) {
             var timeout, result;
             return function() {
-                var context = this, args = arguments, later, callNow;
+                var context = this,
+                    args = arguments,
+                    later, callNow;
                 later = function() {
                     timeout = null;
                     if (!immediate) {
@@ -104,7 +108,8 @@
                 result = func.apply(context, args);
             };
             return function() {
-                var now = new Date(), remaining = wait - (now - previous);
+                var now = new Date(),
+                    remaining = wait - (now - previous);
                 context = this;
                 args = arguments;
                 if (remaining <= 0) {
@@ -130,12 +135,15 @@
                 whitespace: getObjTokenizer(whitespace)
             }
         };
+
         function whitespace(s) {
             return s.split(/\s+/);
         }
+
         function nonword(s) {
             return s.split(/\W+/);
         }
+
         function getObjTokenizer(tokenizer) {
             return function setKey(key) {
                 return function tokenize(o) {
@@ -153,7 +161,8 @@
         }
         _.mixin(LruCache.prototype, {
             set: function set(key, val) {
-                var tailItem = this.list.tail, node;
+                var tailItem = this.list.tail,
+                    node;
                 if (this.size >= this.maxSize) {
                     this.list.remove(tailItem);
                     delete this.hash[tailItem.key];
@@ -176,6 +185,7 @@
                 }
             }
         });
+
         function List() {
             this.head = this.tail = null;
         }
@@ -197,6 +207,7 @@
                 this.add(node);
             }
         });
+
         function Node(key, val) {
             this.key = key;
             this.val = val;
@@ -213,8 +224,9 @@
         } catch (err) {
             ls = null;
         }
+
         function PersistentStorage(namespace) {
-            this.prefix = [ "__", namespace, "__" ].join("");
+            this.prefix = ["__", namespace, "__"].join("");
             this.ttlKey = "__ttl__";
             this.keyMatcher = new RegExp("^" + this.prefix);
         }
@@ -246,13 +258,14 @@
                     return this;
                 },
                 clear: function() {
-                    var i, key, keys = [], len = ls.length;
+                    var i, key, keys = [],
+                        len = ls.length;
                     for (i = 0; i < len; i++) {
                         if ((key = ls.key(i)).match(this.keyMatcher)) {
                             keys.push(key.replace(this.keyMatcher, ""));
                         }
                     }
-                    for (i = keys.length; i--; ) {
+                    for (i = keys.length; i--;) {
                         this.remove(keys[i]);
                     }
                     return this;
@@ -273,18 +286,24 @@
         }
         _.mixin(PersistentStorage.prototype, methods);
         return PersistentStorage;
+
         function now() {
             return new Date().getTime();
         }
+
         function encode(val) {
             return JSON.stringify(_.isUndefined(val) ? null : val);
         }
+
         function decode(val) {
             return JSON.parse(val);
         }
     }();
     var Transport = function() {
-        var pendingRequestsCount = 0, pendingRequests = {}, maxPendingRequests = 6, requestCache = new LruCache(10);
+        var pendingRequestsCount = 0,
+            pendingRequests = {}, maxPendingRequests = 6,
+            requestCache = new LruCache(10);
+
         function Transport(o) {
             o = o || {};
             this._send = o.transport ? callbackToDeferred(o.transport) : $.ajax;
@@ -298,7 +317,8 @@
         };
         _.mixin(Transport.prototype, {
             _get: function(url, o, cb) {
-                var that = this, jqXhr;
+                var that = this,
+                    jqXhr;
                 if (jqXhr = pendingRequests[url]) {
                     jqXhr.done(done).fail(fail);
                 } else if (pendingRequestsCount < maxPendingRequests) {
@@ -307,13 +327,16 @@
                 } else {
                     this.onDeckRequestArgs = [].slice.call(arguments, 0);
                 }
+
                 function done(resp) {
                     cb && cb(null, resp);
                     requestCache.set(url, resp);
                 }
+
                 function fail() {
                     cb && cb(true);
                 }
+
                 function always() {
                     pendingRequestsCount--;
                     delete pendingRequests[url];
@@ -340,16 +363,19 @@
             }
         });
         return Transport;
+
         function callbackToDeferred(fn) {
             return function customSendWrapper(url, o) {
                 var deferred = $.Deferred();
                 fn(url, o, onSuccess, onError);
                 return deferred;
+
                 function onSuccess(resp) {
                     _.defer(function() {
                         deferred.resolve(resp);
                     });
                 }
+
                 function onError(err) {
                     _.defer(function() {
                         deferred.reject(err);
@@ -375,7 +401,7 @@
             },
             add: function(data) {
                 var that = this;
-                data = _.isArray(data) ? data : [ data ];
+                data = _.isArray(data) ? data : [data];
                 _.each(data, function(datum) {
                     var id, tokens;
                     id = that.datums.push(datum) - 1;
@@ -392,7 +418,8 @@
                 });
             },
             get: function get(query) {
-                var that = this, tokens, matches;
+                var that = this,
+                    tokens, matches;
                 tokens = normalizeTokens(this.queryTokenizer(query));
                 _.each(tokens, function(token) {
                     var node, chars, ch, ids;
@@ -428,6 +455,7 @@
             }
         });
         return SearchIndex;
+
         function normalizeTokens(tokens) {
             tokens = _.filter(tokens, function(token) {
                 return !!token;
@@ -437,12 +465,14 @@
             });
             return tokens;
         }
+
         function newNode() {
             return {
                 ids: [],
                 children: {}
             };
         }
+
         function unique(array) {
             var seen = {}, uniques = [];
             for (var i = 0; i < array.length; i++) {
@@ -453,8 +483,11 @@
             }
             return uniques;
         }
+
         function getIntersection(arrayA, arrayB) {
-            var ai = 0, bi = 0, intersection = [];
+            var ai = 0,
+                bi = 0,
+                intersection = [];
             arrayA = arrayA.sort(compare);
             arrayB = arrayB.sort(compare);
             while (ai < arrayA.length && bi < arrayB.length) {
@@ -469,6 +502,7 @@
                 }
             }
             return intersection;
+
             function compare(a, b) {
                 return a - b;
             }
@@ -480,9 +514,11 @@
             prefetch: getPrefetch,
             remote: getRemote
         };
+
         function getLocal(o) {
             return o.local || null;
         }
+
         function getPrefetch(o) {
             var prefetch, defaults;
             defaults = {
@@ -504,6 +540,7 @@
             }
             return prefetch;
         }
+
         function getRemote(o) {
             var remote, defaults;
             defaults = {
@@ -529,11 +566,13 @@
                 !remote.url && $.error("remote requires url to be set");
             }
             return remote;
+
             function byDebounce(wait) {
                 return function(fn) {
                     return _.debounce(fn, wait);
                 };
             }
+
             function byThrottle(wait) {
                 return function(fn) {
                     return _.throttle(fn, wait);
@@ -550,6 +589,7 @@
             thumbprint: "thumbprint"
         };
         root.Bloodhound = Bloodhound;
+
         function Bloodhound(o) {
             if (!o || !o.local && !o.prefetch && !o.remote) {
                 $.error("one of local, prefetch, or remote is required");
@@ -574,7 +614,8 @@
         Bloodhound.tokenizers = tokenizers;
         _.mixin(Bloodhound.prototype, {
             _loadPrefetch: function loadPrefetch(o) {
-                var that = this, serialized, deferred;
+                var that = this,
+                    serialized, deferred;
                 if (serialized = this._readFromStorage(o.thumbprint)) {
                     this.index.bootstrap(serialized);
                     deferred = $.Deferred().resolve();
@@ -582,6 +623,7 @@
                     deferred = $.ajax(o.url, o.ajax).done(handlePrefetchResponse);
                 }
                 return deferred;
+
                 function handlePrefetchResponse(resp) {
                     that.clear();
                     that.add(o.filter ? o.filter(resp) : resp);
@@ -589,11 +631,13 @@
                 }
             },
             _getFromRemote: function getFromRemote(query, cb) {
-                var that = this, url, uriEncodedQuery;
+                var that = this,
+                    url, uriEncodedQuery;
                 query = query || "";
                 uriEncodedQuery = encodeURIComponent(query);
                 url = this.remote.replace ? this.remote.replace(this.remote.url, query) : this.remote.url.replace(this.remote.wildcard, uriEncodedQuery);
                 return this.transport.get(url, this.remote.ajax, handleRemoteResponse);
+
                 function handleRemoteResponse(err, resp) {
                     err ? cb([]) : cb(that.remote.filter ? that.remote.filter(resp) : resp);
                 }
@@ -616,11 +660,14 @@
                 return stored.data && !isExpired ? stored.data : null;
             },
             _initialize: function initialize() {
-                var that = this, local = this.local, deferred;
+                var that = this,
+                    local = this.local,
+                    deferred;
                 deferred = this.prefetch ? this._loadPrefetch(this.prefetch) : $.Deferred().resolve();
                 local && deferred.done(addLocalToIndex);
                 this.transport = this.remote ? new Transport(this.remote) : null;
                 return this.initPromise = deferred.promise();
+
                 function addLocalToIndex() {
                     that.add(_.isFunction(local) ? local() : local);
                 }
@@ -632,7 +679,9 @@
                 this.index.add(data);
             },
             get: function get(query, cb) {
-                var that = this, matches = [], cacheHit = false;
+                var that = this,
+                    matches = [],
+                    cacheHit = false;
                 matches = this.index.get(query);
                 matches = this.sorter(matches).slice(0, this.limit);
                 if (matches.length < this.limit && this.transport) {
@@ -641,6 +690,7 @@
                 if (!cacheHit) {
                     (matches.length > 0 || !this.transport) && cb && cb(matches);
                 }
+
                 function returnRemoteMatches(remoteMatches) {
                     var matchesWithBackfill = matches.slice(0);
                     _.each(remoteMatches, function(remoteMatch) {
@@ -668,15 +718,19 @@
             }
         });
         return Bloodhound;
+
         function getSorter(sortFn) {
             return _.isFunction(sortFn) ? sort : noSort;
+
             function sort(array) {
                 return array.sort(sortFn);
             }
+
             function noSort(array) {
                 return array;
             }
         }
+
         function ignoreDuplicates() {
             return false;
         }
@@ -713,7 +767,7 @@
             position: "absolute",
             top: "100%",
             left: "0",
-            zIndex: "100",
+            zIndex: "9999",
             display: "none"
         },
         suggestions: {
@@ -721,6 +775,7 @@
         },
         suggestion: {
             whiteSpace: "nowrap",
+            zIndex: "9999",
             cursor: "pointer"
         },
         suggestionChild: {
@@ -747,6 +802,7 @@
     }
     var EventBus = function() {
         var namespace = "typeahead:";
+
         function EventBus(o) {
             if (!o || !o.el) {
                 $.error("EventBus initialized without el");
@@ -762,13 +818,15 @@
         return EventBus;
     }();
     var EventEmitter = function() {
-        var splitter = /\s+/, nextTick = getNextTick();
+        var splitter = /\s+/,
+            nextTick = getNextTick();
         return {
             onSync: onSync,
             onAsync: onAsync,
             off: off,
             trigger: trigger
         };
+
         function on(method, types, cb, context) {
             var type;
             if (!cb) {
@@ -786,12 +844,15 @@
             }
             return this;
         }
+
         function onAsync(types, cb, context) {
             return on.call(this, "async", types, cb, context);
         }
+
         function onSync(types, cb, context) {
             return on.call(this, "sync", types, cb, context);
         }
+
         function off(types) {
             var type;
             if (!this._callbacks) {
@@ -803,6 +864,7 @@
             }
             return this;
         }
+
         function trigger(types) {
             var type, callbacks, args, syncFlush, asyncFlush;
             if (!this._callbacks) {
@@ -811,14 +873,16 @@
             types = types.split(splitter);
             args = [].slice.call(arguments, 1);
             while ((type = types.shift()) && (callbacks = this._callbacks[type])) {
-                syncFlush = getFlush(callbacks.sync, this, [ type ].concat(args));
-                asyncFlush = getFlush(callbacks.async, this, [ type ].concat(args));
+                syncFlush = getFlush(callbacks.sync, this, [type].concat(args));
+                asyncFlush = getFlush(callbacks.async, this, [type].concat(args));
                 syncFlush() && nextTick(asyncFlush);
             }
             return this;
         }
+
         function getFlush(callbacks, context, args) {
             return flush;
+
             function flush() {
                 var cancelled;
                 for (var i = 0; !cancelled && i < callbacks.length; i += 1) {
@@ -827,6 +891,7 @@
                 return !cancelled;
             }
         }
+
         function getNextTick() {
             var nextTickFn;
             if (window.setImmediate) {
@@ -844,6 +909,7 @@
             }
             return nextTickFn;
         }
+
         function bindContext(fn, context) {
             return fn.bind ? fn.bind(context) : function() {
                 fn.apply(context, [].slice.call(arguments, 0));
@@ -865,9 +931,10 @@
             if (!o.node || !o.pattern) {
                 return;
             }
-            o.pattern = _.isArray(o.pattern) ? o.pattern : [ o.pattern ];
+            o.pattern = _.isArray(o.pattern) ? o.pattern : [o.pattern];
             regex = getRegex(o.pattern, o.caseSensitive, o.wordsOnly);
             traverse(o.node, hightlightTextNode);
+
             function hightlightTextNode(textNode) {
                 var match, patternNode;
                 if (match = regex.exec(textNode.data)) {
@@ -880,6 +947,7 @@
                 }
                 return !!match;
             }
+
             function traverse(el, hightlightTextNode) {
                 var childNode, TEXT_NODE_TYPE = 3;
                 for (var i = 0; i < el.childNodes.length; i++) {
@@ -892,8 +960,10 @@
                 }
             }
         };
+
         function getRegex(patterns, caseSensitive, wordsOnly) {
-            var escapedPatterns = [], regexStr;
+            var escapedPatterns = [],
+                regexStr;
             for (var i = 0; i < patterns.length; i++) {
                 escapedPatterns.push(_.escapeRegExChars(patterns[i]));
             }
@@ -912,8 +982,10 @@
             38: "up",
             40: "down"
         };
+
         function Input(o) {
-            var that = this, onBlur, onFocus, onKeydown, onInput;
+            var that = this,
+                onBlur, onFocus, onKeydown, onInput;
             o = o || {};
             if (!o.input) {
                 $.error("input is missing");
@@ -964,31 +1036,31 @@
             _managePreventDefault: function managePreventDefault(keyName, $e) {
                 var preventDefault, hintValue, inputValue;
                 switch (keyName) {
-                  case "tab":
-                    hintValue = this.getHint();
-                    inputValue = this.getInputValue();
-                    preventDefault = hintValue && hintValue !== inputValue && !withModifier($e);
-                    break;
+                    case "tab":
+                        hintValue = this.getHint();
+                        inputValue = this.getInputValue();
+                        preventDefault = hintValue && hintValue !== inputValue && !withModifier($e);
+                        break;
 
-                  case "up":
-                  case "down":
-                    preventDefault = !withModifier($e);
-                    break;
+                    case "up":
+                    case "down":
+                        preventDefault = !withModifier($e);
+                        break;
 
-                  default:
-                    preventDefault = false;
+                    default:
+                        preventDefault = false;
                 }
                 preventDefault && $e.preventDefault();
             },
             _shouldTrigger: function shouldTrigger(keyName, $e) {
                 var trigger;
                 switch (keyName) {
-                  case "tab":
-                    trigger = !withModifier($e);
-                    break;
+                    case "tab":
+                        trigger = !withModifier($e);
+                        break;
 
-                  default:
-                    trigger = true;
+                    default:
+                        trigger = true;
                 }
                 return trigger;
             },
@@ -1070,6 +1142,7 @@
             }
         });
         return Input;
+
         function buildOverflowHelper($input) {
             return $('<pre aria-hidden="true"></pre>').css({
                 position: "absolute",
@@ -1087,15 +1160,20 @@
                 textTransform: $input.css("text-transform")
             }).insertAfter($input);
         }
+
         function areQueriesEquivalent(a, b) {
             return Input.normalizeQuery(a) === Input.normalizeQuery(b);
         }
+
         function withModifier($e) {
             return $e.altKey || $e.ctrlKey || $e.metaKey || $e.shiftKey;
         }
     }();
     var Dataset = function() {
-        var datasetKey = "ttDataset", valueKey = "ttValue", datumKey = "ttDatum";
+        var datasetKey = "ttDataset",
+            valueKey = "ttValue",
+            datumKey = "ttDatum";
+
         function Dataset(o) {
             o = o || {};
             o.templates = o.templates || {};
@@ -1106,7 +1184,7 @@
                 $.error("invalid dataset name: " + o.name);
             }
             this.query = null;
-            this.highlight = !!o.highlight;
+            this.highlight = !! o.highlight;
             this.name = o.name || _.getUniqueId();
             this.source = o.source;
             this.displayFn = getDisplayFn(o.display || o.displayKey);
@@ -1127,7 +1205,8 @@
                 if (!this.$el) {
                     return;
                 }
-                var that = this, hasSuggestions;
+                var that = this,
+                    hasSuggestions;
                 this.$el.empty();
                 hasSuggestions = suggestions && suggestions.length;
                 if (!hasSuggestions && this.templates.empty) {
@@ -1136,12 +1215,14 @@
                     this.$el.html(getSuggestionsHtml()).prepend(that.templates.header ? getHeaderHtml() : null).append(that.templates.footer ? getFooterHtml() : null);
                 }
                 this.trigger("rendered");
+
                 function getEmptyHtml() {
                     return that.templates.empty({
                         query: query,
                         isEmpty: true
                     });
                 }
+
                 function getSuggestionsHtml() {
                     var $suggestions, nodes;
                     $suggestions = $(html.suggestions).css(css.suggestions);
@@ -1152,6 +1233,7 @@
                         pattern: query
                     });
                     return $suggestions;
+
                     function getSuggestionNode(suggestion) {
                         var $el;
                         $el = $(html.suggestion).append(that.templates.suggestion(suggestion)).data(datasetKey, that.name).data(valueKey, that.displayFn(suggestion)).data(datumKey, suggestion);
@@ -1161,12 +1243,14 @@
                         return $el;
                     }
                 }
+
                 function getHeaderHtml() {
                     return that.templates.header({
                         query: query,
                         isEmpty: !hasSuggestions
                     });
                 }
+
                 function getFooterHtml() {
                     return that.templates.footer({
                         query: query,
@@ -1182,6 +1266,7 @@
                 this.query = query;
                 this.canceled = false;
                 this.source(query, render);
+
                 function render(suggestions) {
                     if (!that.canceled && query === that.query) {
                         that._render(query, suggestions);
@@ -1204,13 +1289,16 @@
             }
         });
         return Dataset;
+
         function getDisplayFn(display) {
             display = display || "value";
             return _.isFunction(display) ? display : displayFn;
+
             function displayFn(obj) {
                 return obj[display];
             }
         }
+
         function getTemplates(templates, displayFn) {
             return {
                 empty: templates.empty && _.templatify(templates.empty),
@@ -1218,17 +1306,20 @@
                 footer: templates.footer && _.templatify(templates.footer),
                 suggestion: templates.suggestion || suggestionTemplate
             };
+
             function suggestionTemplate(context) {
                 return "<p>" + displayFn(context) + "</p>";
             }
         }
+
         function isValidName(str) {
             return /^[_a-zA-Z0-9-]+$/.test(str);
         }
     }();
     var Dropdown = function() {
         function Dropdown(o) {
-            var that = this, onSuggestionClick, onSuggestionMouseEnter, onSuggestionMouseLeave;
+            var that = this,
+                onSuggestionClick, onSuggestionMouseEnter, onSuggestionMouseLeave;
             o = o || {};
             if (!o.menu) {
                 $.error("menu is required");
@@ -1260,6 +1351,7 @@
                 this.isEmpty = _.every(this.datasets, isDatasetEmpty);
                 this.isEmpty ? this._hide() : this.isOpen && this._show();
                 this.trigger("datasetRendered");
+
                 function isDatasetEmpty(dataset) {
                     return dataset.isEmpty();
                 }
@@ -1357,6 +1449,7 @@
             },
             update: function update(query) {
                 _.each(this.datasets, updateDataset);
+
                 function updateDataset(dataset) {
                     dataset.update(query);
                 }
@@ -1364,6 +1457,7 @@
             empty: function empty() {
                 _.each(this.datasets, clearDataset);
                 this.isEmpty = true;
+
                 function clearDataset(dataset) {
                     dataset.clear();
                 }
@@ -1375,18 +1469,21 @@
                 this.$menu.off(".tt");
                 this.$menu = null;
                 _.each(this.datasets, destroyDataset);
+
                 function destroyDataset(dataset) {
                     dataset.destroy();
                 }
             }
         });
         return Dropdown;
+
         function initializeDataset(oDataset) {
             return new Dataset(oDataset);
         }
     }();
     var Typeahead = function() {
         var attrsKey = "ttAttrs";
+
         function Typeahead(o) {
             var $menu, $input, $hint;
             o = o || {};
@@ -1394,7 +1491,7 @@
                 $.error("missing input");
             }
             this.isActivated = false;
-            this.autoselect = !!o.autoselect;
+            this.autoselect = !! o.autoselect;
             this.minLength = _.isNumber(o.minLength) ? o.minLength : 1;
             this.$node = buildDomStructure(o.input, o.withHint);
             $menu = this.$node.find(".tt-dropdown-menu");
@@ -1583,6 +1680,7 @@
             }
         });
         return Typeahead;
+
         function buildDomStructure(input, withHint) {
             var $input, $wrapper, $dropdown, $hint;
             $input = $(input);
@@ -1608,6 +1706,7 @@
             } catch (e) {}
             return $input.wrap($wrapper).parent().prepend(withHint ? $hint : null).append($dropdown);
         }
+
         function getBackgroundStyles($el) {
             return {
                 backgroundAttachment: $el.css("background-attachment"),
@@ -1620,6 +1719,7 @@
                 backgroundSize: $el.css("background-size")
             };
         }
+
         function destroyDomStructure($node) {
             var $input = $node.find(".tt-input");
             _.each($input.data(attrsKey), function(val, key) {
@@ -1638,17 +1738,19 @@
                 datasets = _.isArray(datasets) ? datasets : [].slice.call(arguments, 1);
                 o = o || {};
                 return this.each(attach);
+
                 function attach() {
-                    var $input = $(this), eventBus, typeahead;
+                    var $input = $(this),
+                        eventBus, typeahead;
                     _.each(datasets, function(d) {
-                        d.highlight = !!o.highlight;
+                        d.highlight = !! o.highlight;
                     });
                     typeahead = new Typeahead({
                         input: $input,
                         eventBus: eventBus = new EventBus({
                             el: $input
                         }),
-                        withHint: _.isUndefined(o.hint) ? true : !!o.hint,
+                        withHint: _.isUndefined(o.hint) ? true : !! o.hint,
                         minLength: o.minLength,
                         autoselect: o.autoselect,
                         datasets: datasets
@@ -1658,8 +1760,10 @@
             },
             open: function open() {
                 return this.each(openTypeahead);
+
                 function openTypeahead() {
-                    var $input = $(this), typeahead;
+                    var $input = $(this),
+                        typeahead;
                     if (typeahead = $input.data(typeaheadKey)) {
                         typeahead.open();
                     }
@@ -1667,8 +1771,10 @@
             },
             close: function close() {
                 return this.each(closeTypeahead);
+
                 function closeTypeahead() {
-                    var $input = $(this), typeahead;
+                    var $input = $(this),
+                        typeahead;
                     if (typeahead = $input.data(typeaheadKey)) {
                         typeahead.close();
                     }
@@ -1676,12 +1782,15 @@
             },
             val: function val(newVal) {
                 return !arguments.length ? getVal(this.first()) : this.each(setVal);
+
                 function setVal() {
-                    var $input = $(this), typeahead;
+                    var $input = $(this),
+                        typeahead;
                     if (typeahead = $input.data(typeaheadKey)) {
                         typeahead.setVal(newVal);
                     }
                 }
+
                 function getVal($input) {
                     var typeahead, query;
                     if (typeahead = $input.data(typeaheadKey)) {
@@ -1692,8 +1801,10 @@
             },
             destroy: function destroy() {
                 return this.each(unattach);
+
                 function unattach() {
-                    var $input = $(this), typeahead;
+                    var $input = $(this),
+                        typeahead;
                     if (typeahead = $input.data(typeaheadKey)) {
                         typeahead.destroy();
                         $input.removeData(typeaheadKey);

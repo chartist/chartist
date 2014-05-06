@@ -1,5 +1,5 @@
 var data = [
-    ["stuff", "Maserati", "Mazda", "Mercedes", "Mini", "Mitsubishi"],
+    ["Year", "Maserati", "Mazda", "Mercedes", "Mini", "Mitsubishi"],
     ["2009", 0, 2941, 4303, 354, 5814],
     ["2010", 5, 2905, 2867, 412, 5284],
     ["2011", 4, 2517, 4822, 552, 6127],
@@ -11,10 +11,17 @@ $(document).ready(function() {
     $('#example').handsontable({
         data: data,
         minSpareRows: 0,
+        startCols: 10,
+        colWidths: [80, 80, 80, 80, 80, 80],
         colHeaders: true,
-        contextMenu: true
+        contextMenu: false
     });
-
+    
+    $('#example table').addClass('table');
+    $('#example table').addClass('table-bordered');
+    $('#example table').addClass('table-striped');
+    $('#example table').addClass('table-hover');
+    $('#example table').addClass('table-condensed');
 
     function bindDumpButton() {
         $('body').on('click', 'button[name=dump]', function() {
@@ -24,6 +31,7 @@ $(document).ready(function() {
         });
     }
     bindDumpButton();
+    
     var csvContent = "";
     data.forEach(function(infoArray, index) {
 
@@ -37,5 +45,3 @@ $(document).ready(function() {
     });
 
 });
-
-// XXXXXXXXXX OUR code
