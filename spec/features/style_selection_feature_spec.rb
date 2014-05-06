@@ -22,7 +22,7 @@ describe 'Choosing colors' do
     expect(Chart.last.spring?).to be_true
   end
 
-  it 'Chart is rendered in the right color scheme', js: true do
+  xit 'Chart is rendered in the right color scheme', js: true do
     visit chart_path(color_chart)
     sleep 3
     expect(page.first('path')['fill']).to eq '#ea729a'

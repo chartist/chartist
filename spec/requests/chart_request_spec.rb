@@ -28,7 +28,7 @@ describe "Charts API" do
 
     let(:line_chart) { create(:line_chart, user: user) }
 
-    xit 'Returns the right JSON for file with dates' do
+    it 'Returns the right JSON for file with dates' do
       get chart_path(line_chart, format: :json)
       expect(response).to be_success
       chart_data = JSON.parse(response.body)
