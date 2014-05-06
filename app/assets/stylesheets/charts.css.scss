@@ -2,7 +2,7 @@
 
 /*form*/
 #msform {
-  width: 600px;
+  width: 750px;
   height: 550px;
   margin: 50px auto;
   padding: -20px;
@@ -31,14 +31,15 @@
 
 /*collapse*/
 .panel-group {
-margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .panel-title {
-margin-top: 0;
-margin-bottom: 0;
-font-size: 16px;
-color: inherit;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
 }
 
 /*inputs*/
@@ -82,19 +83,19 @@ color: inherit;
 }
 
 .btn-file input#chart_csv {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 999px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 999px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
 }
 
 /*headings*/

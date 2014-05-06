@@ -10,7 +10,9 @@
   </ul>
   <!-- fieldsets -->
   <fieldset>
-    <h5>There are three different options for uploading your data. Please choose whichever one works best for you.</h5>
+    <h2 class="fs-title">Import Sources</h2>
+    <h5>There are three different options for uploading your data.</h5>
+    <h5>Please choose one that works best for you.</h5>
     <div class="panel-group" id="accordion">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -43,7 +45,8 @@
           </div>
           <div id="collapseTwo" class="panel-collapse collapse">
             <div class="panel-body">
-              Enter data manually
+              <div id="example" class="handsontable"></div>
+              <button id='download' type="button" class="btn btn-primary">Ready</button>
             </div>
           </div>
         </div>  
@@ -122,28 +125,9 @@
     <%= f.label :dashboard_titles, "Create New Board" %>
     <%= f.text_field :dashboard_titles, class: 'form-control dashboards' %>
     <br />
-    <%= f.hidden_field :table_data, value: "xxxx", class: "hidden-field" %>
+    <%= f.hidden_field :table_data, value: "", class: "hidden-field" %>
     <input type="button" name="previous" class="previous action-button" value="Previous" />
     <%= f.submit "Create", class: "action-button" %>
   </div>
   </fieldset>
 <% end %>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Manual data entry</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-2 col-md-offset-1">
-            <div id="example" class="handsontable"></div><br>
-          </div></div>
-      </div>
-      <div class="modal-footer">
-        <button id='download' type="button" class="btn btn-primary">Ready</button>
-      </div>
-    </div>
-  </div>
-</div>
