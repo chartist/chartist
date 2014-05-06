@@ -7,7 +7,7 @@
     <div class="thumbnail chart_container">
 
       <div class = "chart-graphic">
-        <%= render @chart %>
+        <a class="popup-link popup" href="<%= chart_widget_url(@chart)%>"><%= render @chart %></a>
       </div>
 
       <div class = "caption">

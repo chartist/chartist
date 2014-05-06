@@ -106,6 +106,11 @@ $(document).ready(function() {
         alert('Copied to clipboard');
       })
     });
+
+    // magnific pop up
+    $('.popup-link').magnificPopup({ 
+      type: 'iframe'
+    });
   });
 
 
