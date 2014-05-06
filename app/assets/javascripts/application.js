@@ -24,4 +24,5 @@
 //= require canvas2image
 //= require typeahead
 //= require_tree ../../../vendor/assets/javascripts/.
+//= require zeroclipboard
 //= require_tree .

@@ -25,19 +25,20 @@ $(document).ready(function() {
         cb(matches);
       };
     };
-    var results = null;
-    if (dashboards) {results = dashboards}
-    
-     
-     
-    $('.dashboards').typeahead({
-      hint: true,
-      highlight: true,
-      minLength: 1
-    },
-    {
-      name: 'dashboards',
-      displayKey: 'value',
-      source: substringMatcher(results)
-    });
-    });
+
+    if(typeof dashboards === 'undefined') {
+      // do nothing
+    } else {
+      $('.dashboards').typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 1
+      },
+      {
+        name: 'dashboards',
+        displayKey: 'value',
+        source: substringMatcher(dashboards)
+      });
+    }
+  });
+

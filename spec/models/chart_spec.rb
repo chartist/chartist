@@ -3,9 +3,9 @@ require 'chronic'
 
 describe Chart do
 
-
-  let(:chart) {create(:pie_chart)}
-  let(:line_chart) {create(:line_chart)}
+  let!(:user) {create(:user)}
+  let(:chart) {create(:pie_chart, user: user)}
+  let(:line_chart) {create(:line_chart, user: user)}
 
   it "creates datapoints in the database correctly" do
     expect(chart.datapoints.count).to eq(2)
@@ -30,14 +30,11 @@ describe Chart do
       should validate_attachment_size(:csv).
         less_than(2.megabytes)
     end
-    xit "presence" do
-      should validate_attachment_presence(:csv)
-    end
   end
   context 'Enumeration' do
 
-    let(:line_chart) {create(:line_chart)}
-    let(:pie_chart) {create(:pie_chart)}
+    let(:line_chart) {create(:line_chart, user: user)}
+    let(:pie_chart) {create(:pie_chart, user: user)}
 
     it 'knows the type of the chart' do
       expect(line_chart.line_chart?).to be_true
@@ -48,7 +45,7 @@ describe Chart do
 
   context 'multi-series chart' do
 
-    let(:mult_chart) {create(:mult_chart)}
+    let(:mult_chart) {create(:mult_chart, user: user)}
 
     it 'creates datapoints with correct series id' do
       expect(mult_chart.series.count).to eq 2
@@ -64,8 +61,8 @@ describe Chart do
 
   context 'different colorts' do
 
-    let(:color_chart) {create(:pie_chart, colorscheme: 0 )}
-    let(:hockey_chart) {create(:pie_chart, colorscheme: 1 )}
+    let(:color_chart) {create(:pie_chart, colorscheme: 0, user: user )}
+    let(:hockey_chart) {create(:pie_chart, colorscheme: 1, user: user )}
 
     it 'color is correctly processed' do
       expect(color_chart.spring?).to be_true
@@ -73,7 +70,7 @@ describe Chart do
       expect(hockey_chart.spring?).to be_false
     end
 
-    let(:color_chart2) {create(:pie_chart)}
+    let(:color_chart2) {create(:pie_chart, user: user)}
 
     it 'if colorscheme not selected default is applied' do
       expect(color_chart2.spring?).to be_true

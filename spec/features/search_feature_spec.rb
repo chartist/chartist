@@ -15,15 +15,15 @@ describe "Search engine" do
 
 	it "shows results for chart names" do
 		fill_in 'search', with: 'jobs'
-		click_button 'Search'
+		click_button 'search-btn'
 		expect(page).to have_content 'jobs for undergrads'
 		expect(page).not_to have_content 'Mortality rates'
 	end
 
-	xit 'shows results for dashboards' do
+	it 'shows results for dashboards' do
 		fill_in 'search', with: 'miami'
-		click_button 'Search'
+		click_button 'search-btn'
 		expect(page).to have_content 'US chart'
-		expect(page).to have_content 'jobs for undergrads'
+		expect(page).not_to have_content 'jobs for undergrads'
 	end
 end

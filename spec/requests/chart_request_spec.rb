@@ -2,9 +2,11 @@ require 'spec_helper'
 
 describe "Charts API" do
 
+  let(:user) {create(:user)}
+
   context "Generating data for a chart" do
 
-    let(:pie_chart) { create(:pie_chart) }
+    let(:pie_chart) { create(:pie_chart, user: user) }
 
     it "Returns the right JSON for a pie chart file" do
       get chart_path(pie_chart, format: :json)
@@ -14,7 +16,7 @@ describe "Charts API" do
       expect(chart_data['GB']).to eq 25
     end
 
-    let(:col_chart) { create(:col_chart) }
+    let(:col_chart) { create(:col_chart, user: user) }
 
     it "Returns ta different JSON for other chart types" do
       get chart_path(col_chart, format: :json)
@@ -24,7 +26,7 @@ describe "Charts API" do
       expect(chart_data[0]['data']['GB']).to eq 25
     end
 
-    let(:line_chart) { create(:line_chart) }
+    let(:line_chart) { create(:line_chart, user: user) }
 
     it 'Returns the right JSON for file with dates' do
       get chart_path(line_chart, format: :json)
@@ -32,11 +34,11 @@ describe "Charts API" do
       chart_data = JSON.parse(response.body)
       apr_23 = "2014-12-23"
       expect(chart_data[0]['data'][apr_23]).to eq 5
-      next_tuesday = "2014-05-06"
+      next_tuesday = Chronic.parse("next tuesday").strftime("%Y-%m-%d")
       expect(chart_data[0]['data'][next_tuesday]).to eq 45
     end
 
-    let(:mult_chart) { create(:mult_chart) }
+    let(:mult_chart) { create(:mult_chart, user: user) }
 
     it 'Returns the right JSON for multi-series chart' do
       get chart_path(mult_chart, format: :json)

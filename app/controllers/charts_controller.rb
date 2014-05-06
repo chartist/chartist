@@ -23,15 +23,11 @@ class ChartsController < ApplicationController
       format.json {render json: @chart.generate_json }
       format.html
       format.csv { send_data @chart.to_csv}
-      # format.xlsx { send_data @chart.to_csv(col_sep: "\t") }
     end
   end
 
   def index
-    @search = Chart.search do
-      fulltext params[:search]
-    end
-    @charts = @search.results
+    @charts = Chart.search(params[:search])
   end
 
   def destroy
