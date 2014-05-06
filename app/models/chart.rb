@@ -93,11 +93,13 @@ class Chart < ActiveRecord::Base
     end
 
     def self.search(search)
+      result = []
       if search
-        where("name like ?", "%#{search}%")
+        where("name like ?", "%#{search}%").each {|x| result << x }
+        joins(:dashboards).where("title like ?", "%#{search}%").each {|x| result << x  }
+        result
       else
         all
       end
     end
-
   end

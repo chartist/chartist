@@ -24,6 +24,6 @@ describe "Search engine" do
 		fill_in 'search', with: 'miami'
 		click_button 'Search'
 		expect(page).to have_content 'US chart'
-		expect(page).to have_content 'jobs for undergrads'
+		expect(page).not_to have_content 'jobs for undergrads'
 	end
 end
