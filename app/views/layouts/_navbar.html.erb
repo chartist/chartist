@@ -10,15 +10,12 @@
       </button>
       <a class="navbar-brand" href="/charts"><%= image_tag "navbar/logo_pic.png" %>Chartist</a>
     </div>
-
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
         <li><%= link_to new_chart_path do%>
           <i class="fa fa-plus fa-lg"></i> New Chart
         <% end %>
-     
-       
-         <li>
+         <li class="search-box">
           <div class="col-sm-15 col-md-15 pull-left">
           <%= form_tag charts_path, :method => :get, class: "navbar-form" do %>
           <div class="input-group">
