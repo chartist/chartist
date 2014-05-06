@@ -17,7 +17,6 @@ gem "chartkick"
 gem 'jquery-rails'
 # gem 'smarter_csv'
 
-
 group :development do
 end
 
