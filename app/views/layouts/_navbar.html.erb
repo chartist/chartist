@@ -12,19 +12,23 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to new_chart_path do%>
-          <i class="fa fa-plus fa-lg"></i> New Chart
-        <% end %>
-         <li class="search-box">
+        <li>
+          <%= link_to new_chart_path do%>
+            <i class="fa fa-plus fa-lg"></i> New Chart
+          <% end %> 
+        </li> 
+        <li class="search-box">
           <div class="col-sm-15 col-md-15 pull-left">
-          <%= form_tag charts_path, :method => :get, class: "navbar-form" do %>
-          <div class="input-group">
-            <%= text_field_tag :search, params[:search], class: "form-control", id: 'search', placeholder: "Search", autocomplete: "off" %>
-             <div class="input-group-btn">
-            <%= submit_tag "Search", :name => nil, class: "btn btn-default", id: 'search-btn' %>
-            </div>
-            </div>
-          <% end %>
+            <%= form_tag charts_path, :method => :get, class: "navbar-form" do %>
+              <div class="input-group">
+                <%= text_field_tag :search, params[:search], class: "form-control", id: 'search', placeholder: "Search", autocomplete: "off" %>
+                  <div class="input-group-btn">
+                    <%= button_tag type: "submit", :name => nil, class: "btn btn-default", id: 'search-btn' do %>
+                      <i class="glyphicon glyphicon-search"></i>
+                    <% end %>
+                  </div>
+              </div>
+            <% end %>
           </div>
         </li>
       </ul>
