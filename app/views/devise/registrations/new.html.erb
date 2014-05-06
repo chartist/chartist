@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-  <div class="row sign_up_form">
+  <div class="row">
 
     <div class = "col-md-8 col-md-offset-2">
   
@@ -11,9 +11,10 @@
         </div>
     
         <div class ="panel-body">
+
           <div class = "row">
     
-            <div class="column-border col-md-6 ">
+            <div class="col-md-6 ">
               <h4>Create account</h4>
               <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
                 <%= f.text_field :username, autofocus: false, :placeholder => "Username", :class => "form-control" %><br>
@@ -25,7 +26,7 @@
             </div>
       
             <div class="col-md-6">
-              <h4>Sign in with Facebook, LinkedIn or Google.</h4>
+              <h4>Sign up with Facebook, LinkedIn or Google.</h4>
               <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-block btn-social btn-facebook" do %>
                 <i class="fa fa-facebook"></i> Sign up with Facebook
               <% end %>
