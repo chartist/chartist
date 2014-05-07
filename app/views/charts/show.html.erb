@@ -33,6 +33,7 @@
         </div>
 
         <div class="chartspage-footer"> 
+          <div class="row">
           <div class="col-sm-6 col-md-6 chartspage-buttons">
 
           <div class="btn-group edit-chart">
@@ -80,7 +81,10 @@
         </div>
 
           </div>
-          <div class="col-sm-6 col-md-6 chartspage-share"><%= render 'layouts/share', :chart => @chart %></div>
+          </div>
+          <div class="row sharing-bar">
+          <div class="col-sm-12 col-md-12 chartspage-share"><%= render 'layouts/share', :chart => @chart %></div>
+          </div>
         </div>
 
 

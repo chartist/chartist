@@ -79,7 +79,7 @@ body {
 }
 
 .chartspage-buttons .btn {
-  padding: 3px 5px;
+  /*padding: 3px 5px;*/
   margin: -20px 0px 0px -15px;
   font-size: 12px;
 }
@@ -92,4 +92,7 @@ body {
 .chartspage-share {
   float: right;
   padding: 5px 0px;
+}
+.sharing-bar {
+  margin-top: 10px;
 }
