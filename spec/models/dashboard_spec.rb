@@ -8,7 +8,7 @@ describe Dashboard do
 
     it 'belongs to user on creation' do
       expect(user.dashboards.count).to eq 3
-      expect(user.dashboards.first.title).to eq 'foo'
+      expect(user.dashboards.last.title).to eq 'foo'
     end
   end
 
