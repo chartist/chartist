@@ -10,6 +10,7 @@ describe "Search engine" do
 		create(:bar_chart, user: foo)
 		create(:col_chart, user: mario)
 		create(:chart_with_dashboards, user: mario)
+		login_as foo
 		visit "/charts"
 	end
 
