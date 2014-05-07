@@ -2,7 +2,7 @@
 
 /*form*/
 #msform {
-  width: 750px;
+  width: 740px;
   height: 550px;
   margin: 50px auto;
   padding: -20px;
@@ -41,6 +41,11 @@
   font-size: 16px;
   color: inherit;
 }
+
+  .panel-title a:hover {
+  text-decoration: none;
+}
+
 
 /*inputs*/
 #msform input, #msform textarea {
@@ -117,7 +122,7 @@
 #progressbar {
   margin-bottom: 30px;
   overflow: hidden;
-  width: 500px;
+  width: 740px;
   /*CSS counters to number the steps*/
   counter-reset: step;
 }
@@ -185,7 +190,8 @@ input[type=radio]:checked + img{
 }
 
 .form-charts img.image-col-2 {
-  margin-left: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .charts-theme >input[type=radio] {
@@ -206,6 +212,7 @@ input[type=radio]:checked + img{
 
 .charts-theme img.image-col-2 {
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 /*charts*/
