@@ -3,7 +3,6 @@ class UserMailer < ActionMailer::Base
 
   def welcome_notification
     @user = User.last
-    attachments.inline['logo.png'] = File.read('../assets/images/mailer/logo.png')
     mail(to: @user.email, subject: 'Welcome to Chartist')
   end
 
