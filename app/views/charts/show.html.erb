@@ -10,7 +10,7 @@
           <a class="popup-link popup" href="<%= chart_widget_url(@chart)%>"><%= render @chart %></a>
         </div>
 
-        <div class="chartspage-info">
+        <div class="chartspage-info caption">
           <div class="col-sm-1 col-md-1 pull-left chartspage-icon">
             <%= image_tag gravatar_url(@chart.user) %>
           </div>
@@ -58,17 +58,31 @@
           <%= link_to icon('fa fa-pencil') + ' Edit', edit_chart_path(@chart), type: "button", class: 'btn btn-default', id: 'edit-btn' if @chart.user == current_user %>
    
           <%= link_to icon('fa fa-trash-o') + ' Delete', chart_path(@chart), method: :delete, type: "button", class: 'btn btn-danger', id: 'delete-btn' if @chart.user == current_user %>
+
+          <div class="btn-group">
+            <% if current_user %>
+            
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle = "dropdown" id="pin-btn" >
+              <%= icon('fa fa-thumb-tack') %>
+              Pin 
+              <span class="caret"></span>
+            </button>
+              <ul class="dropdown-menu" role="menu">
+               <% (current_user.dashboards - @chart.dashboards).each do |dashboard| %>
+              <li><%= link_to dashboard.title, dashboard_path(dashboard), data: { chart_id: @chart.id, dashboard_url: dashboard_url(dashboard) }, class: 'pin' %></li>
+              <% end %>
+            <% end %>
+            </ul>
+          </div>
+        
+
         </div>
 
           </div>
           <div class="col-sm-6 col-md-6 chartspage-share"><%= render 'layouts/share', :chart => @chart %></div>
         </div>
 
-        
-
-          
-
-
 
    
   </div>
+
