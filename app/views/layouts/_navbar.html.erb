@@ -12,6 +12,7 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
+      <% if current_user %>
         <li class="search-box">
           <div class="col-sm-15 col-md-15 pull-left">
             <%= form_tag charts_path, :method => :get, class: "navbar-form" do %>
@@ -26,12 +27,15 @@
             <% end %>
           </div>
         </li>
+      <% end %>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
         <li><%= link_to new_chart_path do %>
           <i class="fa fa-plus fa-lg"></i> New Chart
-        <% end %> 
+        <% end %>
+      <% end %>
         </li> 
         <% if user_signed_in? %>
         <% if current_user.dashboards.any? %>
@@ -55,7 +59,6 @@
               </li>
             </ul>
           <% else %>
-            <li><%= link_to "Sign in", new_session_path(:user) %></li>
             <li><%= link_to "Sign up", new_registration_path(:user) %></li>
           <% end %>
         </ul>
