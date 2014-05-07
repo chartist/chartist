@@ -5,9 +5,16 @@ body {
 	font-family: "Open Sans", sans-serif;
 }
 
+.chart_container > * {
+  margin: 0px;
+  padding: 0px;
+}
+
 .chartspage-container {
+	margin-top: 25px;
 	background: #ffffff;
 	padding: 0px 20px 20px 20px;
+	box-shadow: 0px 0px 10px $medium-grey;
 }
 
 .chart-graphic {
@@ -18,22 +25,28 @@ body {
 .chartspage-icon img {
 	width: 50px;
 	height: auto;
+  text-align: right;
 }
 
 .chartspage-icon {
   padding-right: 20px;
+  float: left;
+  margin: 0px 0px 0px -15px;
+}
+
+.chartspage-header {
+	float: right;
 }
 
 .chartspage-title {
 	padding: 0px;
-	margin: 0px;
+	margin: -10px 0px 0px 0px;
 	font-size: 34px;
-
 }
 
 .chartspage-author {
 	padding: 0px;
-	margin: 0px;
+	margin: -5px 0px 0px 0px;
     text-transform: uppercase;
     font-size: 12px;
 }
@@ -43,5 +56,40 @@ body {
 	margin: 0px;
 	text-transform: uppercase;
 	font-size: 12px;
+	color: $dark-grey;
+}
 
+.chartspage-text {
+	font-size: 16px;
+	margin: 15px 0px 15px -15px;
+}
+
+.chartspage-dashboards {
+	font-size: 16px;
+	color: $dark-grey;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid $pale-grey;
+}
+
+.chartspage-buttons {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+.chartspage-buttons .btn {
+  padding: 3px 5px;
+  margin: -20px 0px 0px -15px;
+  font-size: 12px;
+}
+
+.chartspage-buttons .btn-default {
+  background: #ffffff;
+  color: $dark-grey;
+}
+
+.chartspage-share {
+  float: right;
+  padding: 5px 0px;
 }
