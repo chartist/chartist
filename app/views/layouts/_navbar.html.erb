@@ -10,13 +10,14 @@
       </button>
       <a class="navbar-brand" href="/charts"><%= image_tag "navbar/logo_pic.png" %>Chartist</a>
     </div>
+
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-left">
+      <ul class="nav navbar-nav">
       <% if current_user %>
         <li class="search-box">
-          <div class="col-sm-15 col-md-15 pull-left">
+          <div class="pull-left">
             <%= form_tag charts_path, :method => :get, class: "navbar-form" do %>
-              <div class="input-group">
+              <div class="input-group search-bar">
                 <%= text_field_tag :search, params[:search], class: "form-control", id: 'search', placeholder: "Search", autocomplete: "off" %>
                   <div class="input-group-btn">
                     <%= button_tag type: "submit", :name => nil, class: "btn btn-default", id: 'search-btn' do %>
