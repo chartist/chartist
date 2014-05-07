@@ -62,7 +62,7 @@
               <span class="caret"></span>
             </button>
               <ul class="dropdown-menu" role="menu">
-               <% current_user.dashboards.each do |dashboard| %>
+               <% (current_user.dashboards - @chart.dashboards).each do |dashboard| %>
               <li><%= link_to dashboard.title, dashboard_path(dashboard), data: { chart_id: @chart.id, dashboard_url: dashboard_url(dashboard) }, class: 'pin' %></li>
               <% end %>
             <% end %>
