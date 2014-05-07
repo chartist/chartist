@@ -27,7 +27,6 @@ class Chart < ActiveRecord::Base
     enum colorscheme: [:spring, :summer, :autumn, :winter]
 
     def prepare_chart
-      puts "&" * 80
       self.colorscheme ||= 0
       add_to_default
       generate_dashboards
@@ -38,8 +37,7 @@ class Chart < ActiveRecord::Base
 
     def rows(string)
       row = first_processed_row(string)
-      # raise "#{processor(string).process}"
-      row[(1...row).size]
+      row[1...row.size]
     end
 
     def create_series(string = nil)
@@ -54,8 +52,6 @@ class Chart < ActiveRecord::Base
     end
 
     def first_processed_row(string)
-      puts processor(string).inspect
-      puts processor(string).process.inspect
       processor(string).process.first
     end
 

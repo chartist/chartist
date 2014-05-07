@@ -27,7 +27,6 @@ class CSVProcessor
 
   def process
     array = @has_file ? self.read : self.parse
-    raise "#{array}"
     array.each do |sub_array|
       sub_array[0] = Chronic.parse(sub_array.first).strftime('%F') unless not_chronicable?(sub_array)
     end
