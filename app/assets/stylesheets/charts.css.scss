@@ -1,8 +1,8 @@
 @import "mixins";
 
-/*form styles*/
+/*form*/
 #msform {
-  width: 600px;
+  width: 750px;
   height: 550px;
   margin: 50px auto;
   padding: -20px;
@@ -18,7 +18,7 @@
   
   box-sizing: border-box;
   width: 80%;
-  margin: 0 10%;
+  margin: 0 10%;  
   
   /*stacking fieldsets above each other*/
   position: absolute;
@@ -27,6 +27,19 @@
 /*Hide all except first fieldset*/
 #msform fieldset:not(:first-of-type) {
   display: none;
+}
+
+/*collapse*/
+.panel-group {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  color: inherit;
 }
 
 /*inputs*/
@@ -70,19 +83,19 @@
 }
 
 .btn-file input#chart_csv {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 999px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 999px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
 }
 
 /*headings*/
@@ -195,8 +208,7 @@ input[type=radio]:checked + img{
   margin-left: 20px;
 }
 
-/* Chart styles   */
-
+/*charts*/
 .chart-title {
   margin-left: 10px;
   font-size: 2em;
@@ -214,5 +226,3 @@ input[type=radio]:checked + img{
 .chart-container {
   background: #ecf0f1;
 }
-
-
