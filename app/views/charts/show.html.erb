@@ -6,7 +6,7 @@
     
     <div class="col-sm-10 col-md-10 col-md-offset-1 col-sm-offset-1 chartspage-container">
 
-        <div class="chart-graphic">
+        <div class="chart-graphic chart_container">
           <a class="popup-link popup" href="<%= chart_widget_url(@chart)%>"><%= render @chart %></a>
         </div>
 
@@ -17,14 +17,14 @@
           <div class="col-sm-11 col-md-11 chartspage-header">
             <div class="chartspage-title"><%= @chart.name %></div>
             <div class="chartspage-author">By <a href= "mailto:<%= @chart.user.email %>"><%= @chart.user.username %></a></div>
-            <div class="chartspage-datestamp">Added <%= (@chart.created_at).strftime("%a %b %d, %Y") %></div>
+            <div class="chartspage-datestamp ">Added <%= (@chart.created_at).strftime("%a %b %d, %Y") %></div>
           </div>
           <div class="col-sm-12 col-md-12 chartspage-text clearfix"><%= @chart.description %></div>
 
 
         </div>
 
-        <div class="chartspage-dashboards">
+        <div class="chartspage-dashboards dashboard-list">
           Dashboards: <% if @chart.dashboards.any? %>
             <% @chart.dashboards.each do |dashboard| %>
                <%= link_to dashboard.title, dashboard_path(dashboard) %>
