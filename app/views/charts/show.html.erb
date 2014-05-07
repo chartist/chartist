@@ -50,6 +50,7 @@
           <%= link_to icon('fa fa-pencil') + ' Edit', edit_chart_path(@chart), type: "button", class: 'btn btn-default', id: 'edit-btn' if @chart.user == current_user %>
    
           <%= link_to icon('fa fa-trash-o') + ' Delete', chart_path(@chart), method: :delete, type: "button", class: 'btn btn-danger', id: 'delete-btn' if @chart.user == current_user %>
+          <%= link_to icon('fa fa-plus-o'), '#', id: 'pin', class: 'btn btn-success' %>
         </div>
       </div>
     </div>
