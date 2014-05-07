@@ -53,12 +53,8 @@
             </ul>
           </div>
 
-          <button type="button" class='my_clip_button btn btn-default' data-clipboard-text="<iframe src='<%= chart_widget_url(@chart)%>' frameBorder='0'></iframe>" id='d_clip_button' title='Click me to copy to embed the chart.'><%= icon("fa fa-files-o") %> Embed chart</button>
+          <button type="button" class='my_clip_button btn btn-default' data-clipboard-text="<iframe src='<%= chart_widget_url(@chart)%>' frameBorder='0'></iframe>" id='d_clip_button' title='Click me to copy to embed the chart.'><%= icon("fa fa-files-o") %> Embed</button>
          
-          <%= link_to icon('fa fa-pencil') + ' Edit', edit_chart_path(@chart), type: "button", class: 'btn btn-default', id: 'edit-btn' if @chart.user == current_user %>
-   
-          <%= link_to icon('fa fa-trash-o') + ' Delete', chart_path(@chart), method: :delete, type: "button", class: 'btn btn-danger', id: 'delete-btn' if @chart.user == current_user %>
-
           <div class="btn-group">
             <% if current_user %>
             
@@ -74,6 +70,11 @@
             <% end %>
             </ul>
           </div>
+          <%= link_to icon('fa fa-pencil') + ' Edit', edit_chart_path(@chart), type: "button", class: 'btn btn-default', id: 'edit-btn' if @chart.user == current_user %>
+   
+          <%= link_to icon('fa fa-trash-o') + ' Delete', chart_path(@chart), method: :delete, type: "button", class: 'btn btn-danger', id: 'delete-btn' if @chart.user == current_user %>
+
+          
         
 
         </div>
