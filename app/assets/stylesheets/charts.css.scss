@@ -233,3 +233,9 @@ input[type=radio]:checked + img{
 .chart-container {
   background: #ecf0f1;
 }
+
+.mfp-iframe {
+  width: 100% !important;
+  max-height: 63% !important;
+  color: grey;
+}

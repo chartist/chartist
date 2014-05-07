@@ -15,6 +15,7 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # gem 'websocket-rails'
 gem "chartkick"
 gem 'jquery-rails'
+gem 'magnific-popup-rails'
 
 
 
