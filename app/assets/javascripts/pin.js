@@ -3,6 +3,8 @@ $(document).ready(function() {
     event.preventDefault();
     event.stopPropagation();
     url = $(this).attr('href')
-    $.ajax(url, { type: 'PATCH', data: { chart_id: $(this).data('chart-id') } });
+    $.ajax(url, { type: 'PATCH', data: { chart_id: $(this).data('chart-id') } }, function(){
+      $('p.dashboard-list').append("<span>dashboard</span>");
+    });
   }); 
 });
