@@ -50,7 +50,17 @@
           <%= link_to icon('fa fa-pencil') + ' Edit', edit_chart_path(@chart), type: "button", class: 'btn btn-default', id: 'edit-btn' if @chart.user == current_user %>
    
           <%= link_to icon('fa fa-trash-o') + ' Delete', chart_path(@chart), method: :delete, type: "button", class: 'btn btn-danger', id: 'delete-btn' if @chart.user == current_user %>
-          <%= link_to icon('fa fa-plus-o'), '#', id: 'pin', class: 'btn btn-success' %>
+
+          <div class="btn-group">
+            <%= link_to icon('fa fa-thumb-tack') + 'Pin' + ' <span class="caret"></span>'.html_safe, dashboard_path(current_user.dashboards.first, chart_id: @chart.id), method: :patch, id: 'pin', class: 'btn btn-success dropdown-toggle', "data-toggle" => "dropdown" %> 
+            <ul class="dropdown-menu" role="menu">
+            <% current_user.dashboards.each do |dashboard| %>
+              <li><%= link_to dashboard.title, dashboard_path(dashboard) %></li>
+            <% end %>
+            </ul>
+          </div>
+        
+
         </div>
       </div>
     </div>
