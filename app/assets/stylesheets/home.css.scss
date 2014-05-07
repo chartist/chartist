@@ -132,7 +132,7 @@ text-decoration: underline;
 /* Sign up */
 
 .homepage-forms {
-  background: image-url("homepage/bg_header.png") no-repeat center center fixed; 
+  background: image-url("homepage/bg_signup.png") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -142,19 +142,42 @@ text-decoration: underline;
   padding-top: 5%;
 }
 
+.homepage-forms .form-footer a {
+  color: $medium-grey;
+}
+
+.homepage-forms .form-footer a:hover {
+  color: $dark-grey;
+}
+
 
 /* Footer */
 
 .homepage-footer {
   width: 100%;
-  height: 200px;
-  background: $pale-grey;
+  height: 140px;
+  
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 400;
-  padding: 20px;
+  padding: 30px;
   text-align: center;
   line-height: 30px;
+}
+
+.homepage-footer > p {
+  margin: -5px;
+  padding: 0px;
+}
+
+.homepage-footer a {
+  color: $medium-grey;
+  text-decoration: none;
+}
+
+.homepage-footer a:hover {
+  color: $darker;
+  text-decoration: none;
 }
 
 .homepage-clearfix {

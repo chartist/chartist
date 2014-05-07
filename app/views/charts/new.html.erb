@@ -27,7 +27,8 @@
             <div class="input-group">
               <span class="input-group-btn">
                 <span class="btn btn-default btn-file">
-                  Browse <%= f.file_field :csv %>
+                  Browse
+                  <%= f.file_field :csv %>
                 </span>
               </span>
               <input type="text" class="form-control filename">
@@ -35,37 +36,37 @@
           </div>
         </div>
       </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                Enter Data
-              </a>
-            </h3>
-          </div>
-          <div id="collapseTwo" class="panel-collapse collapse">
-            <div class="panel-body">
-              <div id="example" class="handsontable"></div>
-              <button id='download' type="button" class="btn btn-primary">Ready</button>
-            </div>
-          </div>
-        </div>  
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                Link to Google Spreadsheet
-              </a>
-            </h3>
-          </div>
-          <div id="collapseThree" class="panel-collapse collapse">
-            <div class="panel-body">
-              Upload Button
-            </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+              Enter Data
+            </a>
+          </h3>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div id="example" class="handsontable"></div>
+            <button id='download' type="button" class="btn btn-primary">Ready</button>
           </div>
         </div>
-       </div> 
-        <input type="button" name="next" id="first-next" class="next action-button" value="Next" />
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+              Link to Google Spreadsheet
+            </a>
+          </h3>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+          <div class="panel-body">
+            Upload Button
+          </div>
+        </div>
+      </div>
+    </div>
+    <input type="button" name="next" id="first-next" class="next action-button" value="Next" />
   </fieldset>
   <fieldset>
     <h2 class="fs-title">Choose a chart type</h2>
@@ -115,19 +116,19 @@
   </fieldset>
   <fieldset>
     <div class="form-group">
-    <%= f.label :name, "Add a Title" %>
-    <%= f.text_field :name, :autofocus => true, :placeholder => "My New Awesome Chart", class: "form-control" %>
-    <br>
-    <%= f.label :description, 'Add a description' %>
-    <%= f.text_field :description, class: 'form-control' %>
-    <br>
-    <br>
-    <%= f.label :dashboard_titles, "Create New Board" %>
-    <%= f.text_field :dashboard_titles, class: 'form-control dashboards' %>
-    <br />
-    <%= f.hidden_field :table_data, value: "", class: "hidden-field" %>
-    <input type="button" name="previous" class="previous action-button" value="Previous" />
-    <%= f.submit "Create", class: "action-button" %>
-  </div>
+      <%= f.label :name, "Add a Title" %>
+      <%= f.text_field :name, :autofocus => true, :placeholder => "My New Awesome Chart", class: "form-control" %>
+      <br>
+      <%= f.label :description, 'Add a description' %>
+      <%= f.text_field :description, class: 'form-control' %>
+      <br>
+      <br>
+      <%= f.label :dashboard_titles, "Create New Board" %>
+      <%= f.text_field :dashboard_titles, class: 'form-control dashboards' %>
+      <br />
+      <%= f.hidden_field :table_data, value: "xxxx", class: "hidden-field" %>
+      <input type="button" name="previous" class="previous action-button" value="Previous" />
+      <%= f.submit "Create", class: "action-button" %>
+    </div>
   </fieldset>
 <% end %>

@@ -45,6 +45,8 @@
 .form-footer {
   clear: both;
   text-align: center;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 .form-rememberme {
@@ -111,23 +113,4 @@
 
 .right > .btn-social {
   margin-bottom: 10px;
-}
-
-/* alerts */ 
-
-.alert {
-  font-size: 16px;
-  margin: 0px 0px 5px 0px;
-  padding: 0px;
-  color: $accent;
-  font-size: 14px;
-}
-
-.alert *, .alert li {
-  padding: 0px;
-  margin: 0px;
-}
-
-.alert ul {
-  margin-top: -20px;
 }

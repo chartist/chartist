@@ -5,13 +5,18 @@
   <script src="assets/jquery.scrolldeck.js"></script>
 
   <script type="text/javascript">
-$(document).ready(function() {
-  var deck = new $.scrolldeck({
-    buttons: '.nav-button',
-    slides: '.slide',
-    duration: 600,
-    easing: 'easeInOutExpo',
-  offset: 0
+  $(document).ready(function(){
+  $('a[href^="#"]').on('click',function (e) {
+      e.preventDefault();
+
+      var target = this.hash,
+      $target = $(target);
+
+      $('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+      }, 900, 'easeInOutExpo', function () {
+          window.location.hash = target;
+      });
   });
 });
 </script>
@@ -21,25 +26,25 @@ $(document).ready(function() {
       <%= image_tag "homepage/logo_home.png" %>
       <div class="header-text">Create beautiful charts on the go.<br>
       <small><em>Arriving May 9th 2014.</em></small></div>
-      <a href="#hpsignup" class="nav-button btn btn-danger">Start creating</a><br>
-      <a href="#hpinfo" class="nav-button header-link">Find out more</a>
+      <a href="#sign-up" class="nav-button btn btn-danger">Start creating</a><br>
+      <a href="#more" class="nav-button header-link">Find out more</a>
   </div>
 
-  <div class="homepage-info slide" id="hpinfo">
+  <div class="homepage-info slide" id="more">
     <%= render :file => "home/homepage_info" %>
   </div>
 
-  <div class="homepage-forms slide" id="hpsignup">
+  <div class="homepage-forms slide" id="sign-up">
     <%= render :file => "devise/registrations/new" %>
   </div>
 
   <div class="homepage-footer slide">
-    Made by the <b>Chartist Team</b> at <a href="http://www.makersacademy.com" target="_blank">Makers Academy</a> &copy; 2014 All Rights Reserved.
-    <br>
-    Follow us on 
+    <p>Made by the Chartist Team at <a href="http://www.makersacademy.com" target="_blank">Makers Academy</a></p>
+    <p>Follow us on 
     <a href="https://twitter.com/ChartistChat" target="_blank"><i class="fa fa-twitter"></i> twitter</a>, 
     <a href="http://chartistchat.tumblr.com/" target="_blank"><i class="fa fa-rss"></i> blog</a>,
-    <a href="https://github.com/chartist/chartist" target="_blank"><i class="fa fa-github"></i> github</a>.
+    <a href="https://github.com/chartist/chartist" target="_blank"><i class="fa fa-github"></i> github</a>.</p>
+    <p>&copy; 2014 All Rights Reserved.</p>
   </div>
 
 </div>
