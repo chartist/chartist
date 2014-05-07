@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   has_many :charts
   has_many :dashboards
 
-  after_create :send_email
+  after_create :send_email, :create_user_dashboard
 
   def send_email
     UserMailer.welcome_notification.deliver
@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
       user.username = auth.info.email.split('@').first
       user.password = Devise.friendly_token[0,20]
     end
+  end
+
+  def create_user_dashboard
+    dashboards << Dashboard.create(title: self.username, user_id: self.id)
   end
 
   def self.new_with_session(params, session)

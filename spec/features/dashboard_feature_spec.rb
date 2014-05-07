@@ -3,8 +3,8 @@ require 'spec_helper'
 describe "Dashboards" do
 
   let(:user) { create(:user, email: "foo@bar.com") }
-  let!(:pie_chart) {create(:pie_chart, user: user, dashboard_titles: 'miami texas')}
-  let!(:chart_dashboards) {create(:chart_with_dashboards, user: user)}
+  let(:pie_chart) {create(:pie_chart, user: user, dashboard_titles: 'miami texas')}
+  let(:chart_dashboards) {create(:chart_with_dashboards, user: user)}
 
   before do
     login_as user
