@@ -16,7 +16,7 @@
         <div class= "chart-about" >
           <p class="chart-datetime"><strong>Added <%= (@chart.created_at).strftime("%a %b %d, %Y") %></strong></p>
           <p><%= @chart.description %></p>
-          <p>Dashboards: <% if @chart.dashboards.any? %>
+          <p class='dashboard-list'>Dashboards: <% if @chart.dashboards.any? %>
             <% @chart.dashboards.each do |dashboard| %>
                <%= link_to dashboard.title, dashboard_path(dashboard) %>
             <% end %>
@@ -53,10 +53,15 @@
 
           <div class="btn-group">
             <% if current_user %>
-            <%= link_to icon('fa fa-thumb-tack') + 'Pin' + ' <span class="caret"></span>'.html_safe, dashboard_path(current_user.dashboards.first, chart_id: @chart.id), method: :patch, id: 'pin', class: 'btn btn-success dropdown-toggle', "data-toggle" => "dropdown" %> 
+            
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle = "dropdown" >
+              <%= icon('fa fa-thumb-tack') %>
+              Pin 
+              <span class="caret"></span>
+            </button>
               <ul class="dropdown-menu" role="menu">
                <% current_user.dashboards.each do |dashboard| %>
-              <li><%= link_to dashboard.title, dashboard_path(dashboard) %></li>
+              <li><%= link_to dashboard.title, dashboard_path(dashboard), data: { chart_id: @chart.id }, class: 'pin' %></li>
               <% end %>
             <% end %>
             </ul>

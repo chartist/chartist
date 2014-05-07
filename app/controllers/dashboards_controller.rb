@@ -8,6 +8,7 @@ class DashboardsController < ApplicationController
     @dashboard = Dashboard.find params[:id]
     @chart = Chart.find(params[:chart_id])
     @dashboard.charts << @chart unless @dashboard.charts.include?(@chart)
-    redirect_to chart_path(@chart)
+    render nothing: true
+    # redirect_to chart_path(@chart)
   end
 end

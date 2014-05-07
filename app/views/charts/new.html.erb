@@ -1,8 +1,8 @@
 <!-- multistep form -->
 <%= javascript_tag "var dashboards = #{current_user.dashboards.map(&:title).to_json}" %>
-<%= form_for @chart, class: "form-vertical", html: { multipart: true, id: 'msform' } do |f| %>
+<%= form_for @chart, class: "form-vertical", html: { multipart: true, id: 'msform', role: "form"} do |f| %>
   <!-- progressbar -->
-  <ul id="progressbar">
+  <ul id="progressbar" class="center-block">
     <li class="active">Start Creating</li>
     <li>Choose Design</li>
     <li>Choose Colour</li>
@@ -146,3 +146,4 @@
         <%= f.submit "Create", class: "action-button" %>
         </fieldset>
 <% end %>
+
