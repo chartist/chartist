@@ -17,7 +17,7 @@
         <li class="search-box">
           <div class="pull-left">
             <%= form_tag charts_path, :method => :get, class: "navbar-form" do %>
-              <div class="input-group">
+              <div class="input-group search-bar">
                 <%= text_field_tag :search, params[:search], class: "form-control", id: 'search', placeholder: "Search", autocomplete: "off" %>
                   <div class="input-group-btn">
                     <%= button_tag type: "submit", :name => nil, class: "btn btn-default", id: 'search-btn' do %>

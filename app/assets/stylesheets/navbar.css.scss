@@ -20,7 +20,12 @@
   }
 }
 
-
+.search-bar {
+  @media(max-width: 692px) {
+    padding-top: 10px;
+    padding-right: 15px;
+  }
+}
 
 .navbar-brand img {
   margin: -5px 10px 5px 0px;
