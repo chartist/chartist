@@ -8,7 +8,7 @@ describe Dashboard do
 
     it 'belongs to user on creation' do
       expect(user.dashboards.count).to eq 3
-      expect(user.dashboards.first.title).to eq 'foo'
+      expect(user.dashboards.map(&:title)).to include 'foo'
     end
   end
 
@@ -18,6 +18,8 @@ describe Dashboard do
 
   	it "is created when the user is created" do
   		expect(new_user.dashboards.count).to eq 1
+  		expect(new_user.dashboards.first.title).to eq 'mariogintili'
+
   	end
   end
 end

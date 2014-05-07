@@ -40,7 +40,7 @@ describe "Dashboards" do
     end
 
     it "shows only the charts associated with that board" do
-      click_link 'texas'
+      within(:css, ".chart-about") {click_link 'texas'}
       expect(page).not_to have_content 'miami'
       expect(page).to have_content "texas"
     end
