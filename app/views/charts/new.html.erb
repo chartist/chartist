@@ -114,20 +114,35 @@
     <input type="button" name="next" class="next action-button" value="Next" />
   </fieldset>
   <fieldset>
-    <div class="form-group">
-    <%= f.label :name, "Add a Title" %>
-    <%= f.text_field :name, :autofocus => true, :placeholder => "My New Awesome Chart", class: "form-control" %>
-    <br>
-    <%= f.label :description, 'Add a description' %>
-    <%= f.text_field :description, class: 'form-control' %>
-    <br>
-    <br>
-    <%= f.label :dashboard_titles, "Create New Board" %>
-    <%= f.text_field :dashboard_titles, class: 'form-control dashboards' %>
-    <br />
-    <%= f.hidden_field :table_data, value: "", class: "hidden-field" %>
+  <h2 class="fs-title">Pick a Board</h2>
+  <div class="panel panel-default">
+    <div class="panel-heading clearfix">         
+      <%= f.label :name, "Add a Title", class: "panel-title pull-left" %> 
+    </div>
+      <div class="panel-body">
+        <%= f.text_field :name, :autofocus => true, :placeholder => "My New Awesome Chart", class: "form-control" %>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix"> 
+        <%= f.label :description, "Add a Description", class: "panel-title pull-left" %>
+      </div>
+        <div class="panel-body">
+          <%= f.text_field :description, class: 'form-control' %>
+        </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix"> 
+        <%= f.label :dashboard_titles, "Create New Board", class: "panel-title pull-left" %>
+      </div>
+        <div class="panel-body">
+          <%= f.text_field :dashboard_titles, class: 'form-control dashboards' %>
+        </div>
+    </div>
+    <div>
+      <%= f.hidden_field :table_data, value: "", class: "hidden-field" %>
+    </div>
     <input type="button" name="previous" class="previous action-button" value="Previous" />
     <%= f.submit "Create", class: "action-button" %>
-  </div>
+    <% end %>
   </fieldset>
-<% end %>
