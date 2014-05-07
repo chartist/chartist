@@ -3,7 +3,7 @@
 /* logo */
 .navbar-brand {
   position: absolute;
-  width: 100%;
+  width: 30%;
   left: 0;
   margin: auto;
   text-align: center;
@@ -14,6 +14,9 @@
   -webkit-font-smoothing: antialiased; 
   font-smoothing: antialiased;
   text-shadow: 1px 1px $accent;
+  @media(max-width: 692px) {
+    width: auto;
+  }
 }
 
 .navbar-brand img {
