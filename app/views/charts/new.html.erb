@@ -1,8 +1,8 @@
 <!-- multistep form -->
 <%= javascript_tag "var dashboards = #{current_user.dashboards.map(&:title).to_json}" %>
-<%= form_for @chart, class: "form-vertical", html: { multipart: true, id: 'msform' } do |f| %>
+<%= form_for @chart, class: "form-vertical", html: { multipart: true, id: 'msform', role: "form"} do |f| %>
   <!-- progressbar -->
-  <ul id="progressbar">
+  <ul id="progressbar" class="center-block">
     <li class="active">Start Creating</li>
     <li>Choose Design</li>
     <li>Choose Colour</li>
@@ -120,7 +120,7 @@
       <%= f.text_field :name, :autofocus => true, :placeholder => "My New Awesome Chart", class: "form-control" %>
       <br>
       <%= f.label :description, 'Add a description' %>
-      <%= f.text_field :description, class: 'form-control' %>
+      <%= f.text_area :description, class: 'form-control' %>
       <br>
       <br>
       <%= f.label :dashboard_titles, "Create New Board" %>
