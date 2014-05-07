@@ -134,3 +134,16 @@ width:85px !important;
   display: block;
    width: 100%;
 }
+@import "mixins";
+.dashboard-tile {
+  border-radius: 0;
+  box-shadow: 0px 0px 8px $medium-grey;
+}
+.dashboard-tile:hover {
+ cursor: move;
+}
+.dashboard-tile:link {
+ box-shadow: 0px 0px 8px pink;
+}
+
+
