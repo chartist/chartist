@@ -5,6 +5,7 @@ var data = [
     ["2011", 4, 2517, 4822, 552, 6127],
     ["2012", 2, 2422, 5399, 776, 4151]
 ];
+var csvContent = "";
 
 $(document).ready(function() {
     if($('#example').length) {
@@ -28,21 +29,22 @@ $(document).ready(function() {
         $('body').on('click', 'button[name=dump]', function() {
             var dump = $(this).data('dump');
             var $container = $(dump);
-            console.log('data of ' + dump, $container.handsontable('getData'));
+            // console.log('data of ' + dump, $container.handsontable('getData'));
         });
     }
     bindDumpButton();
     
-    var csvContent = "";
-    data.forEach(function(infoArray, index) {
+    
+
+
+    $('#download').on('click', function() {
+        data.forEach(function(infoArray, index) {
 
         dataString = infoArray.join(",");
         csvContent += index < infoArray.length ? dataString + "\n" : dataString;
 
     });
-
-    $('#download').on('click', function() {
         $(".hidden-field").val(csvContent)
+        $('#first-next').click()
     });
-
 });

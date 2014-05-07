@@ -44,6 +44,7 @@ class Chart < ActiveRecord::Base
     def prepare_chart
       puts "&" * 80
       self.colorscheme ||= 0
+      add_to_default
       generate_dashboards
       return true unless csv.present?
       create_series
@@ -91,16 +92,18 @@ class Chart < ActiveRecord::Base
       create_datapoints(string)
     end
 
+    def add_to_default
+      self.dashboards << Dashboard.where(title: self.user.username, user_id: self.user.id)
+    end
+
 
 
     def generate_dashboards
-      if dashboard_titles
-        dashboard_titles << " #{self.user.username}"
+      unless dashboard_titles.nil?
+        # dashboard_titles << " #{user.username}"
         dashboard_titles.split.each do |title|
           add_dashboards(title, user.id)
         end
-      else
-        add_dashboards(self.user.username, user.id)
       end
     end
 

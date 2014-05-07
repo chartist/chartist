@@ -25,7 +25,7 @@ describe "Pretty URLs" do
 	context "Dashboards" do
 
 		it "URL is the same as the title" do
-			dashboard = chart.dashboards.last
+			dashboard = chart.dashboards.first
 			visit dashboard_path(dashboard)
 			expect(current_path).to eq "/dashboards/#{dashboard.id}-#{dashboard.user.username}"
 		end 

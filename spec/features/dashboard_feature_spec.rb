@@ -3,8 +3,8 @@ require 'spec_helper'
 describe "Dashboards" do
 
   let(:user) { create(:user, email: "foo@bar.com") }
-  let!(:pie_chart) {create(:pie_chart, user: user, dashboard_titles: 'miami texas')}
-  let!(:chart_dashboards) {create(:chart_with_dashboards, user: user)}
+  let(:pie_chart) {create(:pie_chart, user: user, dashboard_titles: 'miami texas')}
+  let(:chart_dashboards) {create(:chart_with_dashboards, user: user)}
 
   before do
     login_as user
@@ -40,7 +40,7 @@ describe "Dashboards" do
     end
 
     it "shows only the charts associated with that board" do
-      click_link 'texas'
+      within(:css, ".chart-about") {click_link 'texas'}
       expect(page).not_to have_content 'miami'
       expect(page).to have_content "texas"
     end
