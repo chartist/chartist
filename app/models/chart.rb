@@ -26,21 +26,6 @@ class Chart < ActiveRecord::Base
 
     enum colorscheme: [:spring, :summer, :autumn, :winter]
 
-    def self.new_chart(data)
-      puts "£" * 80
-      # .permit(:name, :chart_type, :csv, :dashboard_titles, :colorscheme, :description, :table_data)
-      puts data.inspect
-      data.each {|x,y| puts "#{x} ------ #{y}"   }
-      if data[:table_data]
-        data.each {|x,y| puts "#{x} ------ #{y}"   }
-        new(data).permit(:name, :chart_type, :dashboard_titles, :colorscheme, :description, :table_data)
-      else
-        data.each {|x,y| puts "#{x} ------ #{y}"   }
-        new(data).permit(:name, :chart_type, :dashboard_titles, :colorscheme, :description, :csv)
-      end
-      # new(options)
-    end
-
     def prepare_chart
       puts "&" * 80
       self.colorscheme ||= 0
