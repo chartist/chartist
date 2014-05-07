@@ -25,5 +25,6 @@
 //= require typeahead
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require zeroclipboard
-// require angular
+//= require angular
+//= require magnific-popup
 //= require_tree .
