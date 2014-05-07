@@ -2,32 +2,40 @@
 
 <canvas id="canvas" style="display:none;"></canvas>
 
-<div class = "row">
-  <div class="col-sm-9 col-md-9 pull-left">    
-    <div class="thumbnail chart_container">
+  <div class="row">
+    
+    <div class="col-sm-10 col-md-8 col-md-offset-2 col-sm-offset-1 chartspage-container">
 
-      <div class = "chart-graphic">
-        <a class="popup-link popup" href="<%= chart_widget_url(@chart)%>"><%= render @chart %></a>
-      </div>
+        <div class="chart-graphic">
+          <a class="popup-link popup" href="<%= chart_widget_url(@chart)%>"><%= render @chart %></a>
+        </div>
 
-      <div class = "caption">
-        <h1><%= @chart.name %></h1>
-          
-        <div class= "chart-about" >
-          <p class="chart-datetime"><strong>Added <%= (@chart.created_at).strftime("%a %b %d, %Y") %></strong></p>
-          <p><%= @chart.description %></p>
-          <p>Dashboards: <% if @chart.dashboards.any? %>
+        <div class="chartspage-info">
+          <div class="pull-left chartspage-icon">
+            <%= image_tag gravatar_url(@chart.user) %>
+          </div>
+          <div class="chartspage-header">
+            <div class="chartspage-title"><%= @chart.name %></div>
+            <div class="chartspage-author">By <a href= "mailto:<%= @chart.user.email %>"><%= @chart.user.username %></a></div>
+            <div class="chartspage-datestamp">Added <%= (@chart.created_at).strftime("%a %b %d, %Y") %></div>
+          </div>
+          <div class="col-sm-12 col-md-12 chartspage-text clearfix"><%= @chart.description %></div>
+
+
+        </div>
+
+        <div class="chartspage-dashboards">
+          Dashboards: <% if @chart.dashboards.any? %>
             <% @chart.dashboards.each do |dashboard| %>
                <%= link_to dashboard.title, dashboard_path(dashboard) %>
             <% end %>
-          <% end %></p>
+          <% end %>
         </div>
 
-        <div class = "chart-embed">
-            <%= render 'layouts/share', :chart => @chart %>
-        </div>
+        <div class="chartspage-footer"> 
+          <div class="col-sm-6 col-md-6 chartspage-buttons">
 
-        <div class="btn-group edit-chart">
+          <div class="btn-group edit-chart">
 
           <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle = "dropdown">
@@ -51,19 +59,16 @@
    
           <%= link_to icon('fa fa-trash-o') + ' Delete', chart_path(@chart), method: :delete, type: "button", class: 'btn btn-danger', id: 'delete-btn' if @chart.user == current_user %>
         </div>
-      </div>
-    </div>
 
+          </div>
+          <div class="col-sm-6 col-md-6 chartspage-share"><%= render 'layouts/share', :chart => @chart %></div>
+        </div>
+
+        
+
+          
+
+
+
+   
   </div>
-  <div class="col-sm-3 col-md-3 pull-right">
-    <div class = "thumbnail">
-      <%= image_tag gravatar_url(@chart.user) %>
-      <div class="caption">
-        <h1><%= @chart.user.username %></h1>
-        <p><%= @chart.user.bio %></p>
-        <p><a href= "mailto:<%= @chart.user.email %>"><i class="fa fa-envelope">
-              Contact</i></a></p>
-      </div>
-    </div>
-  </div>
-</div>

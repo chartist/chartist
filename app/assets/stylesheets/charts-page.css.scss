@@ -1,0 +1,47 @@
+@import "mixins";
+
+body {
+	background: $pale-grey;
+	font-family: "Open Sans", sans-serif;
+}
+
+.chartspage-container {
+	background: #ffffff;
+	padding: 0px 20px 20px 20px;
+}
+
+.chart-graphic {
+	padding: 0px;
+	margin: 0px 0px 20px 0px;
+}
+
+.chartspage-icon img {
+	width: 50px;
+	height: auto;
+}
+
+.chartspage-icon {
+  padding-right: 20px;
+}
+
+.chartspage-title {
+	padding: 0px;
+	margin: 0px;
+	font-size: 34px;
+
+}
+
+.chartspage-author {
+	padding: 0px;
+	margin: 0px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.chartspage-datestamp {
+	padding: 0px;
+	margin: 0px;
+	text-transform: uppercase;
+	font-size: 12px;
+
+}
