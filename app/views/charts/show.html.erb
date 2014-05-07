@@ -14,7 +14,7 @@
         <h1><%= @chart.name %></h1>
           
         <div class= "chart-about" >
-          <p><strong>Added <%= (@chart.created_at).strftime("%a %b %d, %Y") %></strong></p>
+          <p class="chart-datetime"><strong>Added <%= (@chart.created_at).strftime("%a %b %d, %Y") %></strong></p>
           <p><%= @chart.description %></p>
           <p>Dashboards: <% if @chart.dashboards.any? %>
             <% @chart.dashboards.each do |dashboard| %>
