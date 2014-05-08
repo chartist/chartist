@@ -14,15 +14,6 @@ GIT
       cocaine (~> 0.5.3)
       mime-types
 
-GIT
-  remote: https://github.com/stripe/stripe-ruby
-  revision: 48f76057f425ab5c3bb147f3d71c3d36d951159f
-  specs:
-    stripe (1.11.0)
-      json (~> 1.8.1)
-      mime-types (~> 1.25)
-      rest-client (~> 1.4)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -261,8 +252,6 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.1)
       json (~> 1.4)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
     roo (1.13.2)
       nokogiri
       rubyzip
@@ -398,7 +387,6 @@ DEPENDENCIES
   sendgrid
   spreadsheet
   sprockets
-  stripe!
   travis
   turbolinks
   uglifier
