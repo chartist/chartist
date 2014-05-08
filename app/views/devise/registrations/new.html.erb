@@ -6,7 +6,7 @@
   
       <div class="panel panel-default">
       
-        <div class="panel-heading">Sign up to Chartist</div>
+        <div class="panel-heading">Sign up</div>
     
         <div class="panel-body">
 
@@ -15,9 +15,9 @@
             <div class="col-md-6 column-border">
               <div class="form-title">Create account</div>
               <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
-                <%= f.text_field :username, autofocus: false, :placeholder => "Username", :class => "form-control" %>
-                <%= f.email_field :email, autofocus: false, :placeholder => "Email address", :class => "form-control" %>
-                <%= f.password_field :password, autocomplete: "off", :placeholder => "Password", :class => "form-control" %>
+                <%= f.text_field :username, autofocus: false, :placeholder => "Username", autocomplete: "off", :class => "form-control" %>
+                <%= f.email_field :email, autofocus: false, :placeholder => "Email address", autocomplete: "off", :class => "form-control" %>
+                <%= f.password_field :password, autocomplete: "off", :placeholder => "Password", autocomplete: "off", :class => "form-control" %>
                 <%= f.password_field :password_confirmation, autocomplete: "off", :placeholder => "Password confirmation", :class => "form-control" %>
                 <%= f.submit "Sign up", :class => "btn btn-default" %>
               <% end %>

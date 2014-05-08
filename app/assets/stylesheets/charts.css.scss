@@ -50,6 +50,7 @@
 /*inputs*/
 #msform input, #msform textarea {
   padding: 15px;
+  height: 33px;
   border: 1px solid #ccc;
   border-radius: 3px;
   margin-bottom: 10px;
@@ -238,3 +239,5 @@ input[type=radio]:checked + img{
   max-height: 63% !important;
   color: grey;
 }
+
+
