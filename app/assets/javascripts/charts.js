@@ -111,6 +111,9 @@ $(document).ready(function() {
     $('.popup-link').magnificPopup({ 
       type: 'iframe'
     });
+
+    // bootsrap popover
+    $('#chart_container').popover
   });
 
 
