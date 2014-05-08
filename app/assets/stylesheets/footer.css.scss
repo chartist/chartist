@@ -1,4 +1,4 @@
-footer.navbar-default.navbar-fixed-bottom {
+footer.navbar-default {
   width: 100%;
   height: 90px;
   font-size: 12px;
@@ -7,16 +7,16 @@ footer.navbar-default.navbar-fixed-bottom {
   text-align: center;
 }
 
-footer.navbar-default.navbar-fixed-bottom > p {
+footer.navbar-default > p {
   margin: 0px auto;
   padding: 0px;
 }
 
-footer.navbar-default.navbar-fixed-bottom a {
+footer.navbar-default a {
   text-decoration: none;
 }
 
-footer.navbar-default.navbar-fixed-bottom a:hover {
+footer.navbar-default a:hover {
   color: black;
   text-decoration: none;
 }
