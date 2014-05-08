@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
   def welcome_notification
     @user = User.last
     mail(to: @user.email, subject: 'Welcome to Chartist')
-    attachments.inline['chartist_avatar.png'] = File.read(Rails.root.join('public', 'images', 'chartist_avatar.png'))
+    @image_url = File.read("#{Rails.root}/app/assets/images/navbar/chartist_avatar.png").html_safe
   end
 
 end
