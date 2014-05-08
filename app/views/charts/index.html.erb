@@ -2,7 +2,7 @@
 <div class="row charts-row">
   <% @charts.each do |chart| %>
     <div class="col-sm-6 col-md-4">
-      <div class="thumbnail dashboard-chart">
+      <div class="thumbnail dashboard-chart dashboard-tile">
         <h2><%= link_to chart.name, chart_path(chart) %></h2>
         <%= render chart %>
       </div>

@@ -2,8 +2,8 @@
 
 /* logo */
 .navbar-brand {
-  position: absolute;
   width: 100%;
+  position: absolute;
   left: 0;
   margin: auto;
   text-align: center;
@@ -14,6 +14,17 @@
   -webkit-font-smoothing: antialiased; 
   font-smoothing: antialiased;
   text-shadow: 1px 1px $accent;
+  @media(max-width: 692px) {
+    text-align: left !important;
+    width: 30%;
+  }
+}
+
+.search-bar {
+  @media(max-width: 692px) {
+    padding-top: 10px;
+    padding-right: 15px;
+  }
 }
 
 .navbar-brand img {
