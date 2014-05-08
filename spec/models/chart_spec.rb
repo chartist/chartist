@@ -35,7 +35,7 @@ describe Chart do
 
 
     it "can't be created without a title" do
-      expect(wrong_chart).to have(1).errors_on(:name)
+      expect(wrong_chart1).to have(1).errors_on(:name)
     end
 
   end
