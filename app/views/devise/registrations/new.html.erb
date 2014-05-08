@@ -1,17 +1,10 @@
 <div class="container-fluid">
-
   <div class="row">
-
     <div class="col-md-8 col-md-offset-2">
-  
       <div class="panel panel-default">
-      
-        <div class="panel-heading">Sign up</div>
-    
+        <div class="panel-heading">Sign up to Chartist</div>
         <div class="panel-body">
-
           <div class="row">
-    
             <div class="col-md-6 column-border">
               <div class="form-title">Create account</div>
               <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
@@ -22,28 +15,28 @@
                 <%= f.submit "Sign up", :class => "btn btn-default" %>
               <% end %>
             </div>
-      
             <div class="col-md-6">
               <div class="form-title">Sign up with Facebook, LinkedIn or Google.</div>
               <%= link_to user_omniauth_authorize_path(:facebook), :class => "btn btn-block btn-social btn-facebook" do %>
-                <i class="fa fa-facebook"></i> Sign up with Facebook
+                <i class="fa fa-facebook"></i>
+                Sign up with Facebook
               <% end %>
               <%= link_to user_omniauth_authorize_path(:linkedin), :class => "btn btn-block btn-social btn-linkedin" do %>
-                <i class="fa fa-linkedin"></i> Sign up with LinkedIn
+                <i class="fa fa-linkedin"></i>
+                Sign up with LinkedIn
               <% end %>
               <%= link_to user_omniauth_authorize_path(:google_oauth2), :class => "btn btn-block btn-social btn-google-plus" do %>
-                <i class="fa fa-google-plus"></i> Sign up with Google
+                <i class="fa fa-google-plus"></i>
+                Sign up with Google
               <% end %>
             </div>
           </div>
-    
           <div class ="row">
             <div class="panel-body form-footer">
               Already have an account?
               <%= link_to "Sign in", new_session_path(:user) %>
             </div>
           </div>
-
         </div>
       </div>
     </div>

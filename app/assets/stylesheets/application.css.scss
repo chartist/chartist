@@ -17,11 +17,12 @@
  *= require charts
  *= require charts-dashboard
  *= require charts-page
- *= require dashboards
  *= require home
  *= require footer
  *= require navbar
  *= require signin
+ *= require error
+
  *= require magnific-popup
  *= require jquery.gridster
  *= require_self
@@ -146,5 +147,10 @@ width:85px !important;
 .dashboard-tile:link {
  box-shadow: 0px 0px 8px pink;
 }
+
+ .main-container {
+  margin-top: 80px;
+ }
+
 
 
