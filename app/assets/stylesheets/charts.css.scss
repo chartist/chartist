@@ -64,6 +64,7 @@
 /*buttons*/
 #msform .action-button {
   width: 100px;
+  height: 40px;
   background: $dark-grey;
   font-weight: bold;
   color: white;
@@ -102,6 +103,16 @@
   background: white;
   cursor: inherit;
   display: block;
+}
+
+.input-group .form-control:last-child {
+  height: 33px;
+}
+
+.data .btn-default {
+  margin-top: 10px;
+  text-decoration: none;
+  color: $darker;
 }
 
 /*headings*/
