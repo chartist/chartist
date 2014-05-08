@@ -51,9 +51,6 @@
 
 .form-rememberme {
   margin: 0px 0px 7px 0px;
-}
-
-.form-rememberme label {
   font-weight: 400;
 }
 
@@ -109,8 +106,32 @@
   color: #ffffff;
 }
 
+.btn-signin {
+  background: $dark-grey;
+  border: 1px solid #666666;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.btn-signin:hover {
+  background: #555555;
+  border: 1px solid #444444;
+  color: #ffffff;
+}
+
 /* social buttons */ 
 
 .right > .btn-social {
   margin-bottom: 10px;
+}
+
+.form-footer a {
+  color: $medium-grey;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form-footer a:hover {
+  color: $darker;
+  text-decoration: none;
 }
