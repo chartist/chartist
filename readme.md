@@ -1,7 +1,7 @@
+
 # Chartist
 
 [![Code Climate](https://codeclimate.com/github/chartist/chartist.png)](https://codeclimate.com/github/chartist/chartist)
-
 
 ### Amazing Charts on the Go
 We will soon be launching an exciting new way to help people quickly visualize and share simple date. It's called Chartist
