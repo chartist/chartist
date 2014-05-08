@@ -8,11 +8,12 @@ footer.navbar-default {
   padding: 10px;
   text-align: center;
   margin: 0px;
+  background-color: #ffffff;
+}
 
   @media(max-width: 692px) {
     height: 110px;
   }
-}
 
 .footer-content > p {
   margin: 5px auto;

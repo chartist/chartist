@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504182111) do
+ActiveRecord::Schema.define(version: 20140508150635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "charts", force: true do |t|
     t.string   "name"
-    t.integer  "chart_type"
+    t.integer  "chart_type",       default: 0
     t.integer  "x_type"
     t.datetime "created_at"
     t.datetime "updated_at"
