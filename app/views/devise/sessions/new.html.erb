@@ -10,7 +10,7 @@
             <div class="col-md-6 ">
               <h4>Sign in</h4>
               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                <%= f.email_field :email, autofocus: true, :placeholder => "Email address", :class => "form-control" %><br>
+                <%= f.email_field :email, autofocus: true, :placeholder => "Email address", autocomplete: "off", :class => "form-control" %><br>
                 <%= f.password_field :password, autocomplete: "off", :placeholder => "Password", :class => "form-control" %><br>
                 <% if devise_mapping.rememberable? %>
                   <%= f.check_box :remember_me %>
