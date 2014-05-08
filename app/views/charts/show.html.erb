@@ -1,6 +1,8 @@
-<meta property="og:title" content="<%= @chart.name %>" />
-<meta property="og:url" content="<%= chart_url(@chart) %>" />
-<meta property="og:description" content="<%= @chart.description %>" />
+
+<%= @url = chart_url(@chart) %>
+<%= @title = @chart.name %>
+
+
 <canvas id="canvas" style="display:none;"></canvas>
 
   <div class="row">
