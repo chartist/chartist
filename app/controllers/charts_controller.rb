@@ -19,6 +19,8 @@ class ChartsController < ApplicationController
 
   def show
     @chart = Chart.find params[:id]
+    @url = chart_url(@chart)
+    @title = @chart.name
     respond_to do |format|
       format.json {render json: @chart.generate_json }
       format.html

@@ -1,26 +1,26 @@
-
-
 <canvas id="canvas" style="display:none;"></canvas>
 
   <div class="row">
     
-    <div class="col-sm-10 col-md-10 col-md-offset-1 col-sm-offset-1 chartspage-container">
+    <div class="col-sm-8 col-md-8 col-md-offset-2 col-sm-offset-1 chartspage-container">
 
         <div class="chart-graphic chart_container">
           <a data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom" class="popup-link popup" href="<%= chart_widget_url(@chart)%>"><%= render @chart %></a>
         </div>
 
         <div class="chartspage-info caption">
-          <div class="col-sm-1 col-md-1 pull-left chartspage-icon">
-            <%= image_tag gravatar_url(@chart.user) %>
+          <div class="row">
+            <div class="pull-left chartspage-icon">
+              <%= image_tag gravatar_url(@chart.user) %>
+            </div>
+            <div class="pull-left chartspage-header">
+              <div class="chartspage-title"><%= @chart.name %></div>
+              <div class="chartspage-author">By <a href= "mailto:<%= @chart.user.email %>"><%= @chart.user.username %></a></div>
+              <div class="chartspage-datestamp">Added <%= (@chart.created_at).strftime("%a %b %d, %Y") %></div>
+            </div>
           </div>
-          <div class="col-sm-11 col-md-11 chartspage-header">
-            <div class="chartspage-title"><%= @chart.name %></div>
-            <div class="chartspage-author">By <a href= "mailto:<%= @chart.user.email %>"><%= @chart.user.username %></a></div>
-            <div class="chartspage-datestamp ">Added <%= (@chart.created_at).strftime("%a %b %d, %Y") %></div>
-          </div>
-          <div class="col-sm-12 col-md-12 chartspage-text clearfix"><%= @chart.description %></div>
 
+          <div class="col-sm-12 col-md-12 chartspage-text clearfix"><%= @chart.description %></div>
 
         </div>
 
@@ -34,11 +34,11 @@
 
         <div class="chartspage-footer"> 
           <div class="row">
-          <div class="col-sm-6 col-md-6 chartspage-buttons">
+          <div class="col-xs-12 col-sm-12 col-md-12 chartspage-buttons">
 
           <div class="btn-group edit-chart">
 
-          <div class="btn-group">
+          <div class="btn-group ">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle = "dropdown">
               <%= icon('fa fa-download') %>
               Download

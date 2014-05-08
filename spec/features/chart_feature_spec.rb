@@ -63,12 +63,12 @@ end
 
 describe 'Managing charts' do
 
-  let(:user) { create(:user) }  
+  let(:user) { create(:user) }
   let(:hacker) { create(:hacker) }
   let(:chart) { create(:line_chart, user: user) }
 
   context "Editing" do
-    
+
     it 'deletes a chart when the button is pressed' do
       login_as user
       visit chart_path(chart)
@@ -88,12 +88,12 @@ describe 'Managing charts' do
       expect(page).to have_css ".caption", text: 'Bla'
     end
 
-    
+
   end
 
   context "Deleting" do
 
-  
+
     it 'user can only delete own charts' do
       login_as hacker
       visit chart_path(chart)
@@ -106,4 +106,5 @@ describe 'Managing charts' do
       expect(page).not_to have_css '#delete-btn'
     end
   end
+
 end

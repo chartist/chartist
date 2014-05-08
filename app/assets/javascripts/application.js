@@ -26,5 +26,9 @@
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require zeroclipboard
 //= require angular
+//= require jquery.handsontable.full
+//= require jquery.handsontable.full
+//= require canvg
+//= require rgbcolor
 //= require magnific-popup
 //= require_tree .
