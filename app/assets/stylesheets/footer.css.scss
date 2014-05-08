@@ -1,3 +1,5 @@
+@import "mixins";
+
 footer.navbar-default {
   width: 100%;
   height: 90px;
@@ -5,6 +7,11 @@ footer.navbar-default {
   font-weight: 400;
   padding: 10px;
   text-align: center;
+  margin: 0px;
+
+  @media(max-width: 692px) {
+    height: 110px;
+  }
 }
 
 .footer-content > p {
@@ -13,10 +20,11 @@ footer.navbar-default {
 }
 
 footer.navbar-default a {
+  color: $medium-grey;
   text-decoration: none;
 }
 
 footer.navbar-default a:hover {
-  color: black;
+  color: $darker;
   text-decoration: none;
 }
