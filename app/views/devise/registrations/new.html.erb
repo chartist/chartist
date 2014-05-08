@@ -6,7 +6,6 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-md-6 column-border">
-              <div class="form-title">Create account</div>
               <%= form_for(User.new, as: :user, url: registration_path(:user)) do |f| %>
                 <%= f.text_field :username, autofocus: false, :placeholder => "Username", autocomplete: "off", :class => "form-control" %>
                 <%= f.email_field :email, autofocus: false, :placeholder => "Email address", autocomplete: "off", :class => "form-control" %>
