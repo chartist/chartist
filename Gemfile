@@ -8,10 +8,7 @@ gem 'pg'
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'paperclip', github: 'thoughtbot/paperclip'
-
 gem 'font-awesome-sass'
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-
 gem "chartkick"
 gem 'jquery-rails'
 gem 'magnific-popup-rails'
