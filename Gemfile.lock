@@ -52,11 +52,13 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     angularjs-rails (1.2.16)
     annotate (2.6.3)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
+    backports (3.6.0)
     bcrypt (3.1.7)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
@@ -100,6 +102,8 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     erubis (2.7.0)
+    ethon (0.7.0)
+      ffi (>= 1.3.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
     factory_girl (4.4.0)
@@ -109,10 +113,19 @@ GEM
       railties (>= 3.0.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.9.1)
+      faraday (>= 0.7.4, < 0.10)
     ffi (1.9.3)
     font-awesome-sass (4.0.3.1)
       sass (~> 3.2)
     formatador (0.2.4)
+    gh (0.13.2)
+      addressable
+      backports
+      faraday (~> 0.8)
+      multi_json (~> 1.0)
+      net-http-persistent (>= 2.7)
+      net-http-pipeline
     groupdate (2.1.0)
       activerecord (>= 3.0.0)
     guard (2.6.0)
@@ -139,6 +152,8 @@ GEM
     json (1.8.1)
     jwt (0.1.11)
       multi_json (>= 1.5)
+    launchy (2.4.2)
+      addressable (~> 2.3)
     listen (2.7.4)
       celluloid (>= 0.15.2)
       celluloid-io (>= 0.15.0)
@@ -166,6 +181,8 @@ GEM
     multi_json (1.9.3)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    net-http-persistent (2.9.4)
+    net-http-pipeline (1.0.1)
     nio4r (1.0.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
@@ -210,6 +227,9 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pusher-client (0.6.0)
+      json
+      websocket (~> 1.0)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -306,11 +326,24 @@ GEM
     thread_safe (0.3.3)
     tilt (1.4.1)
     timers (1.1.0)
+    travis (1.6.10)
+      addressable (~> 2.3)
+      backports
+      faraday (~> 0.9)
+      faraday_middleware (~> 0.9)
+      gh (~> 0.13)
+      highline (~> 1.6)
+      launchy (~> 2.1)
+      pry (~> 0.9)
+      pusher-client (~> 0.4)
+      typhoeus (~> 0.6)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
     turbolinks (2.2.2)
       coffee-rails
+    typhoeus (0.6.8)
+      ethon (>= 0.7.0)
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
     uglifier (2.5.0)
@@ -318,6 +351,7 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    websocket (1.0.7)
     websocket-driver (0.3.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -365,6 +399,7 @@ DEPENDENCIES
   spreadsheet
   sprockets
   stripe!
+  travis
   turbolinks
   uglifier
   zeroclipboard-rails
