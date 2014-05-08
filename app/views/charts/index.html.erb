@@ -1,13 +1,15 @@
 <div class="page-header">Latest Charts</div>
-<div class="row charts-row">
 <% if @charts.any? %>
-  <% @charts.each do |chart| %>
-    <div class="col-sm-6 col-md-4">
-      <div class="thumbnail dashboard-chart dashboard-tile">
-        <h2><%= link_to chart.name, chart_path(chart) %></h2>
-        <%= render chart %>
-      </div>
+  <% @charts.in_groups_of(3, false) do |triplet| %>
+    <div class="row charts-row">
+      <% triplet.each do |chart| %>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail dashboard-chart dashboard-tile">
+            <h2><%= link_to chart.name, chart_path(chart) %></h2>
+            <%= render chart %>
+          </div>
+        </div>
+      <% end %>
     </div>
   <% end %>
-<% end %> 
-</div>
+<% end %>
