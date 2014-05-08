@@ -1,4 +1,3 @@
-![](app/assets/images/landing-page.png)
 
 # Chartist
 
