@@ -13,7 +13,7 @@ body {
 .chartspage-container {
 	margin-top: 25px;
 	background: #ffffff;
-	padding: 0px 20px 20px 20px;
+	padding: 0px 30px 30px 30px;
 	box-shadow: 0px 0px 10px $medium-grey;
 }
 
@@ -23,19 +23,46 @@ body {
 }
 
 .chartspage-icon img {
-	width: 50px;
+	width: 80px;
 	height: auto;
-  text-align: right;
+
 }
 
 .chartspage-icon {
   padding-right: 20px;
-  float: left;
-  margin: 0px 0px 0px -15px;
+  margin: 0px 0px 0px 15px;
+  width: 90px;
 }
 
 .chartspage-header {
-	float: right;
+
+}
+
+@media (max-width: 768px) {
+   .chartspage-header {
+     max-width: 70%;
+     line-height: 36px;
+     margin-top: 5px;
+   }
+
+   .chartspage-datestamp {
+   	line-height: 0px; 
+   }
+
+   .chartspage-buttons .btn-group .btn {
+      padding: 5px 7px;
+   }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+	.chartspage-header {
+     max-width: 75%;
+     line-height: 36px;
+     margin-top: 5px;
+   }
+   .chartspage-datestamp {
+   	line-height: 0px; 
+   }
 }
 
 .chartspage-title {
@@ -73,7 +100,6 @@ body {
 }
 
 .chartspage-buttons {
-  float: left;
   margin: 0px;
   padding: 0px;
 }
@@ -90,9 +116,12 @@ body {
 }
 
 .chartspage-share {
-  float: right;
   padding: 5px 0px;
 }
 .sharing-bar {
   margin-top: 10px;
+}
+
+.chartspage-footer {
+	margin: 0px 0px 0px 15px;
 }
