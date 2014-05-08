@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def gravatar_url(user)
     gravatar_id = Digest::MD5.hexdigest(@chart.user.email.downcase)
-    "http://gravatar.com/avatar/{gravatar_id}.png?s=300&d=mm"
+    "http://gravatar.com/avatar/{gravatar_id}.png?s=300&d=mm".html_safe
   end
 
   def user_dashboard(current_user)
