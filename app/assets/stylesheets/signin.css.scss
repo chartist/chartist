@@ -68,6 +68,10 @@
   box-shadow: none;
 }
 
+input:-webkit-autofill, textarea:-webkit-autofill {
+  background-color: #f1f1f1;
+}
+
 /* text styles */
 
 .form-title {

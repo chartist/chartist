@@ -64,6 +64,7 @@
 /*buttons*/
 #msform .action-button {
   width: 100px;
+  height: 40px;
   background: $dark-grey;
   font-weight: bold;
   color: white;
@@ -96,12 +97,21 @@
   min-height: 100%;
   font-size: 999px;
   text-align: right;
-  filter: alpha(opacity=0);
   opacity: 0;
   outline: none;
   background: white;
   cursor: inherit;
   display: block;
+}
+
+.input-group .form-control:last-child {
+  height: 33px;
+}
+
+.data .btn-default {
+  margin-top: 10px;
+  text-decoration: none;
+  color: $darker;
 }
 
 /*headings*/
@@ -239,5 +249,3 @@ input[type=radio]:checked + img{
   max-height: 63% !important;
   color: grey;
 }
-
-
