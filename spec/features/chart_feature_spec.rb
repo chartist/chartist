@@ -106,9 +106,5 @@ describe 'Managing charts' do
       expect(page).not_to have_css '#delete-btn'
     end
   end
-  context 'Validations' do
-    it "can't be created without a title" do
-      chart = create(:line_chart, user: user, name: nil)
-    end
-  end
+
 end

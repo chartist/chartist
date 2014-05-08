@@ -16,6 +16,7 @@ class Chart < ActiveRecord::Base
   if: :new_record?
 
 
+    validates :name, presence: true
     attr_accessor :dashboard_titles
 
     after_save :prepare_chart
