@@ -7,7 +7,7 @@
     <div class="col-sm-10 col-md-10 col-md-offset-1 col-sm-offset-1 chartspage-container">
 
         <div class="chart-graphic chart_container">
-          <a class="popup-link popup" href="<%= chart_widget_url(@chart)%>"><%= render @chart %></a>
+          <a data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom" class="popup-link popup" href="<%= chart_widget_url(@chart)%>"><%= render @chart %></a>
         </div>
 
         <div class="chartspage-info caption">
