@@ -3,16 +3,15 @@
 <%= form_for @chart, class: "form-vertical", html: { multipart: true, id: 'msform', role: "form"} do |f| %>
   <!-- progressbar -->
   <ul id="progressbar" class="center-block">
-    <li class="active">Start Creating</li>
-    <li>Choose Design</li>
+    <li class="active">Add data</li>
+    <li>Choose Chart</li>
     <li>Choose Colour</li>
-    <li>Pick a board</li>
+    <li>Add Description</li>
   </ul>
   <!-- fieldsets -->
   <fieldset>
-    <h2 class="fs-title">Import Sources</h2>
-    <h5>There are three different options for uploading your data.</h5>
-    <h5>Please choose one that works best for you.</h5>
+    <h2 class="fs-title">Add data</h2>
+    <h5>Upload a file (.csv, .xls, .xlsx) or enter data by hand</h5>
     <div class="panel-group" id="accordion">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -47,7 +46,7 @@
       <div id="collapseTwo" class="panel-collapse collapse">
         <div class="panel-body">
           <div id="example" class="handsontable"></div>
-            <button id='download' type="button" class="btn btn-primary">Ready</button>
+            <button id='download' type="button" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </div>  
@@ -82,7 +81,7 @@
         <input type="button" name="next" class="next action-button" value="Next" />
         </fieldset>
         <fieldset>
-        <h2 class="fs-title">What colour are you feeling today?</h2>
+        <h2 class="fs-title">Choose a style</h2>
         <div class ="form-group">
           <label class="charts-theme">
             <%= f.radio_button :colorscheme, :spring %>
@@ -105,18 +104,18 @@
         <input type="button" name="next" class="next action-button" value="Next" />
         </fieldset>
         <fieldset>
-        <h2 class="fs-title">Pick a Board</h2>
+        <h2 class="fs-title">Add description</h2>
         <div class="panel panel-default">
           <div class="panel-heading clearfix">         
-            <%= f.label :name, "Add a Title", class: "panel-title pull-left" %> 
+            <%= f.label :name, "Add a title", class: "panel-title pull-left" %> 
           </div>
           <div class="panel-body">
-            <%= f.text_field :name, :autofocus => true, :placeholder => "My New Awesome Chart", class: "form-control" %>
+            <%= f.text_field :name, :autofocus => true, :placeholder => "e.g. My New Awesome Chart", class: "form-control" %>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading clearfix"> 
-            <%= f.label :description, "Add a Description", class: "panel-title pull-left" %>
+            <%= f.label :description, "Write a sentence about your chart", class: "panel-title pull-left" %>
           </div>
           <div class="panel-body">
             <%= f.text_field :description, class: 'form-control' %>
@@ -124,7 +123,7 @@
         </div>
         <div class="panel panel-default">
           <div class="panel-heading clearfix"> 
-            <%= f.label :dashboard_titles, "Create New Board", class: "panel-title pull-left" %>
+            <%= f.label :dashboard_titles, "Add your chart to a dashboard", class: "panel-title pull-left" %>
           </div>
           <div class="panel-body">
             <%= f.text_field :dashboard_titles, class: 'form-control dashboards' %>
