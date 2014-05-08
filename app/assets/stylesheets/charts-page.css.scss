@@ -31,11 +31,34 @@ body {
 .chartspage-icon {
   padding-right: 20px;
   margin: 0px 0px 0px 15px;
-  float: right;
   width: 90px;
 }
 
 .chartspage-header {
+
+}
+
+@media (max-width: 768px) {
+   .chartspage-header {
+     max-width: 70%;
+     line-height: 36px;
+     margin-top: 5px;
+   }
+
+   .chartspage-datestamp {
+   	line-height: 0px; 
+   }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+	.chartspage-header {
+     max-width: 75%;
+     line-height: 36px;
+     margin-top: 5px;
+   }
+   .chartspage-datestamp {
+   	line-height: 0px; 
+   }
 }
 
 .chartspage-title {
