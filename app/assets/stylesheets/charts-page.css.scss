@@ -48,6 +48,10 @@ body {
    .chartspage-datestamp {
    	line-height: 0px; 
    }
+
+   .chartspage-buttons .btn-group .btn {
+      padding: 5px 7px;
+   }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
