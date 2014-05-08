@@ -5,4 +5,5 @@ class UserMailer < ActionMailer::Base
     @user = User.last
     mail(to: @user.email, subject: 'Welcome to Chartist')
   end
+
 end
