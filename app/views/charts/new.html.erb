@@ -30,110 +30,109 @@
                   <%= f.file_field :csv %>
                 </span>
               </span>
-            <div class="form-control filename"></div>
+              <div class="form-control filename"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title text-left">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-            Enter Data
-          </a>
-        </h3>
-      </div>
-      <div id="collapseTwo" class="panel-collapse collapse">
-        <div class="panel-body">
-          <div id="example" class="handsontable"></div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title text-left">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+              Enter Data
+            </a>
+          </h3>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div id="example" class="handsontable"></div>
             <button id='download' type="button" class="btn btn-primary">Submit</button>
           </div>
         </div>
-      </div>  
+      </div>
       <div id="collapseThree" class="panel-collapse collapse">
         <div class="panel-body">
           Upload Button
         </div>
       </div>
       <input type="button" name="next" id="first-next" class="next action-button" value="Next" />
-      </fieldset>
-      <fieldset>
-        <h2 class="fs-title">Choose a chart type</h2>
-        <div class="form-group">
-          <label class="form-charts">
-            <%= f.radio_button :chart_type, :pie_chart %>
-            <%= image_tag("charts/piechart.png", class: "image-col-2") %>
-          </label>
-          <label class="form-charts">
-            <%= f.radio_button :chart_type, :line_chart %>
-            <%= image_tag("charts/linechart.png", class: "image-col-2") %>
-          </label>
-          <label class="form-charts">
-            <%= f.radio_button :chart_type, :col_chart %>
-            <%= image_tag("charts/columnchart.png", class: "image-col-2") %>
-          </label>
-          <label class="form-charts">
-            <%= f.radio_button :chart_type, :bar_chart %>
-            <%= image_tag("charts/barchart.png", class: "image-col-2") %>
-          </label>
+    </fieldset>
+    <fieldset>
+      <h2 class="fs-title">Choose a chart type</h2>
+      <div class="form-group">
+        <label class="form-charts">
+          <%= f.radio_button :chart_type, :pie_chart %>
+          <%= image_tag("charts/piechart.png", class: "image-col-2") %>
+        </label>
+        <label class="form-charts">
+          <%= f.radio_button :chart_type, :line_chart %>
+          <%= image_tag("charts/linechart.png", class: "image-col-2") %>
+        </label>
+        <label class="form-charts">
+          <%= f.radio_button :chart_type, :col_chart %>
+          <%= image_tag("charts/columnchart.png", class: "image-col-2") %>
+        </label>
+        <label class="form-charts">
+          <%= f.radio_button :chart_type, :bar_chart %>
+          <%= image_tag("charts/barchart.png", class: "image-col-2") %>
+        </label>
+      </div>
+      <input type="button" name="previous" class="previous action-button" value="Previous" />
+      <input type="button" name="next" class="next action-button" value="Next" />
+    </fieldset>
+    <fieldset>
+      <h2 class="fs-title">Choose a style</h2>
+      <div class ="form-group">
+        <label class="charts-theme">
+          <%= f.radio_button :colorscheme, :spring %>
+          <%= image_tag("charts/spring.png", class: "image-col-2") %>
+        </label>
+        <label class="charts-theme">
+          <%= f.radio_button :colorscheme, :summer %>
+          <%= image_tag("charts/summer.png", class: "image-col-2") %>
+        </label>
+        <label class="charts-theme">
+          <%= f.radio_button :colorscheme, :autumn %>
+          <%= image_tag("charts/autumn.png", class: "image-col-2") %>
+        </label>
+        <label class="charts-theme">
+          <%= f.radio_button :colorscheme, :winter %>
+          <%= image_tag("charts/winter.png", class: "image-col-2") %>
+        </label>
+      </div>
+      <input type="button" name="previous" class="previous action-button" value="Previous" />
+      <input type="button" name="next" class="next action-button" value="Next" />
+    </fieldset>
+    <fieldset>
+      <h2 class="fs-title">Add description</h2>
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <%= f.label :name, "Add a title", class: "panel-title pull-left" %>
         </div>
-        <input type="button" name="previous" class="previous action-button" value="Previous" />
-        <input type="button" name="next" class="next action-button" value="Next" />
-        </fieldset>
-        <fieldset>
-        <h2 class="fs-title">Choose a style</h2>
-        <div class ="form-group">
-          <label class="charts-theme">
-            <%= f.radio_button :colorscheme, :spring %>
-            <%= image_tag("charts/spring.png", class: "image-col-2") %>
-          </label>
-          <label class="charts-theme">
-            <%= f.radio_button :colorscheme, :summer %>
-            <%= image_tag("charts/summer.png", class: "image-col-2") %>
-          </label>
-          <label class="charts-theme">
-            <%= f.radio_button :colorscheme, :autumn %>
-            <%= image_tag("charts/autumn.png", class: "image-col-2") %>
-          </label>
-          <label class="charts-theme">
-            <%= f.radio_button :colorscheme, :winter %>
-            <%= image_tag("charts/winter.png", class: "image-col-2") %>
-          </label>
+        <div class="panel-body">
+          <%= f.text_field :name, :autofocus => true, :placeholder => "e.g. My New Awesome Chart (required)", class: "form-control" %>
         </div>
-        <input type="button" name="previous" class="previous action-button" value="Previous" />
-        <input type="button" name="next" class="next action-button" value="Next" />
-        </fieldset>
-        <fieldset>
-        <h2 class="fs-title">Add description</h2>
-        <div class="panel panel-default">
-          <div class="panel-heading clearfix">         
-            <%= f.label :name, "Add a title", class: "panel-title pull-left" %> 
-          </div>
-          <div class="panel-body">
-            <%= f.text_field :name, :autofocus => true, :placeholder => "e.g. My New Awesome Chart", class: "form-control" %>
-          </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <%= f.label :description, "Write a sentence about your chart", class: "panel-title pull-left" %>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading clearfix"> 
-            <%= f.label :description, "Write a sentence about your chart", class: "panel-title pull-left" %>
-          </div>
-          <div class="panel-body">
-            <%= f.text_field :description, class: 'form-control' %>
-          </div>
+        <div class="panel-body">
+          <%= f.text_area :description, class: 'form-control' %>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading clearfix"> 
-            <%= f.label :dashboard_titles, "Add your chart to a dashboard", class: "panel-title pull-left" %>
-          </div>
-          <div class="panel-body">
-            <%= f.text_field :dashboard_titles, class: 'form-control dashboards' %>
-          </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <%= f.label :dashboard_titles, "Add your chart to a dashboard", class: "panel-title pull-left" %>
         </div>
-        <div>
-          <%= f.hidden_field :table_data, value: "xxxx", class: "hidden-field" %>
+        <div class="panel-body">
+          <%= f.text_field :dashboard_titles, class: 'form-control dashboards' %>
         </div>
-        <input type="button" name="previous" class="previous action-button" value="Previous" />
-        <%= f.submit "Create", class: "action-button" %>
-        </fieldset>
-<% end %>
-
+      </div>
+      <div>
+        <%= f.hidden_field :table_data, value: "xxxx", class: "hidden-field" %>
+      </div>
+      <input type="button" name="previous" class="previous action-button" value="Previous" />
+      <%= f.submit "Create", class: "action-button" %>
+    </fieldset>
+  <% end %>

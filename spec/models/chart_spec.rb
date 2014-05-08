@@ -20,6 +20,8 @@ describe Chart do
 
   context 'Validations' do
 
+    let(:wrong_chart1) { build(:line_chart, user: user, name: nil, description: 'bla')}
+
     it "content type" do
       should validate_attachment_content_type(:csv).
         allowing("text/csv").
@@ -30,6 +32,12 @@ describe Chart do
       should validate_attachment_size(:csv).
         less_than(2.megabytes)
     end
+
+
+    it "can't be created without a title" do
+      expect(wrong_chart).to have(1).errors_on(:name)
+    end
+
   end
   context 'Enumeration' do
 
