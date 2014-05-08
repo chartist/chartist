@@ -114,6 +114,11 @@
   color: $darker;
 }
 
+/*links*/
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
 /*headings*/
 .fs-title {
   font-size: 20px;
