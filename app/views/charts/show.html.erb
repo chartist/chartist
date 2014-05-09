@@ -14,7 +14,9 @@
               <%= image_tag gravatar_url(@chart.user) %>
             </div>
             <div class="pull-left chartspage-header">
-              <div class="chartspage-title"><%= @chart.name %></div>
+              <div class="chartspage-title">
+                <h3> <%= @chart.name %> </h3>
+              </div>
               <div class="chartspage-author">By <a href= "mailto:<%= @chart.user.email %>"><%= @chart.user.username %></a></div>
               <div class="chartspage-datestamp">Added <%= (@chart.created_at).strftime("%a %b %d, %Y") %></div>
             </div>
