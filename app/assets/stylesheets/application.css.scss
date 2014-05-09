@@ -29,6 +29,10 @@
 
  */
 
+ html,body {
+  height: 100%;
+ }
+
 .addthis_button_tweet {
 width:85px !important;
 }
@@ -37,6 +41,7 @@ width:85px !important;
 .handsontable .table th, .handsontable .table td {
     border-top: none;
 }
+
 
 .table caption + thead tr:first-child th,
 .table caption + thead tr:first-child td,
