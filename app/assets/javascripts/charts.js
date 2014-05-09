@@ -16,6 +16,12 @@ function handleDownloadButtonClick() {
 $(document).ready(function(){
   $(".alert").alert();
   $('.my-tooltip').tooltip();
+  $('#collapseTwo').on('show.bs.collapse', function () {
+    $('#first-next').hide();
+})
+  $('#collapseTwo').on('hide.bs.collapse', function () {
+    $('#first-next').show();
+})
   //jQuery time
   var current_fs, next_fs, previous_fs; //fieldsets
   var left, opacity, scale; //fieldset properties which we will animate

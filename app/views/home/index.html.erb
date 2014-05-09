@@ -1,42 +1,48 @@
-   <script type="text/javascript">
+<script type="text/javascript">
   $(document).ready(function(){
   $('a[href^="#"]').on('click',function (e) {
       e.preventDefault();
-
+  
       var target = this.hash,
       $target = $(target);
-
+  
       $('html, body').stop().animate({
           'scrollTop': $target.offset().top
       }, 900, 'easeInOutExpo', function () {
           window.location.hash = target;
       });
   });
-});
+  });
 </script>
-
 <div class="wrapper">
-  <div class="homepage-header slide" id="homepage-cover">
-      <%= image_tag "homepage/logo_home.png" %>
-      <div class="header-text">Data visualization on the go</div>
-      <a href="#sign-up" class="nav-button btn btn-danger">Start creating</a><br>
-      <a href="#more" class="nav-button header-link">Find out more</a>
+  <div class="homepage-header slide img-responsive" id="homepage-cover">
+    <%= image_tag "homepage/logo_home.png" %>
+    <div class="header-text">Data visualization on the go</div>
+    <a href="#sign-up" class="nav-button btn btn-danger">Start creating</a><br>
+    <a href="#more" class="nav-button header-link">Find out more</a>
   </div>
-
   <div class="homepage-info slide" id="more">
     <%= render :file => "home/homepage_info" %>
   </div>
-
   <div class="homepage-forms slide" id="sign-up">
     <%= render :file => "devise/registrations/new" %>
   </div>
-
   <div class="homepage-footer slide">
-      <p>Made by <a href="https://github.com/yan0va">@yan0va</a>, <a href="https://github.com/itsmurasaki">@itsmurasaki</a>, <a href="https://github.com/mariogintili">@mariogintilli</a>, <a href="https://github.com/duboff">@duboff</a> and <a href="https://github.com/tobyret">@tobyret</a> at <a href="http://www.makersacademy.com" target="_blank">Makers Academy</a></p>
-        <p>Follow the project on    
-            <a href="https://twitter.com/ChartistChat" target="_blank"><i class="fa fa-twitter"></i>  twitter</a>
-            <a href="https://github.com/chartist/chartist" target="_blank"><i class="fa fa-github"></i>  github</a>
-        </p>
-        <p>&copy; 2014 All Rights Reserved</p>
+    <p>Made by
+      <a href="https://github.com/yan0va">@yan0va</a>,
+      <a href="https://github.com/itsmurasaki">@itsmurasaki</a>,
+      <a href="https://github.com/mariogintili">@mariogintilli</a>,
+      <a href="https://github.com/duboff">@duboff</a>
+      and
+      <a href="https://github.com/tobyret">@tobyret</a>
+      at
+      <a href="http://www.makersacademy.com" target="_blank">Makers Academy</a></p>
+    <p>Follow the project on
+      <a href="https://twitter.com/ChartistChat" target="_blank"><i class="fa fa-twitter"></i>
+        twitter</a>
+      <a href="https://github.com/chartist/chartist" target="_blank"><i class="fa fa-github"></i>
+        github</a>
+    </p>
+    <p>&copy; 2014 All Rights Reserved</p>
   </div>
 </div>

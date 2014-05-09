@@ -28,6 +28,10 @@
   }
 }
 
+.form-inline .input-group > .form-control, .navbar-form .input-group > .form-control {
+  height: 33px;
+}
+
 .navbar-brand img {
   margin: -5px 10px 5px 0px;
 }

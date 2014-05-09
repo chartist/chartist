@@ -4,6 +4,7 @@ class ChartsController < ApplicationController
 
   def new
     @chart = Chart.new
+    render layout: "nofooter"
   end
 
   def create

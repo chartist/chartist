@@ -1,19 +1,17 @@
 <div class="page-header">
-  <h1><%= @dashboard.title %></h1>
+  <h1 class="text-center"><%= @dashboard.title %></h1>
 </div>
-<div class = "row">
-  <div class="gridster">
-    <ul>
-      <% @dashboard.charts.each_with_index do |chart, i| %>
-        <li data-row=<%= (i / 3 + 1).to_s %> data-col=<%= ((i+3) % 3 + 1).to_s %> data-sizex="1" data-sizey="1">
-          <div class="thumbnail dashboard-tile">
-            <div class="caption">
-              <h2><%= link_to chart.name, chart_path(chart) %></h2>
-            </div>
-            <%= render chart %>
+<div class="gridster">
+  <ul>
+    <% @dashboard.charts.each_with_index do |chart, i| %>
+      <li data-row=<%= (i / 3 + 1).to_s %> data-col=<%= ((i+3) % 3 + 1).to_s %> data-sizex="1" data-sizey="1">
+        <div class="thumbnail dashboard-chart dashboard-tile">
+          <div class="caption">
+            <h2 class="text-center"><%= link_to chart.name, chart_path(chart) %></h2>
           </div>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+          <%= render chart %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </div>

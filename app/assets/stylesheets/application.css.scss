@@ -33,6 +33,10 @@
   height: 100%;
  }
 
+
+body { 
+  padding-top: 50px;
+}
 .addthis_button_tweet {
 width:85px !important;
 }
@@ -141,20 +145,31 @@ width:85px !important;
   display: block;
    width: 100%;
 }
+
 @import "mixins";
 .dashboard-tile {
   border-radius: 0;
   box-shadow: 0px 0px 8px $medium-grey;
 }
+.index-tile {
+  border-radius: 0;
+  box-shadow: 0px 0px 8px $medium-grey;
+
+}
 .dashboard-tile:hover {
  cursor: move;
+ box-shadow: 2px 2px 10px #e86fa7;
 }
 .dashboard-tile:link {
  box-shadow: 0px 0px 8px pink;
 }
 
- .main-container {
-  margin-top: 80px;
+ .message {
+  margin-top: 20px;
+ }
+
+ #download {
+  margin-top: 10px;
  }
 
 

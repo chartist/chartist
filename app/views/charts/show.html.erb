@@ -26,7 +26,7 @@
 
         <div class="chartspage-dashboards dashboard-list">
           Dashboards: <% if @chart.dashboards.any? %>
-            <% @chart.dashboards.each do |dashboard| %>
+            <% @chart.dashboards.uniq.each do |dashboard| %>
                <%= link_to dashboard.title, dashboard_path(dashboard) %>
             <% end %>
           <% end %>
@@ -54,7 +54,7 @@
             </ul>
           </div>
 
-          <button type="button" class='my_clip_button btn btn-default' data-clipboard-text="<iframe src='<%= chart_widget_url(@chart)%>' frameBorder='0'></iframe>" id='d_clip_button' title='Copy embed code to your clipbord.'><%= icon("fa fa-files-o") %> Embed</button>
+          <button type="button" class='my_clip_button btn btn-default' data-clipboard-text="<iframe src='<%= chart_widget_url(@chart)%>' frameBorder='0'></iframe>" id='d_clip_button' title='Copy embed code to your clipbord.'><%= icon("fa fa-code") %> Embed</button>
          
           <div class="btn-group">
             <% if current_user %>
@@ -89,5 +89,5 @@
 
 
    
-  </div>
+  </div></div>
 

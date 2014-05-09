@@ -2,6 +2,7 @@ class DashboardsController < ApplicationController
 
   def show
     @dashboard = Dashboard.find params[:id]
+    flash.now[:notice] = "Feel free to drag and drop the charts on this page."
   end
 
   def update
