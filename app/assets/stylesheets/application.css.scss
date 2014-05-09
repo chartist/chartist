@@ -28,15 +28,25 @@
  *= require_self
 
  */
-
- html,body {
+html, body {
   height: 100%;
- }
+}
+
 
 
 body { 
   padding-top: 50px;
 }
+
+.main-container {
+  overflow:auto;
+  padding-bottom:150px;
+}
+
+.homepage-header {
+  margin-top: -50px;
+}
+
 .addthis_button_tweet {
 width:85px !important;
 }
