@@ -123,6 +123,17 @@ input:-webkit-autofill, textarea:-webkit-autofill {
   color: #ffffff;
 }
 
+.btn-info {
+  background-color: $medium-grey;
+  border-color: $dark-grey;
+  text-decoration: none;
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active {
+  background-color: $dark-grey;
+  border-color: $dark-grey;
+}
+
 /* social buttons */ 
 
 .right > .btn-social {
