@@ -108,7 +108,7 @@
         <%= f.label :name, "Add a title", class: "panel-title pull-left" %>
       </div>
       <div class="panel-body">
-        <%= f.text_field :name, :autofocus => true, :placeholder => "e.g. My New Awesome Chart", class: "form-control" %>
+        <%= f.text_field :name, :autofocus => true, :placeholder => "e.g. My New Awesome Chart", class: "form-control", required: true %>
       </div>
     </div>
     <div class="panel panel-default">
@@ -116,7 +116,7 @@
         <%= f.label :description, "Write a sentence about your chart", class: "panel-title pull-left" %>
       </div>
       <div class="panel-body">
-        <%= f.text_field :description, :placeholder => "e.g. Some information about awesome data", class: 'form-control' %>
+        <%= f.text_area :description, :placeholder => "e.g. Some information about awesome data", class: 'form-control desc-text-area' %>
       </div>
     </div>
     <div class="panel panel-default">
@@ -124,7 +124,7 @@
         <%= f.label :dashboard_titles, "Add your chart to a dashboard", class: "panel-title pull-left" %>
       </div>
       <div class="panel-body">
-        <%= f.text_field :dashboard_titles, :placeholder => "e.g. Awesome Charts 2013/2014", class: 'form-control dashboards' %>
+        <%= f.text_field :dashboard_titles, :placeholder => "e.g. Politics Economics Awesomeness (space separated)", class: 'form-control dashboards' %>
       </div>
     </div>
     <div>

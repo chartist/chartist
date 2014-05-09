@@ -13,7 +13,7 @@ class ChartsController < ApplicationController
     if @chart.save
       redirect_to chart_path(@chart)
     else
-      flash[:error] = "Oops! something went wrong"
+      flash[:error] = @chart.errors.full_messages.join(', ')
       render "new"
     end
   end

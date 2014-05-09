@@ -16,6 +16,8 @@ function handleDownloadButtonClick() {
 $(document).ready(function(){
   $(".alert").alert();
   $('.my-tooltip').tooltip();
+  $('.dashboards').tooltip({'trigger':'focus', 'title': 'Add your chart to public boards to collate it with other charts on similar topic'});
+
   $('#collapseTwo').on('show.bs.collapse', function () {
     $('#first-next').hide();
 })
