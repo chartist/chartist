@@ -1,5 +1,5 @@
 function handleDownloadButtonClick() {
-  $('#download-btn').on('click', function(event) {
+  $('#download-btn1').on('click', function(event) {
     var canvas, svg;
     if (!$(this).attr('download')) {
       event.preventDefault();
@@ -9,6 +9,9 @@ function handleDownloadButtonClick() {
       $(this).attr('href', Canvas2Image.saveAsPNG(canvas));
       $(this).attr('download', $(this).data('filename'));
       return $(this)[0].click();
+    }
+    else {
+      console.log('hi')
     }
   });
 }

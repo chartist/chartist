@@ -6,7 +6,7 @@ $(document).ready(function(){
       $target = $(target);
   
       $('html, body').stop().animate({
-          'scrollTop': $target.offset().top
+          'scrollTop': $target.offset()
       }, 900, 'easeInOutExpo', function () {
           window.location.hash = target;
       });
