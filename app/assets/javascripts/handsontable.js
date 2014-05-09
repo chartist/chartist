@@ -1,9 +1,9 @@
 var data = [
-    ["Year", "Maserati", "Mazda", "Mercedes", "Mini", "Mitsubishi"],
-    ["2009", 0, 2941, 4303, 354, 5814],
-    ["2010", 5, 2905, 2867, 412, 5284],
-    ["2011", 4, 2517, 4822, 552, 6127],
-    ["2012", 2, 2422, 5399, 776, 4151]
+    ["Days", "Anna", "Mario", "Toby", "Mikhail", "Natascia"],
+    ["Last Tuesday", 23, 32, 23, 43, 21],
+    ["5th of May", 5, 14, 13, 28, 31],
+    ["yesterday", 15, 23, 85, 23, 25],
+    ["9 may 2014", 20, 25, 23, 22, 15]
 ];
 var csvContent = "";
 
