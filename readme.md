@@ -36,10 +36,10 @@ As this was a 2-week project we focused on building the core funtionality. Howev
 
 ### The team
 
-Chartist was well crafted with ♥
+Chartist was well crafted with ♥ by
 
-* Mario Gintili [@mariogintili](https://github.com/mariogintili)
-* Mikhail Dubov [@duboff](https://github.com/duboff)
-* Toby Retallick [@TobyRet](https://github.com/TobyRet)
-* Anna Yanova [@yan0va](https://github.com/yan0va)
-* Natascia Marchese [@itsmurasaki](https://github.com/itsmurasaki)
+* [Mario Gintili](https://github.com/mariogintili)
+* [Mikhail Dubov](https://github.com/duboff)
+* [Toby Retallick](https://github.com/TobyRet)
+* [Anna Yanova](https://github.com/yan0va)
+* [Natascia Marchese](https://github.com/itsmurasaki)
